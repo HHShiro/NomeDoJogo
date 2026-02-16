@@ -14,14 +14,16 @@ config/name="NomeDoJogo"
 run/main_scene="uid://c2ig7irend1e3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+"<<<<<<<Updatedupstream[display]window/size/viewport_width"=1920
+window/size/viewport_height=1080
+window/size/mode=2
 
-<<<<<<< Updated upstream
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
-=======
+
 [file_customization]
 
 folder_colors={
@@ -33,7 +35,6 @@ folder_colors={
 [global_group]
 
 player="Grupo global para o Player"
->>>>>>> Stashed changes
 
 [input]
 
