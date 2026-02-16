@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bk1uxbo8ia1sc"]
+
+[ext_resource type="Texture2D" uid="uid://vvfck06xe4mt" path="res://icon.svg" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://cbqkt8qj0vkss" path="res://scripts/enemy_basic01.gd" id="1_md0e3"]
+[ext_resource type="Script" path="res://scripts/movement_component.gd" id="3_38ino"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
+size = Vector2(24, 24)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=2141062215]
+motion_mode = 1
+script = ExtResource("1_md0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=309086507]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7p1mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=429042490]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_4ra3w")
+
+[node name="MovementComponent" type="Node" parent="." unique_id=348118128 node_paths=PackedStringArray("body", "sprite")]
+script = ExtResource("3_38ino")
+body = NodePath("..")
+sprite = NodePath("../Sprite2D")
+speed = 40.0

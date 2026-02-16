@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://hajbwas022bl"]
+
+[ext_resource type="PackedScene" uid="uid://c2ig7irend1e3" path="res://scenes/player.tscn" id="1_lmvit"]
+[ext_resource type="PackedScene" uid="uid://bk1uxbo8ia1sc" path="res://scenes/enemies/enemy.tscn" id="2_8b2yb"]
+[ext_resource type="Texture2D" uid="uid://boh8msdjeatix" path="res://assets/grama.jpg" id="3_8b2yb"]
+
+[node name="PrimeiraFase" type="Node2D" unique_id=634138565]
+
+[node name="Player" parent="." unique_id=192957208 instance=ExtResource("1_lmvit")]
+position = Vector2(-1, -1)
+
+[node name="Enemy" parent="." unique_id=2141062215 instance=ExtResource("2_8b2yb")]
+position = Vector2(519, 211)
+
+[node name="Enemy2" parent="." unique_id=1592100148 instance=ExtResource("2_8b2yb")]
+position = Vector2(-80, -155)
+
+[node name="Enemy3" parent="." unique_id=2065609876 instance=ExtResource("2_8b2yb")]
+position = Vector2(570, 760)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573217500]
+z_index = -1
+texture_repeat = 2
+position = Vector2(950, 538)
+scale = Vector2(-3.1176472, 3.5751634)
+texture = ExtResource("3_8b2yb")
