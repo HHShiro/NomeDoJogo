@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcqels2e06k2d" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://ba0xl37xfae3i" path="res://scripts/input_component.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://4vsytkmihg4x" path="res://scripts/movement_component.gd" id="3_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 
@@ -20,3 +21,9 @@ texture = SubResource("CanvasTexture_g2els")
 [node name="InputComponent" type="Node" parent="." unique_id=1806697245]
 script = ExtResource("2_g2els")
 metadata/_custom_type_script = "uid://ba0xl37xfae3i"
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1294106319 node_paths=PackedStringArray("body", "sprite")]
+script = ExtResource("3_qhqgy")
+body = NodePath("..")
+sprite = NodePath("../Sprite2D")
+metadata/_custom_type_script = "uid://4vsytkmihg4x"
