@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NomeDoJogo"
-run/main_scene="uid://c2ig7irend1e3"
+run/main_scene="uid://hajbwas022bl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 "<<<<<<<Updatedupstream[display]window/size/viewport_width"=1920
