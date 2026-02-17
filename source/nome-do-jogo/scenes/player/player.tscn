@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c2ig7irend1e3"]
+
+[ext_resource type="Script" uid="uid://bcqels2e06k2d" path="res://scripts/player/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://c56rbmduso43o" path="res://assets/carimbo.png" id="2_dqkch"]
+[ext_resource type="Script" uid="uid://ba0xl37xfae3i" path="res://scripts/player/input_component.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://4vsytkmihg4x" path="res://scripts/player/movement_component.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cw3q4rxelnnj6" path="res://scripts/player/health_component.gd" id="5_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://c5rpy0h77iho2" path="res://scenes/components/hitbox_component.tscn" id="6_fjrip"]
+[ext_resource type="PackedScene" uid="uid://b5cho0f7cc83u" path="res://scenes/components/hurtbox_component.tscn" id="7_smehm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjrip"]
+size = Vector2(86, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
+size = Vector2(88, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur7pv"]
+size = Vector2(80, 57)
+
+[node name="Player" type="CharacterBody2D" unique_id=192957208 groups=["player"]]
+script = ExtResource("1_3vyb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1277185485]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_dqkch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152092755]
+visible = false
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_fjrip")
+
+[node name="InputComponent" type="Node" parent="." unique_id=1806697245]
+script = ExtResource("2_g2els")
+metadata/_custom_type_script = "uid://ba0xl37xfae3i"
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1294106319 node_paths=PackedStringArray("body", "sprite")]
+script = ExtResource("3_qhqgy")
+body = NodePath("..")
+sprite = NodePath("../Sprite2D")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1888958320]
+script = ExtResource("5_qlg0r")
+metadata/_custom_type_script = "uid://cw3q4rxelnnj6"
+
+[node name="HitboxComponent" parent="." unique_id=998533449 instance=ExtResource("6_fjrip")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0" unique_id=1259754881]
+shape = SubResource("RectangleShape2D_smehm")
+
+[node name="HurtboxComponent" parent="." unique_id=262715552 instance=ExtResource("7_smehm")]
+visible = false
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=1487761706]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ur7pv")
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="hurt" from="HurtboxComponent" to="." method="_on_hurtbox_component_hurt"]
+
+[editable path="HitboxComponent"]
+[editable path="HurtboxComponent"]
