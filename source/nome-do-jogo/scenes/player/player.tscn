@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c56rbmduso43o" path="res://assets/carimbo.png" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://ba0xl37xfae3i" path="res://scripts/player/input_component.gd" id="2_g2els"]
 [ext_resource type="Script" uid="uid://4vsytkmihg4x" path="res://scripts/player/movement_component.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://n03p63ngf8p8" path="res://scripts/player/camera_2d.gd" id="5_p47bc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(87, 62)
@@ -30,3 +31,29 @@ sprite = NodePath("../Sprite2D")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1294623745]
 zoom = Vector2(1.2, 1.2)
+script = ExtResource("5_p47bc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D" unique_id=2123242937]
+offset_left = -39.0
+offset_top = -447.0
+offset_right = 1.0
+offset_bottom = -407.0
+
+[node name="minute" type="Label" parent="Camera2D/HBoxContainer" unique_id=1955163706]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Label2" type="Label" parent="Camera2D/HBoxContainer" unique_id=20814416]
+layout_mode = 2
+text = ":"
+
+[node name="second" type="Label" parent="Camera2D/HBoxContainer" unique_id=826293751]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+
+[node name="Timer" type="Timer" parent="Camera2D" unique_id=656114106]
+autostart = true
+
+[connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
