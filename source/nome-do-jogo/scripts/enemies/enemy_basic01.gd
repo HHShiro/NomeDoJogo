@@ -4,7 +4,12 @@ extends CharacterBody2D
 @onready var movement_component: MovementComponent = $MovementComponent
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var player = get_tree().get_first_node_in_group("player")
-
+var elite : bool = false:
+	set(value):
+		elite = value
+		if value:
+			$Sprite2D.material = load("res://scripts/enemies/rainbow_outline.tres")
+			scale = Vector2(1.5,1.5)
 var type : Enemy:
 	set(value):
 		type = value
