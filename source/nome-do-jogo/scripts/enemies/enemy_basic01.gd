@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @onready var movement_component: MovementComponent = $MovementComponent
 @onready var health_component: HealthComponent = $HealthComponent
 
