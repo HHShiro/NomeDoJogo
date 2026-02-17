@@ -13,7 +13,7 @@ var second : int = 0
 func spawn(pos : Vector2):
 	var enemy_instance = enemy.instantiate()
 	enemy_instance.position = pos
-	enemy_instance.player_reference = player
+	enemy_instance.player = player
 	add_child(enemy_instance)
 
 func get_random_position() -> Vector2:
@@ -29,8 +29,4 @@ func _on_timer_timeout():
 	if second >= 60:
 		second = 0
 		minute += 1
-	
-	minute_label.text = str(minute)
-	second_label.text = str(second).lpad(2, "0")
-	
 	amount(second % 10)

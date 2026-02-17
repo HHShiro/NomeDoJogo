@@ -1,34 +1,13 @@
 [gd_scene format=3 uid="uid://ccar1nsb2jybq"]
 
-[ext_resource type="Script" uid="uid://cdd82atw4deke" path="res://scripts/spawner.gd" id="1_lie5b"]
+[ext_resource type="Script" uid="uid://cdd82atw4deke" path="res://scripts/enemies/spawner.gd" id="1_lie5b"]
 [ext_resource type="PackedScene" uid="uid://bk1uxbo8ia1sc" path="res://scenes/enemies/enemy.tscn" id="2_mv1hi"]
 
-[node name="spawner" type="Node2D" unique_id=852875230 node_paths=PackedStringArray("player")]
+[node name="spawner" type="Node2D" unique_id=852875230]
 script = ExtResource("1_lie5b")
-player = NodePath("")
 enemy = ExtResource("2_mv1hi")
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=625204892]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=152275010]
-offset_left = 1848.0
-offset_top = 21.0
-offset_right = 1912.0
-offset_bottom = 81.0
-
-[node name="minute" type="Label" parent="HBoxContainer" unique_id=1268536195]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0"
-
-[node name="Label2" type="Label" parent="HBoxContainer" unique_id=1550056202]
-layout_mode = 2
-text = ":"
-
-[node name="second" type="Label" parent="HBoxContainer" unique_id=1055137801]
-unique_name_in_owner = true
-layout_mode = 2
-text = "00"
 
 [node name="timer" type="Timer" parent="." unique_id=530878413]
 autostart = true

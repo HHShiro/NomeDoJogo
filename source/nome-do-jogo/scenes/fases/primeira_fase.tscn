@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hajbwas022bl"]
 
-[ext_resource type="PackedScene" uid="uid://c2ig7irend1e3" path="res://scenes/player.tscn" id="1_lmvit"]
+[ext_resource type="PackedScene" uid="uid://c2ig7irend1e3" path="res://scenes/player/player.tscn" id="1_lmvit"]
 [ext_resource type="Texture2D" uid="uid://boh8msdjeatix" path="res://assets/grama.jpg" id="3_8b2yb"]
 [ext_resource type="PackedScene" uid="uid://ccar1nsb2jybq" path="res://scenes/enemies/spawner.tscn" id="4_sm4gw"]
 
@@ -16,7 +16,10 @@ position = Vector2(1032, 513)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573217500]
 z_index = -1
+texture_filter = 2
 texture_repeat = 2
-position = Vector2(960.00006, 644.00006)
+position = Vector2(962, 646)
 scale = Vector2(-3.0163324, 3.349376)
 texture = ExtResource("3_8b2yb")
+region_enabled = true
+region_rect = Rect2(0, 0, 4000, 4000)

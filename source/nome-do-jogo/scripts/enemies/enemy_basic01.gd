@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var player_reference : CharacterBody2D
 
 @onready var movement_component: MovementComponent = $MovementComponent
 
