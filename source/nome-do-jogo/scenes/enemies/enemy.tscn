@@ -3,9 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://vvfck06xe4mt" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://cbqkt8qj0vkss" path="res://scripts/enemies/enemy_basic01.gd" id="1_md0e3"]
 [ext_resource type="Script" uid="uid://4vsytkmihg4x" path="res://scripts/player/movement_component.gd" id="3_38ino"]
+[ext_resource type="PackedScene" uid="uid://b5cho0f7cc83u" path="res://scenes/components/hurtbox_component.tscn" id="4_lu5c6"]
+[ext_resource type="PackedScene" uid="uid://c5rpy0h77iho2" path="res://scenes/components/hitbox_component.tscn" id="5_nb6gf"]
+[ext_resource type="Script" uid="uid://cw3q4rxelnnj6" path="res://scripts/player/health_component.gd" id="6_n7575"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
 size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb6gf"]
+size = Vector2(52, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jt03m"]
+size = Vector2(64, 64)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=2141062215]
 collision_layer = 0
@@ -18,6 +27,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_7p1mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=429042490]
+visible = false
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_4ra3w")
 
@@ -26,3 +36,29 @@ script = ExtResource("3_38ino")
 body = NodePath("..")
 sprite = NodePath("../Sprite2D")
 speed = 40.0
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1265445079]
+script = ExtResource("6_n7575")
+max_health = 5.0
+metadata/_custom_type_script = "uid://cw3q4rxelnnj6"
+
+[node name="HitboxComponent" parent="." unique_id=998533449 instance=ExtResource("5_nb6gf")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0" unique_id=1259754881]
+visible = false
+shape = SubResource("RectangleShape2D_nb6gf")
+
+[node name="HurtboxComponent" parent="." unique_id=262715552 instance=ExtResource("4_lu5c6")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=1487761706]
+shape = SubResource("RectangleShape2D_jt03m")
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="hurt" from="HurtboxComponent" to="." method="_on_hurtbox_component_hurt"]
+
+[editable path="HitboxComponent"]
+[editable path="HurtboxComponent"]

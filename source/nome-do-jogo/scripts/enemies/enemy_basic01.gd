@@ -18,5 +18,4 @@ func _on_hurtbox_component_hurt(damage: Variant) -> void:
 
 
 func _on_health_component_died() -> void:
-	print("Murreu")
 	queue_free()
