@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://6ujmljc1xgmk"]
+
+[ext_resource type="Script" uid="uid://b6c3xmn4q8cqg" path="res://scripts/menu/main_menu.gd" id="1_nl8w3"]
+[ext_resource type="Script" uid="uid://b0onnvnyd4ptg" path="res://scripts/menu/start.gd" id="2_3rkf3"]
+[ext_resource type="Script" uid="uid://cgahse8hib6mr" path="res://scripts/menu/skill_tree.gd" id="3_247la"]
+[ext_resource type="Script" uid="uid://ba4wyb7smnfis" path="res://scripts/menu/exit.gd" id="3_hj162"]
+[ext_resource type="Script" uid="uid://xwe8l35b4s4i" path="res://scripts/menu/gold.gd" id="4_kiqgm"]
+
+[sub_resource type="Theme" id="Theme_kiqgm"]
+
+[node name="main_menu" type="Control" unique_id=1255683488]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kiqgm")
+script = ExtResource("1_nl8w3")
+
+[node name="menu" type="Panel" parent="." unique_id=1365369704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start" type="Button" parent="menu" unique_id=874691626]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -235.0
+offset_top = -951.0
+offset_right = 265.0
+offset_bottom = -801.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Iniciar "
+script = ExtResource("2_3rkf3")
+
+[node name="upgrades" type="Button" parent="menu" unique_id=735916901]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -235.0
+offset_top = -771.0
+offset_right = 265.0
+offset_bottom = -621.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Aprimoramentos "
+
+[node name="book" type="Button" parent="menu" unique_id=204231003]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -234.0
+offset_top = -594.0
+offset_right = 266.0
+offset_bottom = -444.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Livro
+"
+
+[node name="exit" type="Button" parent="menu" unique_id=975749089]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -233.0
+offset_top = -413.0
+offset_right = 267.0
+offset_bottom = -263.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Sair"
+script = ExtResource("3_hj162")
+
+[node name="book" type="Panel" parent="." unique_id=2011909880]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="scroll_container" type="ScrollContainer" parent="book" unique_id=66593964]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.284
+anchor_top = 0.49400002
+anchor_right = 0.284
+anchor_bottom = 0.49400002
+offset_left = -372.28003
+offset_top = -345.52002
+offset_right = 371.71997
+offset_bottom = 344.47998
+grow_vertical = 2
+
+[node name="enemylist" type="VBoxContainer" parent="book/scroll_container" unique_id=1920076072]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="info" type="Panel" parent="book" unique_id=765526274]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -297.0
+offset_right = -167.0
+offset_bottom = 301.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="book/info" unique_id=1688201277]
+custom_minimum_size = Vector2(340, 170)
+layout_mode = 0
+offset_left = 128.0
+offset_top = 60.0
+offset_right = 462.0
+offset_bottom = 378.0
+
+[node name="skill_tree" type="Panel" parent="." unique_id=1313913689]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_247la")
+
+[node name="gold" type="Label" parent="." unique_id=1719977137]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("4_kiqgm")
+
+[node name="back" type="Button" parent="." unique_id=908269929]
+visible = false
+layout_mode = 0
+offset_left = 349.0
+offset_top = 42.0
+offset_right = 665.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 32
+text = "BACK
+"
+
+[connection signal="pressed" from="menu/start" to="menu/start" method="_on_pressed"]
+[connection signal="pressed" from="menu/upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="menu/book" to="." method="_on_book_pressed"]
+[connection signal="pressed" from="menu/exit" to="menu/exit" method="_on_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
