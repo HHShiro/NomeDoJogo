@@ -2,17 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://c2ig7irend1e3" path="res://scenes/player/player.tscn" id="1_lmvit"]
 [ext_resource type="Texture2D" uid="uid://boh8msdjeatix" path="res://assets/grama.jpg" id="3_8b2yb"]
-[ext_resource type="PackedScene" uid="uid://ccar1nsb2jybq" path="res://scenes/enemies/spawner.tscn" id="4_sm4gw"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/spawner.tscn" id="4_sm4gw"]
 
 [node name="PrimeiraFase" type="Node2D" unique_id=634138565]
 position = Vector2(-37, -132)
 
+[node name="Player" parent="." unique_id=192957208 instance=ExtResource("1_lmvit")]
+position = Vector2(1032, 513)
+
 [node name="spawner" parent="." unique_id=852875230 node_paths=PackedStringArray("player") instance=ExtResource("4_sm4gw")]
 position = Vector2(38, 127)
 player = NodePath("../Player")
-
-[node name="Player" parent="." unique_id=192957208 instance=ExtResource("1_lmvit")]
-position = Vector2(1032, 513)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573217500]
 z_index = -1
