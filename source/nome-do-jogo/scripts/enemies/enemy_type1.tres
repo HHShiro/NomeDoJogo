@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://cahstmyql10cl"]
+
+[ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="1_eeycd"]
+[ext_resource type="Texture2D" uid="uid://vvfck06xe4mt" path="res://icon.svg" id="2_43ftj"]
+
+[resource]
+script = ExtResource("1_eeycd")
+title = "enemy_type1"
+texture = ExtResource("2_43ftj")
+metadata/_custom_type_script = "uid://clmfcio7b7x0i"
