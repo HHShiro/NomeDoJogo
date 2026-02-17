@@ -3,13 +3,14 @@ extends Node2D
 @export var player : CharacterBody2D
 @export var enemy : PackedScene
 
-
+@export var enemy_types : Array[Enemy]
 var distance : float = 400
 var minute : int = 0
 var second : int = 0
 
 func spawn(pos : Vector2):
 	var enemy_instance = enemy.instantiate()
+	enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)]
 	enemy_instance.position = pos
 	enemy_instance.player = player
 	add_child(enemy_instance)

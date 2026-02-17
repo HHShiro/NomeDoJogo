@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cdd82atw4deke" path="res://scripts/enemies/spawner.gd" id="1_lie5b"]
 [ext_resource type="PackedScene" uid="uid://bk1uxbo8ia1sc" path="res://scenes/enemies/enemy.tscn" id="2_mv1hi"]
+[ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="3_0pfvh"]
+[ext_resource type="Resource" uid="uid://cahstmyql10cl" path="res://scripts/enemies/enemy_type1.tres" id="4_e5muq"]
+[ext_resource type="Resource" uid="uid://ccpl2yla5gwtf" path="res://scripts/enemies/enemy_type2.tres" id="4_rfmb6"]
+[ext_resource type="Resource" uid="uid://c2of7o34dmb5d" path="res://scripts/enemies/enemy_type3.tres" id="5_e5muq"]
 
 [node name="spawner" type="Node2D" unique_id=852875230]
 script = ExtResource("1_lie5b")
 enemy = ExtResource("2_mv1hi")
+enemy_types = Array[ExtResource("3_0pfvh")]([ExtResource("4_e5muq"), ExtResource("4_rfmb6"), ExtResource("5_e5muq")])
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=625204892]
 

@@ -3,8 +3,13 @@ extends CharacterBody2D
 
 @onready var movement_component: MovementComponent = $MovementComponent
 @onready var health_component: HealthComponent = $HealthComponent
-
 @onready var player = get_tree().get_first_node_in_group("player")
+
+var type : Enemy:
+	set(value):
+		type = value
+		$Sprite2D.texture = value.texture
+
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
 	movement_component.direction = direction
