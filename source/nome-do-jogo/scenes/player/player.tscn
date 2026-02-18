@@ -84,6 +84,7 @@ shape = SubResource("RectangleShape2D_h17s1")
 
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
 [connection signal="hurt" from="HurtboxComponent" to="." method="_on_hurtbox_component_hurt"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 
 [editable path="HitboxComponent"]
 [editable path="HurtboxComponent"]
