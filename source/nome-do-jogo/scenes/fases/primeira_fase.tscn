@@ -4,8 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://boh8msdjeatix" path="res://assets/grama.jpg" id="3_8b2yb"]
 [ext_resource type="PackedScene" uid="uid://b762ncs3lnobj" path="res://scenes/menu/pause_menu.tscn" id="4_1fhce"]
 [ext_resource type="PackedScene" uid="uid://bb1f011nkyj3b" path="res://scenes/enemies/spawner.tscn" id="4_sm4gw"]
+[ext_resource type="PackedScene" uid="uid://dpcpt2e5gb1lq" path="res://scenes/menu/death_menu.tscn" id="5_1fhce"]
+
+[sub_resource type="GDScript" id="GDScript_sm4gw"]
 
 [node name="PrimeiraFase" type="Node2D" unique_id=634138565]
+script = SubResource("GDScript_sm4gw")
 
 [node name="Player" parent="." unique_id=192957208 instance=ExtResource("1_lmvit")]
 position = Vector2(1032, 513)
@@ -25,3 +29,5 @@ region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
 [node name="pause_menu" parent="." unique_id=134273844 instance=ExtResource("4_1fhce")]
+
+[node name="death_menu" parent="." unique_id=1912427096 instance=ExtResource("5_1fhce")]
