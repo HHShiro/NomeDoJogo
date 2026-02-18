@@ -1,31 +1,71 @@
 extends CharacterBody2D
 
 
-@onready var movement_component: MovementComponent = $MovementComponent
-@onready var health_component: HealthComponent = $HealthComponent
 @onready var player = get_tree().get_first_node_in_group("player")
+
+var damage_popup_node = preload("res://scenes/player/damage.tscn")
+
+var direction: Vector2
+var speed: float = 75
+var damage: float
+var knockback: Vector2
+var separation: float
+
+var health: float:
+	set(value):
+		health = value
+		if health <= 0:
+			queue_free()
+			
 var elite : bool = false:
 	set(value):
 		elite = value
 		if value:
-			$Sprite2D.material = load("res://resources/rainbow_outline.tres")
+			$Sprite2D.material = load("res://resources/enemies/rainbow_outline.tres")
 			scale = Vector2(1.5,1.5)
+
 var type : Enemy:
 	set(value):
 		type = value
 		$Sprite2D.texture = value.texture
+		damage = value.damage
+		health = value.health
 
 func _physics_process(delta):
-	var direction = global_position.direction_to(player.global_position)
-	movement_component.direction = direction
-	movement_component.tick(delta)
+	check_separation(delta)
+	knockback_update(delta)
 	
+func check_separation(_delta):
+	var separation = (player.position - position).length()
+	if separation >= 1000 and not elite:
+		queue_free()
+		
+	if separation < player.nearest_enemy_distance:
+		player.nearest_enemy_distance = separation
+		player.nearest_enemy = null
+		player.nearest_enemy = self
+
+func knockback_update(delta):
+	velocity = (player.position - position).normalized() * speed
+	knockback = knockback.move_toward(Vector2.ZERO,1)
+	velocity += knockback
+	
+	var collider = move_and_collide(velocity * delta)
+	if collider:
+		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 50
 
 
-func _on_hurtbox_component_hurt(damage: Variant) -> void:
-	health_component.damage(damage)
-	print("Inimigo: ", health_component.current_health)
-
-
-func _on_health_component_died() -> void:
-	queue_free()
+func damage_popup(amount):
+	var popup = damage_popup_node.instantiate()
+	popup.text = str(amount)
+	popup.position = position + Vector2(-50,-25)
+	get_tree().current_scene.add_child(popup)
+	
+func take_damage(amount):
+	var tween = get_tree().create_tween()
+	tween.tween_property($Sprite2D, "modulate", Color(0.996, 0.22, 0.404, 1.0), 0.2)
+	tween.chain().tween_property($Sprite2D, "modulate", Color(1,1,1), 0.2)
+	tween.bind_node(self)
+	
+	damage_popup(amount)
+	health -= amount

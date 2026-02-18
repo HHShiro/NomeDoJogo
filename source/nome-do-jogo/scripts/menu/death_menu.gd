@@ -5,8 +5,7 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	var player = get_tree().get_first_node_in_group("player")
-	var health = player.get_node("HealthComponent")
-	health.died.connect(_on_player_died)
+	player.died.connect(_on_player_died)
 	
 func _on_player_died():
 	get_tree().paused = true

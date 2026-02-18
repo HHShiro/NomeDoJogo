@@ -26,69 +26,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="start" type="Button" parent="menu" unique_id=874691626]
+[node name="VBoxContainer" type="VBoxContainer" parent="menu" unique_id=995979760]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -235.0
-offset_top = -951.0
-offset_right = 265.0
-offset_bottom = -801.0
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -184.0
+offset_right = 216.0
+offset_bottom = 184.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="start" type="Button" parent="menu/VBoxContainer" unique_id=874691626]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Iniciar "
 script = ExtResource("2_3rkf3")
 
-[node name="upgrades" type="Button" parent="menu" unique_id=735916901]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -235.0
-offset_top = -771.0
-offset_right = 265.0
-offset_bottom = -621.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="upgrades" type="Button" parent="menu/VBoxContainer" unique_id=735916901]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Aprimoramentos "
 
-[node name="book" type="Button" parent="menu" unique_id=204231003]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -234.0
-offset_top = -594.0
-offset_right = 266.0
-offset_bottom = -444.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="book" type="Button" parent="menu/VBoxContainer" unique_id=204231003]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Livro
 "
 
-[node name="exit" type="Button" parent="menu" unique_id=975749089]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -233.0
-offset_top = -413.0
-offset_right = 267.0
-offset_bottom = -263.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="exit" type="Button" parent="menu/VBoxContainer" unique_id=975749089]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Sair"
 script = ExtResource("3_hj162")
@@ -170,8 +142,8 @@ theme_override_font_sizes/font_size = 32
 text = "BACK
 "
 
-[connection signal="pressed" from="menu/start" to="menu/start" method="_on_pressed"]
-[connection signal="pressed" from="menu/upgrades" to="." method="_on_upgrades_pressed"]
-[connection signal="pressed" from="menu/book" to="." method="_on_book_pressed"]
-[connection signal="pressed" from="menu/exit" to="menu/exit" method="_on_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/start" to="menu/VBoxContainer/start" method="_on_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/book" to="." method="_on_book_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/exit" to="menu/VBoxContainer/exit" method="_on_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

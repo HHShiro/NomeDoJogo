@@ -1,52 +1,63 @@
 [gd_scene format=3 uid="uid://c2ig7irend1e3"]
 
 [ext_resource type="Script" uid="uid://bcqels2e06k2d" path="res://scripts/player/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://c56rbmduso43o" path="res://assets/carimbo.png" id="2_dqkch"]
-[ext_resource type="Script" uid="uid://ba0xl37xfae3i" path="res://scripts/player/input_component.gd" id="2_g2els"]
-[ext_resource type="Script" uid="uid://4vsytkmihg4x" path="res://scripts/player/movement_component.gd" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://dgf287irplh5f" path="res://scenes/player/slot.tscn" id="2_p47bc"]
+[ext_resource type="Resource" uid="uid://dgw7m53646i1f" path="res://resources/weapons/Carimbo.tres" id="3_75vfm"]
+[ext_resource type="Texture2D" uid="uid://db6kimbbupj0h" path="res://assets/Carimbo2.png" id="4_p47bc"]
 [ext_resource type="Script" uid="uid://n03p63ngf8p8" path="res://scripts/player/camera_2d.gd" id="5_p47bc"]
-[ext_resource type="PackedScene" uid="uid://c5rpy0h77iho2" path="res://scenes/components/hitbox_component.tscn" id="6_fjrip"]
-[ext_resource type="PackedScene" uid="uid://b5cho0f7cc83u" path="res://scenes/components/hurtbox_component.tscn" id="7_smehm"]
-[ext_resource type="PackedScene" uid="uid://c8ecea3l3dssq" path="res://scenes/components/health_component.tscn" id="8_qek5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(87, 62)
+size = Vector2(20, 26)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gtgg"]
-size = Vector2(88, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h17s1"]
-size = Vector2(84, 60)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
+size = Vector2(20, 26)
 
 [node name="Player" type="CharacterBody2D" unique_id=192957208 groups=["player"]]
 script = ExtResource("1_3vyb7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=576165034]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_g2els")
+[node name="UI" type="CanvasLayer" parent="." unique_id=1970179113]
+
+[node name="Weapons" type="HBoxContainer" parent="UI" unique_id=1965225296]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 138.0
+offset_bottom = 50.0
+
+[node name="Slot" parent="UI/Weapons" unique_id=2133889621 instance=ExtResource("2_p47bc")]
+layout_mode = 2
+weapon = ExtResource("3_75vfm")
+
+[node name="Slot2" parent="UI/Weapons" unique_id=1812546093 instance=ExtResource("2_p47bc")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/Weapons" unique_id=1365077769 instance=ExtResource("2_p47bc")]
+layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1277185485]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_dqkch")
+position = Vector2(0, -1)
+texture = ExtResource("4_p47bc")
 
-[node name="InputComponent" type="Node" parent="." unique_id=1806697245]
-script = ExtResource("2_g2els")
-metadata/_custom_type_script = "uid://ba0xl37xfae3i"
-
-[node name="MovementComponent" type="Node" parent="." unique_id=1294106319 node_paths=PackedStringArray("body", "sprite")]
-script = ExtResource("3_qhqgy")
-body = NodePath("..")
-sprite = NodePath("../Sprite2D")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=576165034]
+shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1294623745]
 zoom = Vector2(1.2, 1.2)
 script = ExtResource("5_p47bc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Camera2D" unique_id=2123242937]
-offset_left = -39.0
-offset_top = -375.0
-offset_right = 3.0
-offset_bottom = -334.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -200.5
+offset_right = 21.0
+offset_bottom = -159.50002
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(21, 20.5)
+alignment = 1
 
 [node name="minute" type="Label" parent="Camera2D/HBoxContainer" unique_id=1955163706]
 unique_name_in_owner = true
@@ -65,26 +76,26 @@ text = "00"
 [node name="Timer" type="Timer" parent="Camera2D" unique_id=656114106]
 autostart = true
 
-[node name="HitboxComponent" parent="." unique_id=998533449 instance=ExtResource("6_fjrip")]
-collision_layer = 4
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1961281585]
+collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" parent="HitboxComponent" index="0" unique_id=1259754881]
-visible = false
-shape = SubResource("RectangleShape2D_5gtgg")
+[node name="HurtboxCollision" type="CollisionShape2D" parent="Hurtbox" unique_id=1366321888]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_gmlin")
 
-[node name="HurtboxComponent" parent="." unique_id=262715552 instance=ExtResource("7_smehm")]
-collision_layer = 2
-collision_mask = 2
+[node name="Health" type="ProgressBar" parent="." unique_id=26967196]
+unique_name_in_owner = true
+offset_left = -39.0
+offset_top = 33.0
+offset_right = 40.0
+offset_bottom = 39.0
+value = 100.0
+show_percentage = false
 
-[node name="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=1487761706]
-shape = SubResource("RectangleShape2D_h17s1")
-
-[node name="HealthComponent" parent="." unique_id=608790382 instance=ExtResource("8_qek5x")]
+[node name="HurtCooldown" type="Timer" parent="." unique_id=775577464]
+autostart = true
 
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
-[connection signal="hurt" from="HurtboxComponent" to="." method="_on_hurtbox_component_hurt"]
-[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
-
-[editable path="HitboxComponent"]
-[editable path="HurtboxComponent"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="HurtCooldown" to="." method="_on_hurt_cooldown_timeout"]

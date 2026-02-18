@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://ccpl2yla5gwtf"]
 
-[ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="1_e8y1g"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_type.gd" id="1_e8y1g"]
 [ext_resource type="Texture2D" uid="uid://b5ufj35nbxu2y" path="res://assets/Captura_de_tela_2026-02-17_142305-removebg-preview.png" id="2_e8y1g"]
 
 [resource]
 script = ExtResource("1_e8y1g")
 title = "enemy_type2"
 texture = ExtResource("2_e8y1g")
-metadata/_custom_type_script = "uid://clmfcio7b7x0i"
+health = 10.0
+damage = 5.0
