@@ -1,12 +1,22 @@
 extends Node2D
 
-@export var player : CharacterBody2D
+@onready var player = get_tree().get_first_node_in_group("player")
 @export var enemy : PackedScene
 
-@export var enemy_types : Array[Enemy]
 var distance : float = 400
+
+@export var enemy_types : Array[Enemy]
+
 var minute : int = 0
 var second : int = 0
+
+var can_spawn : bool = true
+
+func _physics_process(delta: float) -> void:
+	if get_tree().get_node_count_in_group("Enemy") < 500:
+		can_spawn = true
+	else:
+		can_spawn = false
 
 func spawn(pos : Vector2, elite : bool = false):
 	var enemy_instance = enemy.instantiate()
@@ -14,13 +24,13 @@ func spawn(pos : Vector2, elite : bool = false):
 	enemy_instance.position = pos
 	enemy_instance.player = player
 	enemy_instance.elite = elite
-	add_child(enemy_instance)
+	
+	get_tree().current_scene.add_child(enemy_instance)
 
 func get_random_position() -> Vector2:
 	return player.position + distance * Vector2.RIGHT.rotated(randf_range(0, 2 * PI))
 
 func amount(number : int = 1):
-	print(number)
 	for i in range(number):
 		spawn(get_random_position())
 

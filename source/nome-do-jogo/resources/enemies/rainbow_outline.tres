@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://4lqq055k26jp"]
 
-[ext_resource type="Shader" uid="uid://c1lv46ouv1u2s" path="res://resources/raiwnbow.gdshader" id="1_1yrqh"]
+[ext_resource type="Shader" uid="uid://c1lv46ouv1u2s" path="res://resources/enemies/raiwnbow.gdshader" id="1_1yrqh"]
 
 [resource]
 shader = ExtResource("1_1yrqh")

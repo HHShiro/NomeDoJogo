@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://d44p3j2qtqdf"]
+
+[ext_resource type="Script" uid="uid://d3m21a8or6m4o" path="res://scripts/player/projectile.gd" id="1_c28ns"]
+[ext_resource type="Texture2D" uid="uid://bh27m4um4m8wb" path="res://assets/Carimbo1.png" id="2_c28ns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c28ns"]
+
+[sub_resource type="Gradient" id="Gradient_xebok"]
+offsets = PackedFloat32Array(0, 0.99159664, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.4045108, 0.40451136, 0.40451044, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c28ns"]
+gradient = SubResource("Gradient_xebok")
+
+[sub_resource type="Curve" id="Curve_yvsue"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_suvv8"]
+curve = SubResource("Curve_yvsue")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yyqrv"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 16.0
+direction = Vector3(1, 1, 0)
+initial_velocity_min = -10.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_suvv8")
+color_ramp = SubResource("GradientTexture1D_c28ns")
+turbulence_enabled = true
+
+[node name="Projectile" type="Area2D" unique_id=594046782]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_c28ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=263254188]
+shape = SubResource("RectangleShape2D_c28ns")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1420620339]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=511099184]
+position = Vector2(-1.9073486e-06, 0)
+scale = Vector2(0.71925133, 0.74590164)
+texture = ExtResource("2_c28ns")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=16872214]
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_yyqrv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

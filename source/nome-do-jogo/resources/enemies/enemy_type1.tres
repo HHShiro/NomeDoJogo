@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://cahstmyql10cl"]
 
-[ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="1_bctnm"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_type.gd" id="1_bctnm"]
 [ext_resource type="Texture2D" uid="uid://vvfck06xe4mt" path="res://icon.svg" id="2_0ktvp"]
 
 [resource]
 script = ExtResource("1_bctnm")
 title = "enemy_type1"
 texture = ExtResource("2_0ktvp")
-metadata/_custom_type_script = "uid://clmfcio7b7x0i"
+health = 1.0
+damage = 1.0
