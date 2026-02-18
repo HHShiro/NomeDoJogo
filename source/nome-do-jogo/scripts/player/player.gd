@@ -16,3 +16,4 @@ func _physics_process(delta: float) -> void:
 func _on_hurtbox_component_hurt(damage: Variant) -> void:
 	health_component.damage(damage)
 	print(health_component.current_health)
+	
