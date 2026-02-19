@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://bcqels2e06k2d" path="res://scripts/player/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://dgf287irplh5f" path="res://scenes/player/slot.tscn" id="2_p47bc"]
 [ext_resource type="Resource" uid="uid://dgw7m53646i1f" path="res://resources/weapons/Carimbo.tres" id="3_75vfm"]
+[ext_resource type="Texture2D" uid="uid://boi7l240l0o7p" path="res://assets/Captura de tela 2026-02-19 133044.png" id="4_0owmy"]
 [ext_resource type="Texture2D" uid="uid://db6kimbbupj0h" path="res://assets/Carimbo2.png" id="4_p47bc"]
 [ext_resource type="Script" uid="uid://n03p63ngf8p8" path="res://scripts/player/camera_2d.gd" id="5_p47bc"]
+[ext_resource type="Texture2D" uid="uid://cyvblua805p1s" path="res://Captura de tela 2026-02-19 132821.png" id="5_qek5x"]
+[ext_resource type="Script" uid="uid://cn1qk100v52en" path="res://scripts/player/options.gd" id="6_qek5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(20, 26)
@@ -12,16 +15,21 @@ size = Vector2(20, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
 size = Vector2(20, 26)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0owmy"]
+radius = 50.0
+
 [node name="Player" type="CharacterBody2D" unique_id=192957208 groups=["player"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_3vyb7")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1970179113]
 
 [node name="Weapons" type="HBoxContainer" parent="UI" unique_id=1965225296]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 138.0
-offset_bottom = 50.0
+offset_left = 11.539391
+offset_top = 42.39765
+offset_right = 140.1084
+offset_bottom = 82.39765
 
 [node name="Slot" parent="UI/Weapons" unique_id=2133889621 instance=ExtResource("2_p47bc")]
 layout_mode = 2
@@ -32,6 +40,40 @@ layout_mode = 2
 
 [node name="Slot3" parent="UI/Weapons" unique_id=1365077769 instance=ExtResource("2_p47bc")]
 layout_mode = 2
+
+[node name="XP" type="TextureProgressBar" parent="UI" unique_id=961565571]
+unique_name_in_owner = true
+offset_right = 419.0
+offset_bottom = 30.0
+max_value = 10.0
+texture_under = ExtResource("4_0owmy")
+texture_progress = ExtResource("5_qek5x")
+
+[node name="Level" type="Label" parent="UI/XP" unique_id=935734002]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 377.0
+offset_top = 28.0
+offset_right = 416.0
+offset_bottom = 51.0
+text = "Lv 1"
+
+[node name="Options" type="VBoxContainer" parent="UI" unique_id=192631775 node_paths=PackedStringArray("weapons")]
+unique_name_in_owner = true
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_qek5x")
+weapons = NodePath("../Weapons")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1277185485]
 position = Vector2(0, -1)
@@ -96,6 +138,14 @@ show_percentage = false
 [node name="HurtCooldown" type="Timer" parent="." unique_id=775577464]
 autostart = true
 
+[node name="Magnet" type="Area2D" parent="." unique_id=433611788]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet" unique_id=1833097526]
+shape = SubResource("CircleShape2D_0owmy")
+
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="timeout" from="HurtCooldown" to="." method="_on_hurt_cooldown_timeout"]
+[connection signal="area_entered" from="Magnet" to="." method="_on_magnet_area_entered"]

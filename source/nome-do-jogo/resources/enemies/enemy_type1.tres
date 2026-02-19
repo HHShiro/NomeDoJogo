@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://cahstmyql10cl"]
 
-[ext_resource type="Script" path="res://scripts/enemies/enemy_type.gd" id="1_bctnm"]
+[ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickup_resource.gd" id="1_5xw61"]
+[ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="1_bctnm"]
 [ext_resource type="Texture2D" uid="uid://vvfck06xe4mt" path="res://icon.svg" id="2_0ktvp"]
+[ext_resource type="Resource" uid="uid://dgqhnqu3trnhu" path="res://resources/Xp/mercado_livre.tres" id="2_b2qel"]
 
 [resource]
 script = ExtResource("1_bctnm")
@@ -9,3 +11,4 @@ title = "enemy_type1"
 texture = ExtResource("2_0ktvp")
 health = 1.0
 damage = 1.0
+drops = Array[ExtResource("1_5xw61")]([ExtResource("2_b2qel")])
