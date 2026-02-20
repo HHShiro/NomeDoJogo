@@ -26,7 +26,7 @@ func get_available_resource_in(items) -> Array[Item]:
 	return resources
 
 func add_option(item) -> int:
-	if item.is_upgradable():
+	if item.is_upgradable() and item.level < 10:
 		var option_slot = OptionSlot.instantiate()
 		option_slot.item = item
 		add_child(option_slot)
