@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://db6kimbbupj0h" path="res://assets/Carimbo2.png" id="4_p47bc"]
 [ext_resource type="Texture2D" uid="uid://optp26aaxhv4" path="res://assets/xp_over.png" id="5_h17s1"]
 [ext_resource type="Script" uid="uid://n03p63ngf8p8" path="res://scripts/player/camera_2d.gd" id="5_p47bc"]
+[ext_resource type="PackedScene" uid="uid://bo6ydp6t6t84d" path="res://scenes/player/passive_slot.tscn" id="6_fm80t"]
 [ext_resource type="Texture2D" uid="uid://dbnbawnxsg041" path="res://assets/xp_progress.png" id="6_je7p5"]
 [ext_resource type="Script" uid="uid://cn1qk100v52en" path="res://scripts/player/options.gd" id="6_qek5x"]
 
@@ -91,12 +92,27 @@ offset_bottom = 82.39765
 
 [node name="Slot" parent="UI/Weapons" unique_id=2133889621 instance=ExtResource("2_p47bc")]
 layout_mode = 2
-weapon = ExtResource("3_75vfm")
+item = ExtResource("3_75vfm")
 
 [node name="Slot2" parent="UI/Weapons" unique_id=1812546093 instance=ExtResource("2_p47bc")]
 layout_mode = 2
 
 [node name="Slot3" parent="UI/Weapons" unique_id=1365077769 instance=ExtResource("2_p47bc")]
+layout_mode = 2
+
+[node name="PassiveItems" type="HBoxContainer" parent="UI" unique_id=1398648197]
+offset_left = 12.0
+offset_top = 86.0
+offset_right = 140.0
+offset_bottom = 126.0
+
+[node name="PassiveSlot" parent="UI/PassiveItems" unique_id=1995932710 instance=ExtResource("6_fm80t")]
+layout_mode = 2
+
+[node name="PassiveSlot2" parent="UI/PassiveItems" unique_id=1448197543 instance=ExtResource("6_fm80t")]
+layout_mode = 2
+
+[node name="PassiveSlot3" parent="UI/PassiveItems" unique_id=457244431 instance=ExtResource("6_fm80t")]
 layout_mode = 2
 
 [node name="XP" type="TextureProgressBar" parent="UI" unique_id=961565571]
@@ -117,7 +133,7 @@ offset_right = 1012.0
 offset_bottom = 49.0
 text = "Lv 1"
 
-[node name="Options" type="VBoxContainer" parent="UI" unique_id=192631775 node_paths=PackedStringArray("weapons", "particles", "panel")]
+[node name="Options" type="VBoxContainer" parent="UI" unique_id=192631775 node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
 unique_name_in_owner = true
 process_mode = 3
 anchors_preset = 8
@@ -133,6 +149,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_qek5x")
 weapons = NodePath("../Weapons")
+passive_items = NodePath("../PassiveItems")
 particles = NodePath("../LevelUpParticle")
 panel = NodePath("../Panel")
 
@@ -203,7 +220,8 @@ autostart = true
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet" unique_id=1833097526]
+[node name="Magnet" type="CollisionShape2D" parent="Magnet" unique_id=1833097526]
+unique_name_in_owner = true
 shape = SubResource("CircleShape2D_0owmy")
 
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]

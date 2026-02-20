@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SingleShot" format=3 uid="uid://defsd0lecjtqw"]
+
+[ext_resource type="PackedScene" uid="uid://bpuoi3sgpdpuw" path="res://scenes/player/projectileCarimboFantasma.tscn" id="1_huvse"]
+[ext_resource type="Script" uid="uid://4r0v0svfrf30" path="res://scripts/player/SingleShot.gd" id="2_lvqq5"]
+[ext_resource type="Texture2D" uid="uid://2s820tdniyd2" path="res://assets/Carimbo_fantasma_placeholder.png" id="3_mmqra"]
+[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/upgrade.gd" id="4_l8pvm"]
+
+[resource]
+script = ExtResource("2_lvqq5")
+damage = 20.0
+cooldown = 0.05
+speed = 500.0
+projectile_node = ExtResource("1_huvse")
+title = "Carimbo Fantasma 2"
+texture = ExtResource("3_mmqra")
+metadata/_custom_type_script = "uid://4r0v0svfrf30"
