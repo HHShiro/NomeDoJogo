@@ -75,13 +75,13 @@ func take_damage(amount):
 func drop_item():
 	if type.drops.size() == 0:
 		return
-	
+	 
 	var item = type.drops.pick_random()
 	
 	var item_to_drop = drop.instantiate()
 	
 	item_to_drop.type = item
 	item_to_drop.position = position
-	item_to_drop.player_reference = get_tree().get_first_node_in_group("player")
+	item_to_drop.player_reference = player
 	
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)

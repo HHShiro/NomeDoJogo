@@ -1,13 +1,33 @@
 [gd_scene format=3 uid="uid://c2ig7irend1e3"]
 
 [ext_resource type="Script" uid="uid://bcqels2e06k2d" path="res://scripts/player/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://0ks58fumahwa" path="res://assets/imagem_2026-02-18_172432767-removebg-preview (1).png" id="2_je7p5"]
 [ext_resource type="PackedScene" uid="uid://dgf287irplh5f" path="res://scenes/player/slot.tscn" id="2_p47bc"]
 [ext_resource type="Resource" uid="uid://dgw7m53646i1f" path="res://resources/weapons/Carimbo.tres" id="3_75vfm"]
-[ext_resource type="Texture2D" uid="uid://boi7l240l0o7p" path="res://assets/Captura de tela 2026-02-19 133044.png" id="4_0owmy"]
+[ext_resource type="Texture2D" uid="uid://bh27m4um4m8wb" path="res://assets/Carimbo1.png" id="3_fm80t"]
+[ext_resource type="Texture2D" uid="uid://b74qy44jhurrl" path="res://assets/xp_under.png" id="4_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://db6kimbbupj0h" path="res://assets/Carimbo2.png" id="4_p47bc"]
+[ext_resource type="Texture2D" uid="uid://optp26aaxhv4" path="res://assets/xp_over.png" id="5_h17s1"]
 [ext_resource type="Script" uid="uid://n03p63ngf8p8" path="res://scripts/player/camera_2d.gd" id="5_p47bc"]
-[ext_resource type="Texture2D" uid="uid://cyvblua805p1s" path="res://Captura de tela 2026-02-19 132821.png" id="5_qek5x"]
+[ext_resource type="Texture2D" uid="uid://dbnbawnxsg041" path="res://assets/xp_progress.png" id="6_je7p5"]
 [ext_resource type="Script" uid="uid://cn1qk100v52en" path="res://scripts/player/options.gd" id="6_qek5x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gx1jg"]
+font_size = 4
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ugbui"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 20, 0)
+emission_shape = 3
+emission_box_extents = Vector3(512, 1, 1)
+angle_min = -720.0
+angle_max = 270.0
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.7
+scale_max = 0.7
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(20, 26)
@@ -24,6 +44,44 @@ collision_mask = 2
 script = ExtResource("1_3vyb7")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1970179113]
+
+[node name="Panel" type="NinePatchRect" parent="UI" unique_id=1029441684]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+scale = Vector2(10, 10)
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("2_je7p5")
+
+[node name="Label" type="Label" parent="UI/Panel" unique_id=846396518]
+layout_mode = 0
+offset_left = 36.2
+offset_top = 4.5000014
+offset_right = 52.2
+offset_bottom = 12.110933
+rotation = 1.5707964
+text = "LevelUp"
+label_settings = SubResource("LabelSettings_gx1jg")
+
+[node name="LevelUpParticle" type="GPUParticles2D" parent="UI" unique_id=672378044]
+process_mode = 3
+visible = false
+position = Vector2(512, 0)
+amount = 32
+texture = ExtResource("3_fm80t")
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_ugbui")
 
 [node name="Weapons" type="HBoxContainer" parent="UI" unique_id=1965225296]
 offset_left = 11.539391
@@ -46,19 +104,20 @@ unique_name_in_owner = true
 offset_right = 419.0
 offset_bottom = 30.0
 max_value = 10.0
-texture_under = ExtResource("4_0owmy")
-texture_progress = ExtResource("5_qek5x")
+texture_under = ExtResource("4_5gtgg")
+texture_over = ExtResource("5_h17s1")
+texture_progress = ExtResource("6_je7p5")
 
 [node name="Level" type="Label" parent="UI/XP" unique_id=935734002]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 377.0
-offset_top = 28.0
-offset_right = 416.0
-offset_bottom = 51.0
+offset_left = 973.0
+offset_top = 26.0
+offset_right = 1012.0
+offset_bottom = 49.0
 text = "Lv 1"
 
-[node name="Options" type="VBoxContainer" parent="UI" unique_id=192631775 node_paths=PackedStringArray("weapons")]
+[node name="Options" type="VBoxContainer" parent="UI" unique_id=192631775 node_paths=PackedStringArray("weapons", "particles", "panel")]
 unique_name_in_owner = true
 process_mode = 3
 anchors_preset = 8
@@ -74,6 +133,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_qek5x")
 weapons = NodePath("../Weapons")
+particles = NodePath("../LevelUpParticle")
+panel = NodePath("../Panel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1277185485]
 position = Vector2(0, -1)
@@ -140,7 +201,7 @@ autostart = true
 
 [node name="Magnet" type="Area2D" parent="." unique_id=433611788]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet" unique_id=1833097526]
 shape = SubResource("CircleShape2D_0owmy")

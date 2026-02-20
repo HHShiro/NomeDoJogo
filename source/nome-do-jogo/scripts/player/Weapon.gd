@@ -11,21 +11,24 @@ class_name Weapon
 @export var projectile_node : PackedScene = preload("res://scenes/player/projectile.tscn")
 
 @export var upgrades : Array[Upgrade]
+
 var level = 1
+
 
 func activate(_source, _target, _scene_tree):
 	pass
 
 func is_upgradable() -> bool:
-	if level <= upgrades.size():
+	#if level <= upgrades.size():
 		return true
-	return false
+	#return false
 
-func upgrade_item():
+func upgrade_item(upgrade_index: int):
 	if not is_upgradable():
 		return
 	
-	var upgrade = upgrades[level -1]
+	var upgrade = upgrades[upgrade_index]
+	
 	
 	damage += upgrade.damage
 	cooldown += upgrade.cooldown
