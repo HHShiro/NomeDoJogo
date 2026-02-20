@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_rbkgy")
-XP = 1.0
+XP = 5.0
 title = "mercado_livre"
 icon = ExtResource("1_4wkmx")
 description = "ganhar exp"
