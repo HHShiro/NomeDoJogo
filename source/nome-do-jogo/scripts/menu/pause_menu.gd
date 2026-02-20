@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var pause_duplicado:= false
+
 func _ready():
 	visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -9,11 +11,21 @@ func _input(event):
 		toggle_pause()
 
 func toggle_pause():
-	get_tree().paused = !get_tree().paused
-	visible = get_tree().paused
+	if get_tree().paused and !visible:
+		pause_duplicado = true
+		visible = true
+	else:
+		if !pause_duplicado:
+			get_tree().paused = !get_tree().paused
+			visible = get_tree().paused
+		else:
+			pause_duplicado = false
+			visible = false
 	
 func _on_resume_pressed() -> void:
-	get_tree().paused = false
+	if !pause_duplicado:
+		get_tree().paused = false
+	pause_duplicado = false
 	visible = false
 
 
