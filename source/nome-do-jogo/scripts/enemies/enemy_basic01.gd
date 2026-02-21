@@ -77,6 +77,8 @@ func drop_item():
 		return
 	 
 	var item = type.drops.pick_random()
+	if elite:
+		item = load("res://resources/Xp/Caixa.tres")
 	
 	var item_to_drop = drop.instantiate()
 	

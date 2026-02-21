@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Gem" format=3 uid="uid://dgqhnqu3trnhu"]
+
+[ext_resource type="Texture2D" uid="uid://djyfa801ogsno" path="res://assets/selov2_placeholder.png" id="1_f6m7c"]
+[ext_resource type="Script" uid="uid://hw8q7yb0w5mr" path="res://scripts/player/gem.gd" id="2_wh4dx"]
+
+[resource]
+script = ExtResource("2_wh4dx")
+XP = 1.0
+title = "selo_xp"
+icon = ExtResource("1_f6m7c")
+description = "ganhar exp"
+metadata/_custom_type_script = "uid://hw8q7yb0w5mr"

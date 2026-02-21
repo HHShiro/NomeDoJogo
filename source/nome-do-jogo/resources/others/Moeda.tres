@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Gold" format=3 uid="uid://b36ejwdlurq7w"]
+
+[ext_resource type="Script" uid="uid://uuo6g858a4e1" path="res://Gold.gd" id="1_uxkik"]
+[ext_resource type="Texture2D" uid="uid://d4j2gteyn8bje" path="res://assets/moeda_placeholder.png" id="2_t7tqy"]
+
+[resource]
+script = ExtResource("1_uxkik")
+title = "Ouro"
+texture = ExtResource("2_t7tqy")
+metadata/_custom_type_script = "uid://uuo6g858a4e1"

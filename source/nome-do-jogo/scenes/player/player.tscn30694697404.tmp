@@ -327,7 +327,6 @@ position = Vector2(0, -1)
 texture = ExtResource("14_fcs02")
 
 [node name="RotationTimer" type="Timer" parent="." unique_id=1112242918]
-wait_time = 0.3
 autostart = true
 
 [node name="TextureRect" type="TextureRect" parent="RotationTimer" unique_id=1793135418]

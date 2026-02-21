@@ -20,9 +20,11 @@ autostart = true
 
 [node name="pattern" type="Timer" parent="." unique_id=587495378]
 wait_time = 20.0
+autostart = true
 
 [node name="elite" type="Timer" parent="." unique_id=299055601]
 wait_time = 30.0
+autostart = true
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="pattern" to="." method="_on_pattern_timeout"]

@@ -1,4 +1,8 @@
 class_name Player extends CharacterBody2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+var isMoving = false
+var canRotate = true
 
 signal died
 
@@ -24,6 +28,11 @@ var growth: float = 1
 
 var nearest_enemy : CharacterBody2D
 var nearest_enemy_distance: float = 150 + area
+
+var gold: int = 0:
+	set(value):
+		gold = value
+		%Gold.text = "Gold : " + str(value)
 
 var XP : int = 0:
 	set(value):
@@ -52,8 +61,20 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = Input.get_vector("move_left","move_right","move_up","move_down") * movement_speed
 	move_and_collide(velocity * delta)
+	if velocity.x != 0 or velocity.y != 0:
+		if velocity.x != 0:
+			sprite_2d.flip_h = velocity.x < 0
+		var velocidade_balanco = 15.0
+		var angulo_maximo = 5.0
+		var tempo = Time.get_ticks_msec() / 1000.0 
+		sprite_2d.rotation_degrees = sin(tempo * velocidade_balanco) * angulo_maximo
+	else:
+		sprite_2d.rotation_degrees = 0.0
+
 	check_XP()
 	health += recovery * delta
+	
+
 
 func take_damage(amount):
 	health -= max(amount - armor, 0)
@@ -81,4 +102,9 @@ func check_XP():
 func _on_magnet_area_entered(area):
 	if area.has_method("follow"):
 		area.follow(self)
+
+func gain_gold(amount):
+	gold += amount
 	
+func open_chest():
+	$UI/Chest.open()

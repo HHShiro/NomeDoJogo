@@ -327,12 +327,7 @@ position = Vector2(0, -1)
 texture = ExtResource("14_fcs02")
 
 [node name="RotationTimer" type="Timer" parent="." unique_id=1112242918]
-wait_time = 0.3
 autostart = true
-
-[node name="TextureRect" type="TextureRect" parent="RotationTimer" unique_id=1793135418]
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=576165034]
 shape = SubResource("RectangleShape2D_g2els")
