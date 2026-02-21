@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @export var enemy : PackedScene
+@export var destructible : PackedScene
 
 var distance : float = 400
 
@@ -52,3 +53,12 @@ func _on_pattern_timeout():
 func _on_elite_timeout():
 	spawn(get_random_position(), true)
 	
+
+
+func _on_destructible_timeout() -> void:
+	spawn_destructible(get_random_position())
+
+func spawn_destructible(pos):
+	var object_instance = destructible.instantiate()
+	object_instance.position = pos
+	get_tree().current_scene.add_child(object_instance)
