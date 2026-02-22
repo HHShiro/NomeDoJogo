@@ -55,7 +55,7 @@ func upgrade_item(start,end):
 		else:
 			var selected_upgrade: Item
 			selected_upgrade = upgrades.pick_random()
-			rewards.get_child(index).texture = selected_upgrade.texture
+			rewards.get_child(index).texture = selected_upgrade.icon
 			var upgrade_index = randi_range(0,selected_upgrade.upgrades.size() - 1)
 			selected_upgrade.upgrade_item(upgrade_index)
 

@@ -29,7 +29,7 @@ func is_upgradable() -> bool:
 	# if level <= upgrades.size():
 		#return true
 	# return false
-	if upgrades.size() <= 0 or level > 10:
+	if upgrades.size() <= 0 or level >= 10:
 		return false
 	return true
 

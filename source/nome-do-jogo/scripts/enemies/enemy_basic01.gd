@@ -32,6 +32,7 @@ var type : Enemy:
 		$Sprite2D.texture = value.texture
 		damage = value.damage
 		health = value.health
+		$CollisionShape2D.shape = value.collision_shape
 
 func _physics_process(delta):
 	check_separation(delta)

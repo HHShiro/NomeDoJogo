@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Circular" format=3 uid="uid://dhaqvo8ayb2fr"]
+
+[ext_resource type="Texture2D" uid="uid://bxt36ehgo4sem" path="res://assets/moderno_supremo.png" id="1_700ye"]
+[ext_resource type="PackedScene" uid="uid://d44p3j2qtqdf" path="res://scenes/player/projectile.tscn" id="2_5oxed"]
+[ext_resource type="Script" uid="uid://gqcfwvtyfi4w" path="res://scripts/player/CircularWeapon.gd" id="3_lq1pu"]
+[ext_resource type="AudioStream" uid="uid://dnpkqqvwv6pc5" path="res://assets/sfx/projetil.wav" id="4_5oxed"]
+[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/upgrade.gd" id="4_wc3ge"]
+
+[resource]
+script = ExtResource("3_lq1pu")
+angular_speed = 270
+radius = 75
+amount = 8
+damage = 10.0
+cooldown = 2.0
+sound = ExtResource("4_5oxed")
+title = "Moderno Supremo"
+icon = ExtResource("1_700ye")
+texture = ExtResource("1_700ye")
+metadata/_custom_type_script = "uid://gqcfwvtyfi4w"

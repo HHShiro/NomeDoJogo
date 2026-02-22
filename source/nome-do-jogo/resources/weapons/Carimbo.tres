@@ -50,4 +50,5 @@ item_needed = ExtResource("2_w8nxg")
 evolution = ExtResource("1_yxnre")
 sound = ExtResource("5_w8nxg")
 title = "Carimbo"
+icon = ExtResource("3_iu48m")
 texture = ExtResource("3_iu48m")
