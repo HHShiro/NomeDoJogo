@@ -18,6 +18,14 @@ config/icon="res://icon.svg"
 window/size/viewport_height=1080
 window/size/mode=2
 
+[audio]
+
+buses/default_bus_layout="uid://ct7y6ck0dlexg"
+
+[autoload]
+
+SoundManager="*uid://dl0hlun7ly432"
+
 [display]
 
 window/size/viewport_width=1024

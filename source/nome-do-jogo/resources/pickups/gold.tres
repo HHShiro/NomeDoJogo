@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="Gold" format=3 uid="uid://02fle4oe03g"]
 
 [ext_resource type="Texture2D" uid="uid://d4j2gteyn8bje" path="res://assets/moeda_placeholder.png" id="1_nba5c"]
-[ext_resource type="Script" uid="uid://uuo6g858a4e1" path="res://Gold.gd" id="2_v0upb"]
+[ext_resource type="Script" uid="uid://uuo6g858a4e1" path="res://scripts/player/Gold.gd" id="2_v0upb"]
+[ext_resource type="AudioStream" uid="uid://ddlss1ubr5s8y" path="res://assets/sfx/pickup_sound.wav" id="3_ibscc"]
 
 [resource]
 script = ExtResource("2_v0upb")
 title = "Coin"
 icon = ExtResource("1_nba5c")
 description = "+5 gold"
+sound = ExtResource("3_ibscc")
 metadata/_custom_type_script = "uid://uuo6g858a4e1"

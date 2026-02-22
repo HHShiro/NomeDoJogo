@@ -11,6 +11,8 @@ class_name Weapon
 
 @export var item_needed: PassiveItem
 @export var evolution: Weapon
+@export var sound: AudioStream
+
 
 var passive_item_available: bool = false:
 	set(value):

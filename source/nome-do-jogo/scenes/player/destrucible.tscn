@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://snl0e4rmiew8"]
 
 [ext_resource type="Texture2D" uid="uid://b5nasg8mnlrde" path="res://assets/caixa_correio.png" id="1_mni6e"]
-[ext_resource type="Script" uid="uid://epwx4414t0rc" path="res://scripts/player/destrucible.gd" id="2_0ogec"]
+[ext_resource type="Script" uid="uid://epwx4414t0rc" path="res://scripts/player/destructible.gd" id="2_0ogec"]
 [ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickup_resource.gd" id="3_jgv8r"]
 [ext_resource type="Resource" uid="uid://n51lqe7u8ptk" path="res://resources/pickups/marmita.tres" id="4_1re5q"]
 [ext_resource type="Resource" uid="uid://02fle4oe03g" path="res://resources/pickups/gold.tres" id="4_jgv8r"]
