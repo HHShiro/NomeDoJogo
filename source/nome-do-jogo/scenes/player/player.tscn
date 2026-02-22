@@ -10,10 +10,14 @@
 [ext_resource type="Script" uid="uid://n03p63ngf8p8" path="res://scripts/player/camera_2d.gd" id="5_p47bc"]
 [ext_resource type="PackedScene" uid="uid://bo6ydp6t6t84d" path="res://scenes/player/passive_slot.tscn" id="6_fm80t"]
 [ext_resource type="Texture2D" uid="uid://dbnbawnxsg041" path="res://assets/xp_progress.png" id="6_je7p5"]
+[ext_resource type="Resource" uid="uid://bhwn55esx75lw" path="res://resources/weapons/Carimbo Moderno.tres" id="6_kvlxm"]
 [ext_resource type="Script" uid="uid://cn1qk100v52en" path="res://scripts/player/options.gd" id="6_qek5x"]
+[ext_resource type="Resource" uid="uid://61f882kl5o1q" path="res://resources/weapons/Vedacao.tres" id="7_lgqa7"]
 [ext_resource type="Resource" uid="uid://cynfkmcxgso7e" path="res://resources/items/magnet.tres" id="7_myrg7"]
+[ext_resource type="Resource" uid="uid://cp38adb3ons65" path="res://resources/items/growth.tres" id="9_uf5tr"]
+[ext_resource type="Resource" uid="uid://ri71ers43wud" path="res://resources/items/movement_speed.tres" id="11_8ydkj"]
 [ext_resource type="Texture2D" uid="uid://dhbsqp13u3vqx" path="res://assets/box_background_placeholder.png" id="11_fcs02"]
-[ext_resource type="Script" path="res://scripts/player/chest.gd" id="12_myrg7"]
+[ext_resource type="Script" uid="uid://cp7rx7eewoc87" path="res://scripts/player/chest.gd" id="12_myrg7"]
 [ext_resource type="Texture2D" uid="uid://bng04qh182m8k" path="res://assets/box_animation_placeholder-Sheet.png" id="13_kvlxm"]
 [ext_resource type="Texture2D" uid="uid://c1nuunqwuhj1g" path="res://assets/carteiro.png" id="14_fcs02"]
 
@@ -172,9 +176,11 @@ item = ExtResource("3_75vfm")
 
 [node name="Slot2" parent="UI/Weapons" unique_id=1812546093 instance=ExtResource("2_p47bc")]
 layout_mode = 2
+item = ExtResource("6_kvlxm")
 
 [node name="Slot3" parent="UI/Weapons" unique_id=1365077769 instance=ExtResource("2_p47bc")]
 layout_mode = 2
+item = ExtResource("7_lgqa7")
 
 [node name="PassiveItems" type="HBoxContainer" parent="UI" unique_id=1398648197]
 offset_left = 12.0
@@ -188,9 +194,11 @@ item = ExtResource("7_myrg7")
 
 [node name="PassiveSlot2" parent="UI/PassiveItems" unique_id=1448197543 instance=ExtResource("6_fm80t")]
 layout_mode = 2
+item = ExtResource("9_uf5tr")
 
 [node name="PassiveSlot3" parent="UI/PassiveItems" unique_id=457244431 instance=ExtResource("6_fm80t")]
 layout_mode = 2
+item = ExtResource("11_8ydkj")
 
 [node name="XP" type="TextureProgressBar" parent="UI" unique_id=961565571]
 unique_name_in_owner = true

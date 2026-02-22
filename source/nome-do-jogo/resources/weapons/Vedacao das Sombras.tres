@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OnTarget" format=3 uid="uid://cr4xbypebcala"]
+
+[ext_resource type="PackedScene" uid="uid://d44p3j2qtqdf" path="res://scenes/player/projectile.tscn" id="2_yc4v7"]
+[ext_resource type="Script" uid="uid://c6wilvrvfqoug" path="res://scripts/player/OnTarget.gd" id="3_n843o"]
+[ext_resource type="Texture2D" uid="uid://cd1bfiumwqmyg" path="res://assets/vedacao_ninja_placeholder_icon.png" id="4_0too3"]
+[ext_resource type="AudioStream" uid="uid://kpplcrc4s5xv" path="res://assets/sfx/vedacao_sound.wav" id="4_yc4v7"]
+[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/upgrade.gd" id="5_pi0xw"]
+
+[resource]
+script = ExtResource("3_n843o")
+amount = 10
+damage = 5.0
+cooldown = 1.0
+sound = ExtResource("4_yc4v7")
+title = "Vedacao das Sombras"
+icon = ExtResource("4_0too3")
+texture = ExtResource("4_0too3")
+metadata/_custom_type_script = "uid://c6wilvrvfqoug"

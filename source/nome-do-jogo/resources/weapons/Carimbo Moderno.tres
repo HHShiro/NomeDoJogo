@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="Circular" format=3 uid="uid://bhwn55esx75lw"]
+
+[ext_resource type="PackedScene" uid="uid://d44p3j2qtqdf" path="res://scenes/player/projectile.tscn" id="1_6h7v8"]
+[ext_resource type="Resource" uid="uid://dhaqvo8ayb2fr" path="res://resources/weapons/Moderno Supremo.tres" id="1_nhmnr"]
+[ext_resource type="Script" uid="uid://gqcfwvtyfi4w" path="res://scripts/player/CircularWeapon.gd" id="2_054tk"]
+[ext_resource type="Resource" uid="uid://cp38adb3ons65" path="res://resources/items/growth.tres" id="3_8ocyw"]
+[ext_resource type="Texture2D" uid="uid://db6kimbbupj0h" path="res://assets/Carimbo2.png" id="3_cjeve"]
+[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/upgrade.gd" id="4_nhmnr"]
+[ext_resource type="Script" uid="uid://ctkejr2elw0m8" path="res://scripts/player/CircularUpgrade.gd" id="5_cjeve"]
+[ext_resource type="AudioStream" uid="uid://dnpkqqvwv6pc5" path="res://assets/sfx/projetil.wav" id="6_8ocyw"]
+
+[sub_resource type="Resource" id="Resource_nhmnr"]
+script = ExtResource("5_cjeve")
+amount = 1
+description = "+1 Projectile"
+metadata/_custom_type_script = "uid://ctkejr2elw0m8"
+
+[sub_resource type="Resource" id="Resource_8ocyw"]
+script = ExtResource("5_cjeve")
+angular_speed = 90.0
+description = "+90 Speed"
+metadata/_custom_type_script = "uid://ctkejr2elw0m8"
+
+[sub_resource type="Resource" id="Resource_gw70g"]
+script = ExtResource("5_cjeve")
+damage = 2.0
+description = "+2 Damage"
+metadata/_custom_type_script = "uid://ctkejr2elw0m8"
+
+[sub_resource type="Resource" id="Resource_bjbgd"]
+script = ExtResource("5_cjeve")
+amount = 1
+description = "+1 Projectile"
+metadata/_custom_type_script = "uid://ctkejr2elw0m8"
+
+[sub_resource type="Resource" id="Resource_aqmar"]
+script = ExtResource("5_cjeve")
+angular_speed = 90.0
+description = "+90 Speed"
+metadata/_custom_type_script = "uid://ctkejr2elw0m8"
+
+[resource]
+script = ExtResource("2_054tk")
+angular_speed = 90
+radius = 75
+damage = 2.0
+cooldown = 2.0
+upgrades = Array[ExtResource("4_nhmnr")]([SubResource("Resource_nhmnr"), SubResource("Resource_8ocyw"), SubResource("Resource_gw70g"), SubResource("Resource_bjbgd"), SubResource("Resource_aqmar")])
+item_needed = ExtResource("3_8ocyw")
+evolution = ExtResource("1_nhmnr")
+sound = ExtResource("6_8ocyw")
+title = "Carimbo Moderno"
+icon = ExtResource("3_cjeve")
+texture = ExtResource("3_cjeve")
+metadata/_custom_type_script = "uid://gqcfwvtyfi4w"

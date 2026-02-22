@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bk1uxbo8ia1sc"]
 
-[ext_resource type="Texture2D" uid="uid://vvfck06xe4mt" path="res://icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://cbqkt8qj0vkss" path="res://scripts/enemies/enemy_basic01.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://spdlbwmk6buj" path="res://assets/abelha_placeholder.png" id="2_8e3ao"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8e3ao"]
-radius = 12.806248
+radius = 5.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=2141062215 groups=["Enemy"]]
 collision_layer = 4
@@ -13,8 +13,7 @@ motion_mode = 1
 script = ExtResource("1_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=309086507]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7p1mj")
+texture = ExtResource("2_8e3ao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=429042490]
 scale = Vector2(2.5, 2.5)
