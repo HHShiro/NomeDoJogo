@@ -11,6 +11,8 @@ class_name Weapon
 
 @export var item_needed: PassiveItem
 @export var evolution: Weapon
+@export var sound: AudioStream
+
 
 var passive_item_available: bool = false:
 	set(value):
@@ -27,7 +29,7 @@ func is_upgradable() -> bool:
 	# if level <= upgrades.size():
 		#return true
 	# return false
-	if upgrades.size() <= 0:
+	if upgrades.size() <= 0 or level > 10:
 		return false
 	return true
 
