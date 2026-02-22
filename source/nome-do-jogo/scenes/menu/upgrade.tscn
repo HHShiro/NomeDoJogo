@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dp8xany6pk42b"]
+
+[ext_resource type="Script" uid="uid://crpf0bhx50wc4" path="res://scenes/menu/upgrade_button.gd" id="1_qrh7d"]
+
+[node name="Upgrade" type="TextureButton" unique_id=938523690]
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_qrh7d")
+
+[node name="Panel" type="Panel" parent="." unique_id=288054238]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

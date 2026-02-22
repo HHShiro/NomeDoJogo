@@ -2,9 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c2ig7irend1e3" path="res://scenes/player/player.tscn" id="1_lmvit"]
 [ext_resource type="Texture2D" uid="uid://boh8msdjeatix" path="res://assets/grama.jpg" id="3_8b2yb"]
-[ext_resource type="PackedScene" path="res://scenes/menu/pause_menu.tscn" id="4_1fhce"]
+[ext_resource type="PackedScene" uid="uid://b762ncs3lnobj" path="res://scenes/menu/pause_menu.tscn" id="4_1fhce"]
 [ext_resource type="PackedScene" uid="uid://bb1f011nkyj3b" path="res://scenes/enemies/spawner.tscn" id="4_sm4gw"]
-[ext_resource type="PackedScene" path="res://scenes/menu/death_menu.tscn" id="5_1fhce"]
 
 [sub_resource type="GDScript" id="GDScript_sm4gw"]
 
@@ -18,8 +17,6 @@ position = Vector2(1032, 513)
 position = Vector2(38, 127)
 
 [node name="pause_menu" parent="." unique_id=134273844 instance=ExtResource("4_1fhce")]
-
-[node name="death_menu" parent="." unique_id=1912427096 instance=ExtResource("5_1fhce")]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=2034054896]
 repeat_size = Vector2(1990, 1190)
