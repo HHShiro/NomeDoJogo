@@ -11,6 +11,7 @@ var passive_item_available:= false:
 		if value.upgrades.size() > 0 and (value.level < 10 or (not passive_item_available)): #<- 10 é o nivel maximo!!
 			texture_normal = value.texture
 			$Label.text = "Lvl" + str(item.level + 1)
+			randomize()
 			upgrade_index = randi_range(0,value.upgrades.size() - 1)
 			$Description.text = value.upgrades[upgrade_index].description
 		else:

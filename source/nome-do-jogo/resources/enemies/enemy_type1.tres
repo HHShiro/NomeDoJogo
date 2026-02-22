@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickup_resource.gd" id="1_5xw61"]
 [ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="1_bctnm"]
 [ext_resource type="Texture2D" uid="uid://vvfck06xe4mt" path="res://icon.svg" id="2_0ktvp"]
-[ext_resource type="Resource" uid="uid://dgqhnqu3trnhu" path="res://resources/Xp/mercado_livre.tres" id="2_b2qel"]
+[ext_resource type="Resource" uid="uid://dgqhnqu3trnhu" path="res://resources/Xp/selo_xp.tres" id="2_b2qel"]
 
 [resource]
 script = ExtResource("1_bctnm")
