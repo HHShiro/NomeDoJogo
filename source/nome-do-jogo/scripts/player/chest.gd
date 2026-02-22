@@ -65,7 +65,7 @@ func clear_reward():
 
 
 func add_gold(index):
-	var gold: Gold = load("res://resources/items/gold.tres")
+	var gold: Gold = load("res://resources/pickups/gold.tres")
 	gold.player_reference = owner
 	rewards.get_child(index).texture = gold.icon
 	gold.activate()

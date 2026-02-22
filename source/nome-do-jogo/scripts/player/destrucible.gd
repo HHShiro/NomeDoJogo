@@ -7,6 +7,7 @@ var health : float = 10:
 		health = value
 		if health < 0:
 			drop_item()
+			queue_free()
 
 @onready var player_reference = get_tree().current_scene.find_child("Player")
 var drop_node = preload("res://scenes/player/pickups.tscn")
@@ -41,4 +42,3 @@ func drop_item():
 	item_to_drop.player_reference = player_reference
 	
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)
-	queue_free()

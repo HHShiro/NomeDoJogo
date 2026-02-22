@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://b5nasg8mnlrde" path="res://assets/caixa_correio.png" id="1_mni6e"]
 [ext_resource type="Script" uid="uid://epwx4414t0rc" path="res://scripts/player/destrucible.gd" id="2_0ogec"]
 [ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickup_resource.gd" id="3_jgv8r"]
-[ext_resource type="Resource" uid="uid://n51lqe7u8ptk" path="res://resources/items/marmita.tres" id="4_1re5q"]
-[ext_resource type="Resource" uid="uid://02fle4oe03g" path="res://resources/items/gold.tres" id="4_jgv8r"]
-[ext_resource type="Resource" uid="uid://cb8d36itvjqcp" path="res://resources/items/death.tres" id="5_1re5q"]
-[ext_resource type="Resource" uid="uid://cm4ooqbju7s1b" path="res://resources/items/vaccum.tres" id="5_lbmpt"]
+[ext_resource type="Resource" uid="uid://n51lqe7u8ptk" path="res://resources/pickups/marmita.tres" id="4_1re5q"]
+[ext_resource type="Resource" uid="uid://02fle4oe03g" path="res://resources/pickups/gold.tres" id="4_jgv8r"]
+[ext_resource type="Resource" uid="uid://cb8d36itvjqcp" path="res://resources/pickups/death.tres" id="5_1re5q"]
+[ext_resource type="Resource" uid="uid://cm4ooqbju7s1b" path="res://resources/pickups/vaccum.tres" id="5_lbmpt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nqr4"]
 
@@ -17,6 +17,7 @@ drops = Array[ExtResource("3_jgv8r")]([ExtResource("4_jgv8r"), ExtResource("5_lb
 
 [node name="Area2D" type="Area2D" parent="." unique_id=15452346]
 collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1185840478]
 position = Vector2(1, 2)
