@@ -23,6 +23,7 @@ func open():
 
 
 func  _on_open_pressed() -> void:
+	SoundManager.play_sfx(load("res://assets/sfx/chest_pickup_sound.wav"))
 	chest.play("open_box_animation")
 	await chest.animation_finished
 	set_reward()
@@ -55,7 +56,11 @@ func upgrade_item(start,end):
 		else:
 			var selected_upgrade: Item
 			selected_upgrade = upgrades.pick_random()
-			rewards.get_child(index).texture = selected_upgrade.icon
+			if selected_upgrade is Weapon and selected_upgrade.max_level_reached() and selected_upgrade.passive_item_available:
+				rewards.get_child(index).texture = selected_upgrade.evolution.icon
+			else:
+				rewards.get_child(index).texture = selected_upgrade.icon
+			
 			var upgrade_index = randi_range(0,selected_upgrade.upgrades.size() - 1)
 			selected_upgrade.upgrade_item(upgrade_index)
 

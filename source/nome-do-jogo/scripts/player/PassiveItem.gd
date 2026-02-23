@@ -4,6 +4,7 @@ class_name PassiveItem
 @export var upgrades : Array[Stats]
 var player_reference
 
+
 func is_upgradable() -> bool:
 	#Esse é o codigo do video, já que estamos trabalhando
 	#Com upgrades infinitos, utilizei outro.
@@ -15,10 +16,13 @@ func is_upgradable() -> bool:
 	return true
 	
 func upgrade_item(upgrade_index: int):
+	print("Tentei dar upgrade")
 	if not is_upgradable():
+		print("Não dava p dar upgrade")
 		return
 		
 	if player_reference == null:
+		print("Sem Referencia de jogador")
 		return
 	
 	var upgrade = upgrades[upgrade_index]
@@ -33,3 +37,4 @@ func upgrade_item(upgrade_index: int):
 	player_reference.growth += upgrade.growth
 	
 	level += 1
+	print("Dei Upgrade!!")

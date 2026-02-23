@@ -5,5 +5,4 @@ class_name Gem
 
 func activate():
 	super.activate()
-	print("+" + str(XP) + "XP")
 	player_reference.gain_XP(XP)

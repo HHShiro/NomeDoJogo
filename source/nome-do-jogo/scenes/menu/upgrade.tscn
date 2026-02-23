@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dp8xany6pk42b"]
 
 [ext_resource type="Script" uid="uid://crpf0bhx50wc4" path="res://scenes/menu/upgrade_button.gd" id="1_qrh7d"]
+[ext_resource type="PackedScene" uid="uid://cgc404dwdw0fs" path="res://scenes/line_2d.tscn" id="2_8fvxh"]
+[ext_resource type="Texture2D" uid="uid://bdqg0g8iif6pu" path="res://assets/carimbo_pago.png" id="3_848xa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_848xa"]
+bg_color = Color(0, 0, 0, 0.654902)
 
 [node name="Upgrade" type="TextureButton" unique_id=938523690]
 offset_right = 40.0
@@ -12,9 +17,28 @@ stretch_mode = 5
 script = ExtResource("1_qrh7d")
 
 [node name="Panel" type="Panel" parent="." unique_id=288054238]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_848xa")
+
+[node name="Outline" parent="." unique_id=1417258540 instance=ExtResource("2_8fvxh")]
+
+[node name="Connection" parent="." unique_id=426005471 instance=ExtResource("2_8fvxh")]
+
+[node name="CarimboPago" type="Sprite2D" parent="." unique_id=927141761]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("3_848xa")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
