@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bh27m4um4m8wb" path="res://assets/Carimbo1.png" id="3_iu48m"]
 [ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/upgrade.gd" id="4_5vj2t"]
 [ext_resource type="Script" uid="uid://b1hbpqd5yfsbs" path="res://scripts/player/projectile_upgrade.gd" id="5_vxl1v"]
+[ext_resource type="AudioStream" uid="uid://dnpkqqvwv6pc5" path="res://assets/sfx/projetil.wav" id="5_w8nxg"]
 
 [sub_resource type="Resource" id="Resource_yxnre"]
 script = ExtResource("5_vxl1v")
@@ -47,5 +48,7 @@ speed = 400.0
 upgrades = Array[ExtResource("4_5vj2t")]([SubResource("Resource_yxnre"), SubResource("Resource_w8nxg"), SubResource("Resource_34rsg"), SubResource("Resource_mkxy6"), SubResource("Resource_17rxg")])
 item_needed = ExtResource("2_w8nxg")
 evolution = ExtResource("1_yxnre")
+sound = ExtResource("5_w8nxg")
 title = "Carimbo"
+icon = ExtResource("3_iu48m")
 texture = ExtResource("3_iu48m")

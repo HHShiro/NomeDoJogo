@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="OnTarget" format=3 uid="uid://61f882kl5o1q"]
+
+[ext_resource type="Texture2D" uid="uid://ccvthoekjp12l" path="res://assets/vedacao_placeholder_icon.png" id="1_anx83"]
+[ext_resource type="Resource" uid="uid://cr4xbypebcala" path="res://resources/weapons/Vedacao das Sombras.tres" id="1_km41x"]
+[ext_resource type="PackedScene" uid="uid://d44p3j2qtqdf" path="res://scenes/player/projectile.tscn" id="2_ldw84"]
+[ext_resource type="Resource" uid="uid://ri71ers43wud" path="res://resources/items/movement_speed.tres" id="3_rpav5"]
+[ext_resource type="Texture2D" uid="uid://clmkuvqmt1tij" path="res://assets/vedacao_placeholder.png" id="4_0gwyn"]
+[ext_resource type="AudioStream" uid="uid://kpplcrc4s5xv" path="res://assets/sfx/vedacao_sound.wav" id="4_ldw84"]
+[ext_resource type="Script" uid="uid://c6wilvrvfqoug" path="res://scripts/player/OnTarget.gd" id="5_dw7pg"]
+[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/upgrade.gd" id="5_km41x"]
+[ext_resource type="Script" uid="uid://b4epa8lbiijvg" path="res://scripts/player/VedacaoUpgrade.gd" id="9_n518x"]
+
+[sub_resource type="Resource" id="Resource_nh84v"]
+script = ExtResource("9_n518x")
+amount = 1
+description = "+1 Amount"
+metadata/_custom_type_script = "uid://b4epa8lbiijvg"
+
+[sub_resource type="Resource" id="Resource_880rh"]
+script = ExtResource("9_n518x")
+damage = 1.0
+description = "+1 Damage"
+metadata/_custom_type_script = "uid://b4epa8lbiijvg"
+
+[sub_resource type="Resource" id="Resource_rr0ig"]
+script = ExtResource("9_n518x")
+cooldown = -0.5
+description = "-0.5s Cooldown"
+metadata/_custom_type_script = "uid://b4epa8lbiijvg"
+
+[sub_resource type="Resource" id="Resource_8um83"]
+script = ExtResource("9_n518x")
+amount = 2
+description = "+2 Amount"
+metadata/_custom_type_script = "uid://b4epa8lbiijvg"
+
+[sub_resource type="Resource" id="Resource_4de4n"]
+script = ExtResource("9_n518x")
+damage = 1.0
+description = "+1 Damage"
+metadata/_custom_type_script = "uid://b4epa8lbiijvg"
+
+[resource]
+script = ExtResource("5_dw7pg")
+damage = 2.0
+cooldown = 4.0
+upgrades = Array[ExtResource("5_km41x")]([SubResource("Resource_nh84v"), SubResource("Resource_880rh"), SubResource("Resource_rr0ig"), SubResource("Resource_8um83"), SubResource("Resource_4de4n")])
+item_needed = ExtResource("3_rpav5")
+evolution = ExtResource("1_km41x")
+sound = ExtResource("4_ldw84")
+title = "Vedacao"
+icon = ExtResource("1_anx83")
+texture = ExtResource("4_0gwyn")
+metadata/_custom_type_script = "uid://c6wilvrvfqoug"

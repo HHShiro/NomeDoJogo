@@ -23,7 +23,7 @@ var elite : bool = false:
 	set(value):
 		elite = value
 		if value:
-			$Sprite2D.material = load("res://resources/enemies/rainbow_outline.tres")
+			$Sprite2D.material = load("res://resources/styles/rainbow_outline.tres")
 			scale = Vector2(1.5,1.5)
 
 var type : Enemy:
@@ -32,6 +32,7 @@ var type : Enemy:
 		$Sprite2D.texture = value.texture
 		damage = value.damage
 		health = value.health
+		$CollisionShape2D.shape = value.collision_shape
 
 func _physics_process(delta):
 	check_separation(delta)
@@ -87,4 +88,3 @@ func drop_item():
 	item_to_drop.player_reference = player
 	
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)
-	queue_free()

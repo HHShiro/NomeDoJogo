@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="1_e8y1g"]
 [ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickup_resource.gd" id="1_qqlmr"]
 [ext_resource type="Resource" uid="uid://dgqhnqu3trnhu" path="res://resources/Xp/selo_xp.tres" id="2_860l5"]
-[ext_resource type="Texture2D" uid="uid://b5ufj35nbxu2y" path="res://assets/Captura_de_tela_2026-02-17_142305-removebg-preview.png" id="2_e8y1g"]
+[ext_resource type="Texture2D" uid="uid://cvs0oh2ygmd8w" path="res://assets/chihuahua_placeholder.png" id="4_qqlmr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_860l5"]
+radius = 8.0
 
 [resource]
 script = ExtResource("1_e8y1g")
-title = "enemy_type2"
-texture = ExtResource("2_e8y1g")
-health = 3.0
+title = "Chihuahua"
+texture = ExtResource("4_qqlmr")
+health = 5.0
 damage = 5.0
 drops = Array[ExtResource("1_qqlmr")]([ExtResource("2_860l5")])
+collision_shape = SubResource("CircleShape2D_860l5")

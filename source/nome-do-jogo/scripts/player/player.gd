@@ -4,26 +4,38 @@ class_name Player extends CharacterBody2D
 var isMoving = false
 var canRotate = true
 
-signal died
 
 var health: float = 100:
 	set(value):
 		health = max(value,0)
 		%Health.value = value
-var movement_speed: float = 150
+		if health <= 0:
+			get_tree().paused = true
+			
+var movement_speed: float = 150.0:
+	set(value):
+		movement_speed = value
+		%MovementSpeed.text = "Movement Speed: " + str(value)
 var max_health: float = 100:
 	set(value):
 		max_health = value
 		%Health.value = value
 var recovery: float = 0
 var armor: float = 0
-var might: float = 1
-var area: float = 0
+var might: float = 1.0:
+	set(value):
+		might = value
+		%Might.text = "Might: " + str(value)
+var area: float = 0:
+	set(value):
+		area = value
+		%Area.text = "Range: " + str(value)
 var magnet: float = 0:
 	set(value):
 		magnet = value
 		%Magnet.shape.radius = 50 + value
 var growth: float = 1
+var luck: float = 1.0
 
 
 var nearest_enemy
@@ -50,7 +62,8 @@ var level : int = 1:
 		elif level >= 7:
 			%XP.max_value = 40
 
-
+func _ready() -> void:
+	Persistence.gain_bonus_stats(self)
 
 
 func _physics_process(delta: float) -> void:
@@ -77,9 +90,7 @@ func _physics_process(delta: float) -> void:
 
 
 func take_damage(amount):
-	health -= max(amount - armor, 0)
-	if health <= 0:
-		emit_signal("died")
+	health -= max(amount * (amount/(amount+armor)), 1)
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	take_damage(body.damage)

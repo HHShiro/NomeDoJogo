@@ -1,0 +1,517 @@
+[gd_scene format=3 uid="uid://6ujmljc1xgmk"]
+
+[ext_resource type="StyleBox" uid="uid://qrp80j7xn5sq" path="res://resources/styles/button_menu_hover_style.tres" id="1_bbqo6"]
+[ext_resource type="Script" uid="uid://b6c3xmn4q8cqg" path="res://scripts/menu/main_menu.gd" id="1_nl8w3"]
+[ext_resource type="FontFile" uid="uid://bhlrq10gglc2b" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_p1nwe"]
+[ext_resource type="Script" uid="uid://cgahse8hib6mr" path="res://scripts/menu/skill_tree.gd" id="3_247la"]
+[ext_resource type="Texture2D" uid="uid://buocqtpgofywx" path="res://assets/universo_placeholder.png" id="4_vxdmp"]
+[ext_resource type="PackedScene" uid="uid://dp8xany6pk42b" path="res://scenes/menu/upgrade.tscn" id="5_xn6kt"]
+[ext_resource type="Script" uid="uid://bitgoko3ltilu" path="res://Skill.gd" id="6_qgo02"]
+[ext_resource type="Texture2D" uid="uid://b0r4ny5xgdffn" path="res://assets/area_placeholder.png" id="6_vovv2"]
+[ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="7_vovv2"]
+[ext_resource type="Texture2D" uid="uid://bjfarej0jpfg7" path="res://assets/might_placeholder.png" id="8_1k4da"]
+[ext_resource type="Texture2D" uid="uid://cwft2l63bnmjw" path="res://assets/movement_speed_placeholder.png" id="8_vovv2"]
+[ext_resource type="Script" uid="uid://xwe8l35b4s4i" path="res://scripts/menu/ui_gold.gd" id="9_vovv2"]
+[ext_resource type="Script" uid="uid://dnqh5dj34rtnu" path="res://scenes/menu/start.gd" id="10_1k4da"]
+[ext_resource type="Texture2D" uid="uid://evbr2fn4a6qj" path="res://assets/menu_placeholder.png" id="12_prbor"]
+[ext_resource type="Script" uid="uid://bq4mppbe2oarb" path="res://scenes/menu/sair.gd" id="14_prbor"]
+[ext_resource type="Script" uid="uid://djuc788mon0nn" path="res://scenes/menu/enemy_list.gd" id="16_3h20m"]
+[ext_resource type="Texture2D" uid="uid://cycb5e8ahwc20" path="res://assets/bestiario_menu_placeholder.png" id="16_pstia"]
+[ext_resource type="Texture2D" uid="uid://88m4416qgwb4" path="res://assets/slot_tile_placeholder.png" id="17_41tvm"]
+[ext_resource type="Theme" uid="uid://581opi40pux7" path="res://resources/styles/tema_main_menu.tres" id="17_vxdmp"]
+[ext_resource type="StyleBox" uid="uid://uq8ga61sg7tq" path="res://resources/styles/hflip_button_menu_hover_style.tres" id="19_vxdmp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4hu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_prbor"]
+content_margin_left = 9.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prbor"]
+bg_color = Color(0, 0, 0, 0.7019608)
+border_width_left = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 100
+corner_detail = 1
+
+[sub_resource type="Theme" id="Theme_kiqgm"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_p1nwe")
+Button/styles/focus = SubResource("StyleBoxEmpty_d4hu8")
+Button/styles/hover = ExtResource("1_bbqo6")
+Button/styles/normal = SubResource("StyleBoxEmpty_prbor")
+Button/styles/pressed = SubResource("StyleBoxFlat_prbor")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prbor"]
+texture = ExtResource("4_vxdmp")
+texture_margin_left = 35.750042
+texture_margin_top = 35.973904
+texture_margin_right = 36.253067
+texture_margin_bottom = 36.063145
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 1024, 576)
+
+[sub_resource type="Resource" id="Resource_bbqo6"]
+script = ExtResource("7_vovv2")
+might = 0.1
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_d4hu8"]
+script = ExtResource("6_qgo02")
+name = "Might I"
+texture = ExtResource("8_1k4da")
+cost = 10
+stats = SubResource("Resource_bbqo6")
+metadata/_custom_type_script = "uid://bitgoko3ltilu"
+
+[sub_resource type="Resource" id="Resource_p1nwe"]
+script = ExtResource("7_vovv2")
+might = 0.3
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_prbor"]
+script = ExtResource("6_qgo02")
+name = "Might II"
+texture = ExtResource("8_1k4da")
+cost = 20
+stats = SubResource("Resource_p1nwe")
+metadata/_custom_type_script = "uid://bitgoko3ltilu"
+
+[sub_resource type="Resource" id="Resource_27h4x"]
+script = ExtResource("7_vovv2")
+might = 0.6
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_gdhp0"]
+script = ExtResource("6_qgo02")
+name = "Might III"
+texture = ExtResource("8_1k4da")
+cost = 50
+stats = SubResource("Resource_27h4x")
+metadata/_custom_type_script = "uid://bitgoko3ltilu"
+
+[sub_resource type="Resource" id="Resource_qgo02"]
+script = ExtResource("7_vovv2")
+area = 50.0
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_vovv2"]
+script = ExtResource("6_qgo02")
+name = "Range I"
+texture = ExtResource("6_vovv2")
+cost = 10
+stats = SubResource("Resource_qgo02")
+metadata/_custom_type_script = "uid://bitgoko3ltilu"
+
+[sub_resource type="Resource" id="Resource_1k4da"]
+script = ExtResource("7_vovv2")
+area = 100.0
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_pstia"]
+script = ExtResource("6_qgo02")
+name = "Area II"
+texture = ExtResource("6_vovv2")
+cost = 20
+stats = SubResource("Resource_1k4da")
+metadata/_custom_type_script = "uid://bitgoko3ltilu"
+
+[sub_resource type="Resource" id="Resource_41tvm"]
+script = ExtResource("7_vovv2")
+area = 150.0
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_vxdmp"]
+script = ExtResource("6_qgo02")
+name = "Area III"
+texture = ExtResource("6_vovv2")
+cost = 50
+stats = SubResource("Resource_41tvm")
+metadata/_custom_type_script = "uid://bitgoko3ltilu"
+
+[sub_resource type="Resource" id="Resource_3h20m"]
+script = ExtResource("7_vovv2")
+movement_speed = 20.0
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_uaj4g"]
+script = ExtResource("6_qgo02")
+name = "Move Speed I"
+texture = ExtResource("8_vovv2")
+cost = 10
+stats = SubResource("Resource_3h20m")
+metadata/_custom_type_script = "uid://bitgoko3ltilu"
+
+[sub_resource type="Resource" id="Resource_si58d"]
+script = ExtResource("7_vovv2")
+movement_speed = 50.0
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_anexq"]
+script = ExtResource("6_qgo02")
+name = "Move Speed II"
+texture = ExtResource("8_vovv2")
+cost = 20
+stats = SubResource("Resource_si58d")
+metadata/_custom_type_script = "uid://bitgoko3ltilu"
+
+[sub_resource type="Resource" id="Resource_qvxhw"]
+script = ExtResource("7_vovv2")
+movement_speed = 80.0
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_do53f"]
+script = ExtResource("6_qgo02")
+name = "Move Speed III"
+texture = ExtResource("8_vovv2")
+cost = 50
+stats = SubResource("Resource_qvxhw")
+metadata/_custom_type_script = "uid://bitgoko3ltilu"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27h4x"]
+texture = ExtResource("12_prbor")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdhp0"]
+texture = ExtResource("16_pstia")
+texture_margin_left = 36.11154
+texture_margin_top = 35.98864
+texture_margin_right = 36.08303
+texture_margin_bottom = 35.92113
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pstia"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vxdmp"]
+texture = ExtResource("17_41tvm")
+texture_margin_left = 5.01103
+texture_margin_top = 5.025068
+texture_margin_right = 5.011151
+texture_margin_bottom = 4.9905376
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(-0.003768921, -0.011945248, 60.051517, 59.996967)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41tvm"]
+content_margin_right = 9.0
+bg_color = Color(0, 0, 0, 0.78431374)
+corner_radius_bottom_left = 100
+corner_detail = 1
+
+[node name="main_menu" type="Control" unique_id=1255683488]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kiqgm")
+script = ExtResource("1_nl8w3")
+
+[node name="SkillTree" type="Panel" parent="." unique_id=1313913689]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 288)
+theme_override_styles/panel = SubResource("StyleBoxTexture_prbor")
+script = ExtResource("3_247la")
+
+[node name="Might" type="Control" parent="SkillTree" unique_id=1602113591]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Might" unique_id=938523690 instance=ExtResource("5_xn6kt")]
+layout_mode = 0
+offset_left = -404.0
+offset_top = 204.0
+offset_right = -364.0
+offset_bottom = 244.0
+skill = SubResource("Resource_d4hu8")
+
+[node name="Upgrade2" parent="SkillTree/Might" unique_id=226717552 instance=ExtResource("5_xn6kt")]
+layout_mode = 0
+offset_left = -404.0
+offset_top = 140.0
+offset_right = -364.0
+offset_bottom = 180.0
+skill = SubResource("Resource_prbor")
+
+[node name="Upgrade3" parent="SkillTree/Might" unique_id=1131944906 instance=ExtResource("5_xn6kt")]
+layout_mode = 0
+offset_left = -404.0
+offset_top = 76.0
+offset_right = -364.0
+offset_bottom = 116.0
+skill = SubResource("Resource_gdhp0")
+
+[node name="Area" type="Control" parent="SkillTree" unique_id=1704260644]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Area" unique_id=1259033037 instance=ExtResource("5_xn6kt")]
+layout_mode = 0
+offset_left = -276.0
+offset_top = 204.0
+offset_right = -236.0
+offset_bottom = 244.0
+skill = SubResource("Resource_vovv2")
+
+[node name="Upgrade2" parent="SkillTree/Area" unique_id=1749226001 instance=ExtResource("5_xn6kt")]
+layout_mode = 0
+offset_left = -276.0
+offset_top = 140.0
+offset_right = -236.0
+offset_bottom = 180.0
+skill = SubResource("Resource_pstia")
+
+[node name="Upgrade3" parent="SkillTree/Area" unique_id=504636285 instance=ExtResource("5_xn6kt")]
+layout_mode = 0
+offset_left = -276.0
+offset_top = 76.0
+offset_right = -236.0
+offset_bottom = 116.0
+skill = SubResource("Resource_vxdmp")
+
+[node name="Movement_Speed" type="Control" parent="SkillTree" unique_id=692636301]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Movement_Speed" unique_id=71704295 instance=ExtResource("5_xn6kt")]
+layout_mode = 0
+offset_left = -148.0
+offset_top = 76.0
+offset_right = -108.0
+offset_bottom = 116.0
+skill = SubResource("Resource_uaj4g")
+
+[node name="Upgrade2" parent="SkillTree/Movement_Speed" unique_id=39925400 instance=ExtResource("5_xn6kt")]
+layout_mode = 0
+offset_left = -148.0
+offset_top = 140.0
+offset_right = -108.0
+offset_bottom = 180.0
+skill = SubResource("Resource_anexq")
+
+[node name="Upgrade3" parent="SkillTree/Movement_Speed" unique_id=1870680566 instance=ExtResource("5_xn6kt")]
+layout_mode = 0
+offset_left = -148.0
+offset_top = 204.0
+offset_right = -108.0
+offset_bottom = 244.0
+skill = SubResource("Resource_do53f")
+
+[node name="Menu" type="Panel" parent="." unique_id=125705153]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 288)
+theme_override_styles/panel = SubResource("StyleBoxTexture_27h4x")
+
+[node name="Start" type="Button" parent="Menu" unique_id=1685997592]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -176.0
+offset_right = -48.0
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Start"
+alignment = 0
+script = ExtResource("10_1k4da")
+
+[node name="Upgrades" type="Button" parent="Menu" unique_id=1488494664]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 176.0
+offset_right = 464.0
+offset_bottom = 241.0
+theme_override_font_sizes/font_size = 32
+text = "Upgrades"
+alignment = 0
+
+[node name="Bestiary" type="Button" parent="Menu" unique_id=1013397127]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 240.0
+offset_right = 464.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 32
+text = "Bestiário
+"
+alignment = 0
+
+[node name="Sair" type="Button" parent="Menu" unique_id=1808714168]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 304.0
+offset_right = 464.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 32
+text = "Sair
+"
+alignment = 0
+script = ExtResource("14_prbor")
+
+[node name="Bestiario" type="Panel" parent="." unique_id=151279342]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 288)
+theme_override_styles/panel = SubResource("StyleBoxTexture_gdhp0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Bestiario" unique_id=564384803]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 128.0
+offset_right = 464.0
+offset_bottom = 448.0
+
+[node name="EnemyList" type="VBoxContainer" parent="Bestiario/ScrollContainer" unique_id=767941876]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("16_3h20m")
+
+[node name="Information" type="Panel" parent="Bestiario" unique_id=2130004608]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 128.0
+offset_right = 808.0
+offset_bottom = 448.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pstia")
+
+[node name="Texture" type="TextureRect" parent="Bestiario/Information" unique_id=1116653315]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 180.0
+offset_bottom = 132.0
+
+[node name="Panel" type="Panel" parent="Bestiario/Information/Texture" unique_id=445675173]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 52)
+theme_override_styles/panel = SubResource("StyleBoxTexture_vxdmp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bestiario/Information" unique_id=1636889164]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 176.0
+offset_right = 64.0
+offset_bottom = 216.0
+
+[node name="Name" type="Label" parent="Bestiario/Information/VBoxContainer" unique_id=1375152953]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("17_vxdmp")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name: "
+
+[node name="Damage" type="Label" parent="Bestiario/Information/VBoxContainer" unique_id=716671413]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("17_vxdmp")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Damage: "
+
+[node name="Health" type="Label" parent="Bestiario/Information/VBoxContainer" unique_id=323934013]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("17_vxdmp")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Health: "
+
+[node name="Gold" type="Label" parent="." unique_id=872994653]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 40.0
+offset_right = 978.0
+offset_bottom = 79.0
+theme = ExtResource("17_vxdmp")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("9_vovv2")
+
+[node name="Back" type="Button" parent="." unique_id=1153526559]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 480.0
+offset_right = 980.0
+offset_bottom = 533.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
+theme_override_styles/pressed = SubResource("StyleBoxFlat_41tvm")
+theme_override_styles/hover = ExtResource("19_vxdmp")
+text = "Back"
+alignment = 2
+
+[connection signal="pressed" from="Menu/Start" to="Menu/Start" method="_on_pressed"]
+[connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Menu/Bestiary" to="." method="_on_bestiary_pressed"]
+[connection signal="pressed" from="Menu/Sair" to="Menu/Sair" method="_on_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ck7hjpa2a3c7" path="res://scripts/player/PassiveItem.gd" id="1_8cce3"]
 [ext_resource type="Texture2D" uid="uid://b35ku1f23igyw" path="res://assets/ima_placeholder.png" id="2_5cvud"]
-[ext_resource type="Script" path="res://scripts/player/Stats.gd" id="3_1jiyy"]
+[ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="3_1jiyy"]
 
 [sub_resource type="Resource" id="Resource_u7h6s"]
 script = ExtResource("3_1jiyy")
@@ -26,5 +26,6 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 script = ExtResource("1_8cce3")
 upgrades = Array[ExtResource("3_1jiyy")]([SubResource("Resource_u7h6s"), SubResource("Resource_id8jr"), SubResource("Resource_ffyjk")])
 title = "Magnet"
+icon = ExtResource("2_5cvud")
 texture = ExtResource("2_5cvud")
 metadata/_custom_type_script = "uid://ck7hjpa2a3c7"

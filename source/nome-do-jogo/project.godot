@@ -18,6 +18,16 @@ config/icon="res://icon.svg"
 window/size/viewport_height=1080
 window/size/mode=2
 
+[audio]
+
+buses/default_bus_layout="uid://ct7y6ck0dlexg"
+
+[autoload]
+
+SoundManager="*uid://dl0hlun7ly432"
+SaveData="*uid://sbuyevl75q8y"
+Persistence="*uid://srpatos4ibig"
+
 [display]
 
 window/size/viewport_width=1024
@@ -88,3 +98,4 @@ click={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.09239706, 0.09239707, 0.09239703, 1)

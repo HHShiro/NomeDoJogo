@@ -11,11 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://bo6ydp6t6t84d" path="res://scenes/player/passive_slot.tscn" id="6_fm80t"]
 [ext_resource type="Texture2D" uid="uid://dbnbawnxsg041" path="res://assets/xp_progress.png" id="6_je7p5"]
 [ext_resource type="Script" uid="uid://cn1qk100v52en" path="res://scripts/player/options.gd" id="6_qek5x"]
-[ext_resource type="Resource" uid="uid://cynfkmcxgso7e" path="res://resources/items/magnet.tres" id="7_myrg7"]
 [ext_resource type="Texture2D" uid="uid://dhbsqp13u3vqx" path="res://assets/box_background_placeholder.png" id="11_fcs02"]
-[ext_resource type="Script" path="res://scripts/player/chest.gd" id="12_myrg7"]
+[ext_resource type="Script" uid="uid://cp7rx7eewoc87" path="res://scripts/player/chest.gd" id="12_myrg7"]
 [ext_resource type="Texture2D" uid="uid://bng04qh182m8k" path="res://assets/box_animation_placeholder-Sheet.png" id="13_kvlxm"]
 [ext_resource type="Texture2D" uid="uid://c1nuunqwuhj1g" path="res://assets/carteiro.png" id="14_fcs02"]
+[ext_resource type="Script" uid="uid://d0ijlpd56banu" path="res://scenes/player/back.gd" id="19_3j4b4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gx1jg"]
 font_size = 4
@@ -113,6 +113,27 @@ script = ExtResource("1_3vyb7")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1970179113]
 
+[node name="Debug" type="VBoxContainer" parent="UI" unique_id=1482015652]
+offset_left = 13.0
+offset_top = 144.0
+offset_right = 53.0
+offset_bottom = 221.0
+
+[node name="Might" type="Label" parent="UI/Debug" unique_id=449216391]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Might: 1"
+
+[node name="Area" type="Label" parent="UI/Debug" unique_id=1584204285]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Range: 0"
+
+[node name="MovementSpeed" type="Label" parent="UI/Debug" unique_id=99244880]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Movement Speed: 150"
+
 [node name="Gold" type="Label" parent="UI" unique_id=1068340041]
 unique_name_in_owner = true
 offset_left = 850.0
@@ -184,7 +205,6 @@ offset_bottom = 126.0
 
 [node name="PassiveSlot" parent="UI/PassiveItems" unique_id=1995932710 instance=ExtResource("6_fm80t")]
 layout_mode = 2
-item = ExtResource("7_myrg7")
 
 [node name="PassiveSlot2" parent="UI/PassiveItems" unique_id=1448197543 instance=ExtResource("6_fm80t")]
 layout_mode = 2
@@ -210,7 +230,7 @@ offset_right = 1012.0
 offset_bottom = 49.0
 text = "Lv 1"
 
-[node name="Options" type="VBoxContainer" parent="UI" unique_id=192631775 node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
+[node name="Options" type="VBoxContainer" parent="UI" unique_id=192631775 node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel", "player_reference")]
 unique_name_in_owner = true
 process_mode = 3
 anchors_preset = 8
@@ -229,6 +249,7 @@ weapons = NodePath("../Weapons")
 passive_items = NodePath("../PassiveItems")
 particles = NodePath("../LevelUpParticle")
 panel = NodePath("../Panel")
+player_reference = NodePath("../..")
 
 [node name="Chest" type="NinePatchRect" parent="UI" unique_id=104999665]
 process_mode = 3
@@ -323,6 +344,23 @@ offset_bottom = 164.0
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Back" type="Button" parent="UI" unique_id=1756670163]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = 85.0
+offset_right = 57.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back to Menu"
+script = ExtResource("19_3j4b4")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1277185485]
 unique_name_in_owner = true
 position = Vector2(0, -1)
@@ -405,6 +443,7 @@ shape = SubResource("CircleShape2D_0owmy")
 
 [connection signal="pressed" from="UI/Chest/Open" to="UI/Chest" method="_on_open_pressed"]
 [connection signal="pressed" from="UI/Chest/Close" to="UI/Chest" method="_on_close_pressed"]
+[connection signal="pressed" from="UI/Back" to="UI/Back" method="_on_pressed"]
 [connection signal="timeout" from="RotationTimer" to="." method="_on_rotation_timer_timeout"]
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Health" format=3 uid="uid://n51lqe7u8ptk"]
+
+[ext_resource type="Texture2D" uid="uid://c4qxpkjevxntw" path="res://assets/marmita.png" id="1_odt87"]
+[ext_resource type="Script" uid="uid://dshps6rsdekf1" path="res://scripts/player/health_pack.gd" id="2_pvj4f"]
+[ext_resource type="AudioStream" uid="uid://ddlss1ubr5s8y" path="res://assets/sfx/pickup_sound.wav" id="3_pvj4f"]
+
+[resource]
+script = ExtResource("2_pvj4f")
+title = "Marmita"
+icon = ExtResource("1_odt87")
+description = "+20 Health"
+sound = ExtResource("3_pvj4f")
+metadata/_custom_type_script = "uid://dshps6rsdekf1"
