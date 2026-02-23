@@ -23,5 +23,6 @@ var passive_item_available:= false:
 func _on_gui_input(event: InputEvent):
 	if event.is_action_pressed("click") and item:
 		print(item.title)
+		get_parent().check_item(item)
 		item.upgrade_item(upgrade_index)
 		get_parent().close_option()

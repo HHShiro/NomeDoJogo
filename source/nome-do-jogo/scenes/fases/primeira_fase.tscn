@@ -11,6 +11,7 @@
 script = SubResource("GDScript_sm4gw")
 
 [node name="Player" parent="." unique_id=192957208 instance=ExtResource("1_lmvit")]
+visible = true
 position = Vector2(1032, 513)
 
 [node name="spawner" parent="." unique_id=852875230 instance=ExtResource("4_sm4gw")]

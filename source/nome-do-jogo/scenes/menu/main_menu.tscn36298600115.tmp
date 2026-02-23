@@ -430,12 +430,12 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_pstia")
 
 [node name="Texture" type="TextureRect" parent="Bestiario/Information" unique_id=1116653315]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(104, 104)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
-offset_left = 72.0
+offset_left = 80.0
 offset_top = 32.0
-offset_right = 176.0
-offset_bottom = 136.0
+offset_right = 180.0
+offset_bottom = 132.0
 
 [node name="Panel" type="Panel" parent="Bestiario/Information/Texture" unique_id=445675173]
 show_behind_parent = true
@@ -445,10 +445,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -60.0
-offset_right = 60.0
-offset_bottom = 60.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(52, 52)

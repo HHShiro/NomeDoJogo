@@ -11,7 +11,7 @@ height = 26.0
 
 [resource]
 script = ExtResource("1_xesjk")
-title = "enemy_type3"
+title = "Karen"
 texture = ExtResource("4_nw7xv")
 health = 6.0
 damage = 10.0
