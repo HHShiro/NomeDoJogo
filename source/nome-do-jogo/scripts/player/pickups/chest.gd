@@ -23,7 +23,7 @@ func open():
 
 
 func  _on_open_pressed() -> void:
-	SoundManager.play_sfx(load("res://assets/sfx/chest_pickup_sound.wav"))
+	SoundManager.play_sfx(load("res://assets/sounds/sfx/chest_pickup_sound.wav"))
 	chest.play("open_box_animation")
 	await chest.animation_finished
 	set_reward()

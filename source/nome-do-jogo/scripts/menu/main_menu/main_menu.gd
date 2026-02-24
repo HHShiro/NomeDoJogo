@@ -17,6 +17,7 @@ func menu():
 	$Bestiario.hide()
 	$Gold.hide()
 	$Back.hide()
+	$Options.hide()
 	tween_pop($Menu)
 
 func skill_tree():
@@ -33,6 +34,13 @@ func bestiario():
 	tween_pop($Bestiario)
 	$Gold.show()
 
+func options():
+	$Options.show()
+	$Back.show()
+	$Menu.hide()
+	tween_pop($Options)
+	$Gold.hide()
+
 func _on_back_pressed() -> void:
 	menu()
 
@@ -41,3 +49,7 @@ func tween_pop(panel):
 	panel.scale = Vector2(0.85,0.85)
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 	await tween.tween_property(panel, "scale", Vector2(1,1), 0.5)
+
+
+func _on_options_pressed() -> void:
+	options()
