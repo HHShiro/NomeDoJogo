@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="FollowAttack" format=3 uid="uid://fli66nfrtb4j"]
+
+[ext_resource type="PackedScene" uid="uid://khhce87fhhcm" path="res://scenes/player/caramelo.tscn" id="1_6byjc"]
+[ext_resource type="Texture2D" uid="uid://b20yhde65ytf6" path="res://assets/images/icons/weapons/caramelo.png" id="1_nhu1x"]
+[ext_resource type="Script" uid="uid://cvu0to5br43k7" path="res://scripts/player/weapons/types/FollowAttack.gd" id="2_uf1e4"]
+[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/weapons/upgrades/upgrade.gd" id="3_nhu1x"]
+[ext_resource type="Script" uid="uid://b3ngail1dfw3h" path="res://scripts/player/weapons/upgrades/FollowUpgrade.gd" id="5_5k888"]
+
+[sub_resource type="Resource" id="Resource_clvqc"]
+script = ExtResource("5_5k888")
+amount = 2
+description = "+2 Ataques"
+metadata/_custom_type_script = "uid://b3ngail1dfw3h"
+
+[sub_resource type="Resource" id="Resource_0hbei"]
+script = ExtResource("5_5k888")
+damage = 2.0
+description = "+2 Dano"
+metadata/_custom_type_script = "uid://b3ngail1dfw3h"
+
+[sub_resource type="Resource" id="Resource_k4vvs"]
+script = ExtResource("5_5k888")
+cooldown = -0.5
+description = "-0.5s Cooldown"
+metadata/_custom_type_script = "uid://b3ngail1dfw3h"
+
+[sub_resource type="Resource" id="Resource_deqev"]
+script = ExtResource("5_5k888")
+amount = 1
+description = "+2 Ataques"
+metadata/_custom_type_script = "uid://b3ngail1dfw3h"
+
+[sub_resource type="Resource" id="Resource_tpc1s"]
+script = ExtResource("5_5k888")
+damage = 1.0
+description = "+1 Dano"
+metadata/_custom_type_script = "uid://b3ngail1dfw3h"
+
+[resource]
+script = ExtResource("2_uf1e4")
+amount = 5
+damage = 2.0
+cooldown = 5.0
+speed = 200.0
+projectile_node = ExtResource("1_6byjc")
+upgrades = Array[ExtResource("3_nhu1x")]([SubResource("Resource_clvqc"), SubResource("Resource_0hbei"), SubResource("Resource_k4vvs"), SubResource("Resource_deqev"), SubResource("Resource_tpc1s")])
+title = "Caramelo"
+icon = ExtResource("1_nhu1x")
+metadata/_custom_type_script = "uid://cvu0to5br43k7"

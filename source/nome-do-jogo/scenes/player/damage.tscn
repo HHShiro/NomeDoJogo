@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4h1osa11tau7"]
 
 [ext_resource type="Script" uid="uid://b7fhn3r8vu0u2" path="res://scripts/player/damage.gd" id="1_ejnaq"]
+[ext_resource type="Theme" uid="uid://c0ti1gsmlye2r" path="res://resources/styles/tema_jogo.tres" id="1_ojcj3"]
 
 [node name="Damage" type="Label" unique_id=1864156187]
 offset_left = -50.0
@@ -8,6 +9,7 @@ offset_top = -12.0
 offset_right = 50.0
 offset_bottom = 12.0
 pivot_offset = Vector2(50, 12)
+theme = ExtResource("1_ojcj3")
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1

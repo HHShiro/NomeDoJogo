@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cgc404dwdw0fs"]
+
+[ext_resource type="Shader" uid="uid://bahm4cf3gmb2t" path="res://resources/menu/line_2d_shader.gdshader" id="1_7h1ok"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lodab"]
+shader = ExtResource("1_7h1ok")
+shader_parameter/color_one = Color(0, 0, 0, 1)
+shader_parameter/color_two = Color(0.48570347, 0.48570353, 0.4857034, 1)
+shader_parameter/angle = 45.0
+shader_parameter/line_count = 10.0
+shader_parameter/speed = 6.0
+shader_parameter/blur = 2.0
+
+[node name="Line2D" type="Line2D" unique_id=1417258540]
+texture_filter = 6
+texture_repeat = 2
+material = SubResource("ShaderMaterial_lodab")
+closed = true
+width = 4.0
+texture_mode = 2

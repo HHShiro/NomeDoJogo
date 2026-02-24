@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Death" format=3 uid="uid://cb8d36itvjqcp"]
 
-[ext_resource type="Texture2D" uid="uid://xcq0de2lsnt" path="res://assets/caveira.png" id="1_m1o17"]
-[ext_resource type="Script" uid="uid://cmmai0mf5nx5" path="res://scripts/player/death_all.gd" id="2_tfypb"]
-[ext_resource type="AudioStream" uid="uid://ddlss1ubr5s8y" path="res://assets/sfx/pickup_sound.wav" id="3_tfypb"]
+[ext_resource type="Texture2D" uid="uid://xcq0de2lsnt" path="res://assets/images/pickups/caveira.png" id="1_m1o17"]
+[ext_resource type="Script" uid="uid://cmmai0mf5nx5" path="res://scripts/player/pickups/death_all.gd" id="2_tfypb"]
+[ext_resource type="AudioStream" uid="uid://ddlss1ubr5s8y" path="res://assets/sounds/sfx/pickup_sound.wav" id="3_tfypb"]
 
 [resource]
 script = ExtResource("2_tfypb")
@@ -10,4 +10,5 @@ title = "Death"
 icon = ExtResource("1_m1o17")
 description = "mata geral"
 sound = ExtResource("3_tfypb")
+weight = 3.0
 metadata/_custom_type_script = "uid://cmmai0mf5nx5"

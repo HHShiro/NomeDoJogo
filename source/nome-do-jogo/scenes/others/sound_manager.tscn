@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dl0hlun7ly432"]
 
-[ext_resource type="Script" uid="uid://clptjsw2o4nlj" path="res://scripts/player/sound_manager.gd" id="1_y62j7"]
+[ext_resource type="Script" uid="uid://clptjsw2o4nlj" path="res://scripts/others/sound_manager.gd" id="1_y62j7"]
+[ext_resource type="AudioStream" uid="uid://oeya1w8pkma5" path="res://assets/sounds/sfx/button_hover_sound.wav" id="2_tw5ku"]
 
 [node name="SoundManager" type="Node2D" unique_id=1311696504]
 script = ExtResource("1_y62j7")
+hover_sound = ExtResource("2_tw5ku")
