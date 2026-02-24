@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b0gh81kf5nq3k"]
+
+[ext_resource type="Texture2D" uid="uid://cj3ep7bh3ter" path="res://assets/images/background/Construcao_1.png" id="1_ft08i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf4tl"]
+size = Vector2(52, 20)
+
+[node name="Construcao" type="Area2D" unique_id=647489762]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=646109024]
+texture = ExtResource("1_ft08i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2116675311]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_xf4tl")
