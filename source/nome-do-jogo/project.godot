@@ -13,20 +13,21 @@ config_version=5
 config/name="NomeDoJogo"
 run/main_scene="uid://6ujmljc1xgmk"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/images/others/legacy/icon.svg"
 "<<<<<<<Updatedupstream[display]window/size/viewport_width"=1920
 window/size/viewport_height=1080
 window/size/mode=2
 
 [audio]
 
-buses/default_bus_layout="uid://ct7y6ck0dlexg"
+buses/default_bus_layout=""
 
 [autoload]
 
 SoundManager="*uid://dl0hlun7ly432"
 SaveData="*uid://sbuyevl75q8y"
 Persistence="*uid://srpatos4ibig"
+ManipuladorPause="*uid://ryr3f8socs8o"
 
 [display]
 

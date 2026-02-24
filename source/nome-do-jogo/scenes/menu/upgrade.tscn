@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dp8xany6pk42b"]
 
-[ext_resource type="Script" uid="uid://crpf0bhx50wc4" path="res://scenes/menu/upgrade_button.gd" id="1_qrh7d"]
-[ext_resource type="PackedScene" uid="uid://cgc404dwdw0fs" path="res://scenes/line_2d.tscn" id="2_8fvxh"]
-[ext_resource type="Texture2D" uid="uid://bdqg0g8iif6pu" path="res://assets/carimbo_pago.png" id="3_848xa"]
+[ext_resource type="Script" uid="uid://crpf0bhx50wc4" path="res://scripts/menu/upgrade_menu/upgrade_button.gd" id="1_qrh7d"]
+[ext_resource type="PackedScene" uid="uid://cgc404dwdw0fs" path="res://scenes/menu/line_2d.tscn" id="2_8fvxh"]
+[ext_resource type="Texture2D" uid="uid://bdqg0g8iif6pu" path="res://assets/images/detail/carimbo_pago.png" id="3_848xa"]
+[ext_resource type="Theme" uid="uid://c0ti1gsmlye2r" path="res://resources/styles/tema_jogo.tres" id="4_lf707"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_848xa"]
 bg_color = Color(0, 0, 0, 0.654902)
@@ -40,5 +41,24 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_848xa")
 unique_name_in_owner = true
 visible = false
 texture = ExtResource("3_848xa")
+
+[node name="Custo" type="Label" parent="." unique_id=1390754226]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 63.0
+theme = ExtResource("4_lf707")
+theme_override_font_sizes/font_size = 8
+text = "Custo: "
+
+[node name="Descricao" type="Label" parent="." unique_id=108553061]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 47.0
+offset_right = 40.0
+offset_bottom = 70.0
+theme = ExtResource("4_lf707")
+theme_override_font_sizes/font_size = 8
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

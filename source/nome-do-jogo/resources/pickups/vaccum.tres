@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PickupMagnet" format=3 uid="uid://cm4ooqbju7s1b"]
 
-[ext_resource type="Texture2D" uid="uid://b35ku1f23igyw" path="res://assets/ima_placeholder.png" id="1_1f0jb"]
-[ext_resource type="Script" uid="uid://cryohhrm876el" path="res://scripts/player/vaccum.gd" id="2_ptl7i"]
-[ext_resource type="AudioStream" uid="uid://ddlss1ubr5s8y" path="res://assets/sfx/pickup_sound.wav" id="3_w4j6b"]
+[ext_resource type="Texture2D" uid="uid://b35ku1f23igyw" path="res://assets/images/icons/placeholders/ima_placeholder.png" id="1_1f0jb"]
+[ext_resource type="Script" uid="uid://cryohhrm876el" path="res://scripts/player/pickups/vaccum.gd" id="2_ptl7i"]
+[ext_resource type="AudioStream" uid="uid://ddlss1ubr5s8y" path="res://assets/sounds/sfx/pickup_sound.wav" id="3_w4j6b"]
 
 [resource]
 script = ExtResource("2_ptl7i")
@@ -10,4 +10,5 @@ title = "Vaccum"
 icon = ExtResource("1_1f0jb")
 description = "pega todas os selos"
 sound = ExtResource("3_w4j6b")
+weight = 3.0
 metadata/_custom_type_script = "uid://cryohhrm876el"

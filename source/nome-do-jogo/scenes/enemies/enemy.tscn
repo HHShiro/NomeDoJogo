@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bk1uxbo8ia1sc"]
 
 [ext_resource type="Script" uid="uid://cbqkt8qj0vkss" path="res://scripts/enemies/enemy_basic01.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://spdlbwmk6buj" path="res://assets/abelha_placeholder.png" id="2_8e3ao"]
+[ext_resource type="Texture2D" uid="uid://spdlbwmk6buj" path="res://assets/images/icons/placeholders/abelha_placeholder.png" id="2_8e3ao"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8e3ao"]
 radius = 5.0

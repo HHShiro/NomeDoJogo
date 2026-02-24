@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dgf287irplh5f"]
 
-[ext_resource type="Script" uid="uid://cve7sa3jqx154" path="res://scripts/player/slot.gd" id="1_gm41d"]
+[ext_resource type="Script" uid="uid://cve7sa3jqx154" path="res://scripts/player/UI/slot.gd" id="1_gm41d"]
+[ext_resource type="StyleBox" uid="uid://coxnfg768upb0" path="res://resources/styles/tema_slot.tres" id="1_x5c6q"]
 
 [node name="Slot" type="PanelContainer" unique_id=2133889621]
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("1_x5c6q")
 script = ExtResource("1_gm41d")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1264636475]

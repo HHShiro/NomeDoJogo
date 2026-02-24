@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://c2of7o34dmb5d"]
 
-[ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickup_resource.gd" id="1_nw7xv"]
+[ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickups/pickup_resource.gd" id="1_nw7xv"]
 [ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="1_xesjk"]
 [ext_resource type="Resource" uid="uid://4pc4pbgceuiq" path="res://resources/Xp/selo_xp2.tres" id="2_nw7xv"]
-[ext_resource type="Texture2D" uid="uid://c28k8ejfwucu5" path="res://assets/karen_placeholder.png" id="4_nw7xv"]
+[ext_resource type="Texture2D" uid="uid://c28k8ejfwucu5" path="res://assets/images/icons/placeholders/karen_placeholder.png" id="4_nw7xv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oi448"]
 radius = 6.0

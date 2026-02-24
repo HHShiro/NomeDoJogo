@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://bwwpewkuw6t5p"]
 
-[ext_resource type="Script" uid="uid://ck7hjpa2a3c7" path="res://scripts/player/PassiveItem.gd" id="1_f6730"]
-[ext_resource type="Texture2D" uid="uid://bjfarej0jpfg7" path="res://assets/might_placeholder.png" id="2_3o6dk"]
+[ext_resource type="Script" uid="uid://ck7hjpa2a3c7" path="res://scripts/player/items/PassiveItem.gd" id="1_f6730"]
+[ext_resource type="Texture2D" uid="uid://bjfarej0jpfg7" path="res://assets/images/icons/placeholders/might_placeholder.png" id="2_3o6dk"]
 [ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="3_uxvd6"]
 
 [sub_resource type="Resource" id="Resource_wi705"]

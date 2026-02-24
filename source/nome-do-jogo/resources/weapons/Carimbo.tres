@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://d44p3j2qtqdf" path="res://scenes/player/projectile.tscn" id="1_iu48m"]
 [ext_resource type="Resource" uid="uid://defsd0lecjtqw" path="res://resources/weapons/Carimbo Fantasma 2.tres" id="1_yxnre"]
-[ext_resource type="Script" uid="uid://4r0v0svfrf30" path="res://scripts/player/SingleShot.gd" id="2_6nlp2"]
+[ext_resource type="Script" uid="uid://4r0v0svfrf30" path="res://scripts/player/weapons/types/SingleShot.gd" id="2_6nlp2"]
 [ext_resource type="Resource" uid="uid://cynfkmcxgso7e" path="res://resources/items/magnet.tres" id="2_w8nxg"]
-[ext_resource type="Texture2D" uid="uid://bh27m4um4m8wb" path="res://assets/Carimbo1.png" id="3_iu48m"]
-[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/upgrade.gd" id="4_5vj2t"]
-[ext_resource type="Script" uid="uid://b1hbpqd5yfsbs" path="res://scripts/player/projectile_upgrade.gd" id="5_vxl1v"]
-[ext_resource type="AudioStream" uid="uid://dnpkqqvwv6pc5" path="res://assets/sfx/projetil.wav" id="5_w8nxg"]
+[ext_resource type="Texture2D" uid="uid://bh27m4um4m8wb" path="res://assets/images/icons/weapons/Carimbo1.png" id="3_iu48m"]
+[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/weapons/upgrades/upgrade.gd" id="4_5vj2t"]
+[ext_resource type="Script" uid="uid://b1hbpqd5yfsbs" path="res://scripts/player/weapons/upgrades/projectile_upgrade.gd" id="5_vxl1v"]
+[ext_resource type="AudioStream" uid="uid://dnpkqqvwv6pc5" path="res://assets/sounds/sfx/projetil.wav" id="5_w8nxg"]
 
 [sub_resource type="Resource" id="Resource_yxnre"]
 script = ExtResource("5_vxl1v")
