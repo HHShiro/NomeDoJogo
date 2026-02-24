@@ -25,7 +25,7 @@ func close_option():
 	hide()
 	particles.hide()
 	panel.hide()
-	ManipuladorPause.pause()
+	ManipuladorPause.pause(self)
 	
 func get_available_resource_in(items) -> Array[Item]:
 	var resources: Array[Item] = []
@@ -77,7 +77,7 @@ func show_option():
 	show()
 	particles.show()
 	panel.show()
-	ManipuladorPause.pause()
+	ManipuladorPause.pause(self)
 
 func dir_contents(path):
 	var dir = DirAccess.open(path)
