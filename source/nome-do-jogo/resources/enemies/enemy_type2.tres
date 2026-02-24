@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://ccpl2yla5gwtf"]
 
 [ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="1_e8y1g"]
-[ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickup_resource.gd" id="1_qqlmr"]
+[ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickups/pickup_resource.gd" id="1_qqlmr"]
 [ext_resource type="Resource" uid="uid://dgqhnqu3trnhu" path="res://resources/Xp/selo_xp.tres" id="2_860l5"]
-[ext_resource type="Texture2D" uid="uid://cvs0oh2ygmd8w" path="res://assets/chihuahua_placeholder.png" id="4_qqlmr"]
+[ext_resource type="Texture2D" uid="uid://cvs0oh2ygmd8w" path="res://assets/images/icons/placeholders/chihuahua_placeholder.png" id="4_qqlmr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_860l5"]
 radius = 8.0

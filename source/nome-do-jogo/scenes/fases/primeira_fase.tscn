@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hajbwas022bl"]
 
 [ext_resource type="PackedScene" uid="uid://c2ig7irend1e3" path="res://scenes/player/player.tscn" id="1_lmvit"]
-[ext_resource type="Texture2D" uid="uid://boh8msdjeatix" path="res://assets/grama.jpg" id="3_8b2yb"]
+[ext_resource type="Texture2D" uid="uid://boh8msdjeatix" path="res://assets/images/background/grama.jpg" id="3_8b2yb"]
 [ext_resource type="PackedScene" uid="uid://b762ncs3lnobj" path="res://scenes/menu/pause_menu.tscn" id="4_1fhce"]
 [ext_resource type="PackedScene" uid="uid://bb1f011nkyj3b" path="res://scenes/enemies/spawner.tscn" id="4_sm4gw"]
 
@@ -11,7 +11,6 @@
 script = SubResource("GDScript_sm4gw")
 
 [node name="Player" parent="." unique_id=192957208 instance=ExtResource("1_lmvit")]
-visible = true
 position = Vector2(1032, 513)
 
 [node name="spawner" parent="." unique_id=852875230 instance=ExtResource("4_sm4gw")]

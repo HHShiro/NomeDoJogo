@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://c6m7afd543puv"]
+
+[ext_resource type="Texture2D" uid="uid://b7furmg1tjadb" path="res://assets/images/icons/placeholders/luck_placeholder.png" id="1_srh1s"]
+[ext_resource type="Script" uid="uid://ck7hjpa2a3c7" path="res://scripts/player/items/PassiveItem.gd" id="2_2w8oo"]
+[ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="3_4fopm"]
+
+[sub_resource type="Resource" id="Resource_srh1s"]
+script = ExtResource("3_4fopm")
+description = "+0.1 Luck"
+luck = 0.1
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_2w8oo"]
+script = ExtResource("3_4fopm")
+description = "+0.2 Luck"
+luck = 0.2
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_4fopm"]
+script = ExtResource("3_4fopm")
+description = "+0.3 Luck"
+luck = 0.3
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[resource]
+script = ExtResource("2_2w8oo")
+upgrades = Array[ExtResource("3_4fopm")]([SubResource("Resource_srh1s"), SubResource("Resource_2w8oo"), SubResource("Resource_4fopm")])
+title = "Leprechaun Hat"
+icon = ExtResource("1_srh1s")
+texture = ExtResource("1_srh1s")
+metadata/_custom_type_script = "uid://ck7hjpa2a3c7"

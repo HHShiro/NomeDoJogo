@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpuoi3sgpdpuw"]
 
-[ext_resource type="Script" uid="uid://d3m21a8or6m4o" path="res://scripts/player/projectile.gd" id="1_ib0ic"]
-[ext_resource type="Texture2D" uid="uid://2s820tdniyd2" path="res://assets/Carimbo_fantasma_placeholder.png" id="2_ib0ic"]
+[ext_resource type="Script" uid="uid://d3m21a8or6m4o" path="res://scripts/player/weapons/types/projectile.gd" id="1_ib0ic"]
+[ext_resource type="Texture2D" uid="uid://2s820tdniyd2" path="res://assets/images/icons/weapons/carimbo_fantasma.png" id="2_ib0ic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c28ns"]
 

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SingleShot" format=3 uid="uid://defsd0lecjtqw"]
 
-[ext_resource type="Script" uid="uid://4r0v0svfrf30" path="res://scripts/player/SingleShot.gd" id="2_lvqq5"]
+[ext_resource type="Script" uid="uid://4r0v0svfrf30" path="res://scripts/player/weapons/types/SingleShot.gd" id="2_lvqq5"]
 [ext_resource type="PackedScene" uid="uid://d44p3j2qtqdf" path="res://scenes/player/projectile.tscn" id="2_mmqra"]
-[ext_resource type="AudioStream" uid="uid://dnpkqqvwv6pc5" path="res://assets/sfx/projetil.wav" id="3_lvqq5"]
-[ext_resource type="Texture2D" uid="uid://2s820tdniyd2" path="res://assets/Carimbo_fantasma_placeholder.png" id="3_mmqra"]
-[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/upgrade.gd" id="4_l8pvm"]
+[ext_resource type="AudioStream" uid="uid://dnpkqqvwv6pc5" path="res://assets/sounds/sfx/projetil.wav" id="3_lvqq5"]
+[ext_resource type="Texture2D" uid="uid://2s820tdniyd2" path="res://assets/images/icons/weapons/carimbo_fantasma.png" id="3_mmqra"]
+[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/weapons/upgrades/upgrade.gd" id="4_l8pvm"]
 
 [resource]
 script = ExtResource("2_lvqq5")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ryr3f8socs8o"]
+
+[ext_resource type="Script" uid="uid://ccbiv0ph7bmk0" path="res://scripts/others/pause_manager.gd" id="1_h42fx"]
+
+[node name="PauseManager" type="Node2D" unique_id=647491951]
+process_mode = 3
+script = ExtResource("1_h42fx")

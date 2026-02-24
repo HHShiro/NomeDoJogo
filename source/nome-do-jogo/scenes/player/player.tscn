@@ -1,24 +1,26 @@
 [gd_scene format=3 uid="uid://c2ig7irend1e3"]
 
 [ext_resource type="Script" uid="uid://bcqels2e06k2d" path="res://scripts/player/player.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://0ks58fumahwa" path="res://assets/imagem_2026-02-18_172432767-removebg-preview (1).png" id="2_je7p5"]
+[ext_resource type="Theme" uid="uid://581opi40pux7" path="res://resources/styles/tema_main_menu.tres" id="2_kvlxm"]
+[ext_resource type="Theme" uid="uid://c0ti1gsmlye2r" path="res://resources/styles/tema_jogo.tres" id="2_lgqa7"]
 [ext_resource type="PackedScene" uid="uid://dgf287irplh5f" path="res://scenes/player/slot.tscn" id="2_p47bc"]
-[ext_resource type="Resource" uid="uid://dgw7m53646i1f" path="res://resources/weapons/Carimbo.tres" id="3_75vfm"]
-[ext_resource type="Texture2D" uid="uid://bh27m4um4m8wb" path="res://assets/Carimbo1.png" id="3_fm80t"]
-[ext_resource type="Texture2D" uid="uid://b74qy44jhurrl" path="res://assets/xp_under.png" id="4_5gtgg"]
-[ext_resource type="Texture2D" uid="uid://optp26aaxhv4" path="res://assets/xp_over.png" id="5_h17s1"]
-[ext_resource type="Script" uid="uid://n03p63ngf8p8" path="res://scripts/player/camera_2d.gd" id="5_p47bc"]
+[ext_resource type="Texture2D" uid="uid://bh27m4um4m8wb" path="res://assets/images/icons/weapons/Carimbo1.png" id="3_fm80t"]
+[ext_resource type="Texture2D" uid="uid://b74qy44jhurrl" path="res://assets/images/player/xp_under.png" id="4_5gtgg"]
+[ext_resource type="Texture2D" uid="uid://88m4416qgwb4" path="res://assets/images/icons/placeholders/slot_tile_placeholder.png" id="4_8ydkj"]
+[ext_resource type="Texture2D" uid="uid://optp26aaxhv4" path="res://assets/images/player/xp_over.png" id="5_h17s1"]
+[ext_resource type="Script" uid="uid://n03p63ngf8p8" path="res://scripts/player/UI/camera_2d.gd" id="5_p47bc"]
 [ext_resource type="PackedScene" uid="uid://bo6ydp6t6t84d" path="res://scenes/player/passive_slot.tscn" id="6_fm80t"]
-[ext_resource type="Texture2D" uid="uid://dbnbawnxsg041" path="res://assets/xp_progress.png" id="6_je7p5"]
-[ext_resource type="Script" uid="uid://cn1qk100v52en" path="res://scripts/player/options.gd" id="6_qek5x"]
-[ext_resource type="Texture2D" uid="uid://dhbsqp13u3vqx" path="res://assets/box_background_placeholder.png" id="11_fcs02"]
-[ext_resource type="Script" uid="uid://cp7rx7eewoc87" path="res://scripts/player/chest.gd" id="12_myrg7"]
-[ext_resource type="Texture2D" uid="uid://bng04qh182m8k" path="res://assets/box_animation_placeholder-Sheet.png" id="13_kvlxm"]
-[ext_resource type="Texture2D" uid="uid://c1nuunqwuhj1g" path="res://assets/carteiro.png" id="14_fcs02"]
-[ext_resource type="Script" uid="uid://d0ijlpd56banu" path="res://scenes/player/back.gd" id="19_3j4b4"]
+[ext_resource type="Texture2D" uid="uid://dbnbawnxsg041" path="res://assets/images/player/xp_progress.png" id="6_je7p5"]
+[ext_resource type="Script" uid="uid://cn1qk100v52en" path="res://scripts/player/UI/options.gd" id="6_qek5x"]
+[ext_resource type="Resource" uid="uid://fli66nfrtb4j" path="res://resources/weapons/Caramelo.tres" id="7_uf5tr"]
+[ext_resource type="Texture2D" uid="uid://dhbsqp13u3vqx" path="res://assets/images/icons/placeholders/box_background_placeholder.png" id="11_fcs02"]
+[ext_resource type="Script" uid="uid://cp7rx7eewoc87" path="res://scripts/player/pickups/chest.gd" id="12_myrg7"]
+[ext_resource type="Texture2D" uid="uid://bng04qh182m8k" path="res://assets/images/icons/placeholders/box_animation_placeholder-Sheet.png" id="13_kvlxm"]
+[ext_resource type="Texture2D" uid="uid://c1nuunqwuhj1g" path="res://assets/images/player/carteiro.png" id="14_fcs02"]
+[ext_resource type="Script" uid="uid://d0ijlpd56banu" path="res://scripts/menu/general/back.gd" id="19_3j4b4"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_gx1jg"]
-font_size = 4
+[sub_resource type="LabelSettings" id="LabelSettings_uf5tr"]
+font_size = 32
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ugbui"]
@@ -114,10 +116,11 @@ script = ExtResource("1_3vyb7")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1970179113]
 
 [node name="Debug" type="VBoxContainer" parent="UI" unique_id=1482015652]
-offset_left = 13.0
-offset_top = 144.0
-offset_right = 53.0
-offset_bottom = 221.0
+offset_left = 12.0
+offset_top = 152.0
+offset_right = 160.0
+offset_bottom = 229.0
+theme = ExtResource("2_lgqa7")
 
 [node name="Might" type="Label" parent="UI/Debug" unique_id=449216391]
 unique_name_in_owner = true
@@ -140,37 +143,36 @@ offset_left = 850.0
 offset_top = 54.0
 offset_right = 1007.0
 offset_bottom = 77.0
+theme = ExtResource("2_lgqa7")
 text = "Ouro: 0"
 horizontal_alignment = 2
 
 [node name="Panel" type="NinePatchRect" parent="UI" unique_id=1029441684]
 process_mode = 3
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -200.0
+offset_top = -204.0
+offset_right = 200.0
+offset_bottom = 195.99997
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -1.5707964
-scale = Vector2(10, 10)
 pivot_offset = Vector2(20, 20)
-texture = ExtResource("2_je7p5")
+theme = ExtResource("2_kvlxm")
+texture = ExtResource("4_8ydkj")
 
 [node name="Label" type="Label" parent="UI/Panel" unique_id=846396518]
 layout_mode = 0
-offset_left = 36.2
-offset_top = 4.5000014
-offset_right = 52.2
-offset_bottom = 12.110933
-rotation = 1.5707964
+offset_left = 141.99998
+offset_top = 34.999992
+offset_right = 259.0
+offset_bottom = 73.99999
+rotation = 0.00045514293
 text = "LevelUp"
-label_settings = SubResource("LabelSettings_gx1jg")
+label_settings = SubResource("LabelSettings_uf5tr")
 
 [node name="LevelUpParticle" type="GPUParticles2D" parent="UI" unique_id=672378044]
 process_mode = 3
@@ -182,14 +184,15 @@ lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_ugbui")
 
 [node name="Weapons" type="HBoxContainer" parent="UI" unique_id=1965225296]
-offset_left = 11.539391
-offset_top = 42.39765
-offset_right = 140.1084
-offset_bottom = 82.39765
+offset_left = 13.0
+offset_top = 42.0
+offset_right = 199.4606
+offset_bottom = 82.0
+theme_override_constants/separation = 12
 
 [node name="Slot" parent="UI/Weapons" unique_id=2133889621 instance=ExtResource("2_p47bc")]
 layout_mode = 2
-item = ExtResource("3_75vfm")
+item = ExtResource("7_uf5tr")
 
 [node name="Slot2" parent="UI/Weapons" unique_id=1812546093 instance=ExtResource("2_p47bc")]
 layout_mode = 2
@@ -198,10 +201,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PassiveItems" type="HBoxContainer" parent="UI" unique_id=1398648197]
-offset_left = 12.0
-offset_top = 86.0
-offset_right = 140.0
-offset_bottom = 126.0
+offset_left = 13.0
+offset_top = 97.0
+offset_right = 173.0
+offset_bottom = 137.0
+theme_override_constants/separation = 12
 
 [node name="PassiveSlot" parent="UI/PassiveItems" unique_id=1995932710 instance=ExtResource("6_fm80t")]
 layout_mode = 2
@@ -216,6 +220,7 @@ layout_mode = 2
 unique_name_in_owner = true
 offset_right = 419.0
 offset_bottom = 30.0
+theme = ExtResource("2_lgqa7")
 max_value = 10.0
 texture_under = ExtResource("4_5gtgg")
 texture_over = ExtResource("5_h17s1")
@@ -244,6 +249,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_lgqa7")
 script = ExtResource("6_qek5x")
 weapons = NodePath("../Weapons")
 passive_items = NodePath("../PassiveItems")
@@ -253,6 +259,7 @@ player_reference = NodePath("../..")
 
 [node name="Chest" type="NinePatchRect" parent="UI" unique_id=104999665]
 process_mode = 3
+visible = false
 custom_minimum_size = Vector2(300, 300)
 anchors_preset = 8
 anchor_left = 0.5
@@ -265,6 +272,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_lgqa7")
 texture = ExtResource("11_fcs02")
 region_rect = Rect2(15.482773, 15.716118, 97.03352, 96.567024)
 script = ExtResource("12_myrg7")
@@ -394,6 +402,7 @@ offset_bottom = -159.50002
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(21, 20.5)
+theme = ExtResource("2_lgqa7")
 alignment = 1
 
 [node name="minute" type="Label" parent="Camera2D/HBoxContainer" unique_id=1955163706]

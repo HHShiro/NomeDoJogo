@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Gem" format=3 uid="uid://dgqhnqu3trnhu"]
 
-[ext_resource type="Texture2D" uid="uid://djyfa801ogsno" path="res://assets/selov2_placeholder.png" id="1_f6m7c"]
-[ext_resource type="Script" uid="uid://hw8q7yb0w5mr" path="res://scripts/player/gem.gd" id="2_wh4dx"]
-[ext_resource type="AudioStream" uid="uid://ddlss1ubr5s8y" path="res://assets/sfx/pickup_sound.wav" id="3_wh4dx"]
+[ext_resource type="Texture2D" uid="uid://djyfa801ogsno" path="res://assets/images/icons/placeholders/selov2_placeholder.png" id="1_f6m7c"]
+[ext_resource type="Script" uid="uid://hw8q7yb0w5mr" path="res://scripts/player/pickups/gem.gd" id="2_wh4dx"]
+[ext_resource type="AudioStream" uid="uid://ddlss1ubr5s8y" path="res://assets/sounds/sfx/pickup_sound.wav" id="3_wh4dx"]
 
 [resource]
 script = ExtResource("2_wh4dx")

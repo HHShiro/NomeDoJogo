@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bap81gft0h4xi"]
+
+[ext_resource type="Texture2D" uid="uid://c6fqg15c8i2w5" path="res://assets/images/icons/weapons/caramelo_spritesheet.PNG" id="1_3pniv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nepe"]
+atlas = ExtResource("1_3pniv")
+region = Rect2(0, 0, 54, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ougqw"]
+atlas = ExtResource("1_3pniv")
+region = Rect2(54, 0, 54, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmy2o"]
+atlas = ExtResource("1_3pniv")
+region = Rect2(108, 0, 54, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n6i6"]
+atlas = ExtResource("1_3pniv")
+region = Rect2(162, 0, 54, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acl8d"]
+atlas = ExtResource("1_3pniv")
+region = Rect2(216, 0, 54, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfkio"]
+atlas = ExtResource("1_3pniv")
+region = Rect2(270, 0, 54, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2j4c"]
+atlas = ExtResource("1_3pniv")
+region = Rect2(324, 0, 54, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcocv"]
+atlas = ExtResource("1_3pniv")
+region = Rect2(378, 0, 54, 44)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nepe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ougqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmy2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n6i6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acl8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfkio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2j4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcocv")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 14.0
+}]
