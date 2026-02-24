@@ -1,33 +1,72 @@
 [gd_scene format=3 uid="uid://hajbwas022bl"]
 
 [ext_resource type="PackedScene" uid="uid://c2ig7irend1e3" path="res://scenes/player/player.tscn" id="1_lmvit"]
-[ext_resource type="Texture2D" uid="uid://boh8msdjeatix" path="res://assets/images/background/grama.jpg" id="3_8b2yb"]
-[ext_resource type="PackedScene" path="res://scenes/menu/pause_menu.tscn" id="4_1fhce"]
+[ext_resource type="PackedScene" uid="uid://ba3qi244dmu44" path="res://scenes/fases/map_block.tscn" id="1_sm4gw"]
+[ext_resource type="PackedScene" uid="uid://b762ncs3lnobj" path="res://scenes/menu/pause_menu.tscn" id="4_1fhce"]
 [ext_resource type="PackedScene" uid="uid://bb1f011nkyj3b" path="res://scenes/enemies/spawner.tscn" id="4_sm4gw"]
 
 [sub_resource type="GDScript" id="GDScript_sm4gw"]
+script/source = "extends Node2D
 
-[node name="PrimeiraFase" type="Node2D" unique_id=634138565]
+@export var cena_map_block: PackedScene
+@export var player: CharacterBody2D
+
+const WIDTH = 1024
+
+var blocks: Array[Node2D] = []
+var centro = 0
+
+func _ready():
+	for i in range(-1, 2):
+		#Spawna os blocos atras, no meio e na frente.
+		spawn_block(i * WIDTH)
+
+func spawn_block(x_pos):
+	var block = cena_map_block.instantiate()
+	block.position.x = x_pos
+	block.position.y = 576
+	$World.add_child(block)
+	blocks.append(block)
+
+func _process(_delta):
+	
+	var player_block_position = int(round(player.position.x / WIDTH))
+	
+	if player_block_position != centro:
+		shift_map(player_block_position)
+
+func shift_map(novo_centro):
+	if novo_centro > centro:
+		#Foi pra direita, então adicionar esquerda na direita.
+		var block_to_move = blocks.pop_front()
+		block_to_move.position.x = (novo_centro + 1) * WIDTH
+		# Coloca ele no fim da lista
+		blocks.push_back(block_to_move)
+		
+	elif novo_centro < centro:
+		# Foi pra esquerda, então adicionar direita na esquerda.
+		var block_to_move = blocks.pop_back()
+		block_to_move.position.x = (novo_centro - 1) * WIDTH
+		# Coloca ele no início da lista
+		blocks.push_front(block_to_move)
+	
+	centro = novo_centro
+"
+
+[node name="PrimeiraFase" type="Node2D" unique_id=634138565 node_paths=PackedStringArray("player")]
 script = SubResource("GDScript_sm4gw")
-
-[node name="Player" parent="." unique_id=192957208 instance=ExtResource("1_lmvit")]
-position = Vector2(1032, 513)
+cena_map_block = ExtResource("1_sm4gw")
+player = NodePath("World/Player")
 
 [node name="spawner" parent="." unique_id=852875230 instance=ExtResource("4_sm4gw")]
 position = Vector2(38, 127)
 
 [node name="pause_menu" parent="." unique_id=134273844 instance=ExtResource("4_1fhce")]
+visible = false
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2034054896]
-repeat_size = Vector2(1990, 1190)
+[node name="World" type="Node2D" parent="." unique_id=760492781]
+unique_name_in_owner = true
+y_sort_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1573217500]
-z_index = -1
-texture_filter = 2
-texture_repeat = 2
-position = Vector2(969.6106, 569.1107)
-rotation = 3.1415927
-scale = Vector2(0.51017904, -0.3106058)
-texture = ExtResource("3_8b2yb")
-region_enabled = true
-region_rect = Rect2(0, 0, 4000, 4000)
+[node name="Player" parent="World" unique_id=192957208 instance=ExtResource("1_lmvit")]
+position = Vector2(1032, 513)

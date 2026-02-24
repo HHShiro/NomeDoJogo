@@ -7,19 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://buocqtpgofywx" path="res://assets/images/menus/universo.png" id="4_vxdmp"]
 [ext_resource type="PackedScene" path="res://scenes/menu/upgrade.tscn" id="5_xn6kt"]
 [ext_resource type="Script" uid="uid://bitgoko3ltilu" path="res://scripts/menu/upgrade_menu/Skill.gd" id="6_qgo02"]
-[ext_resource type="Texture2D" uid="uid://b0r4ny5xgdffn" path="res://assets/images/icons/placeholders/area_placeholder.png" id="6_vovv2"]
 [ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="7_vovv2"]
 [ext_resource type="Texture2D" uid="uid://bjfarej0jpfg7" path="res://assets/images/icons/placeholders/might_placeholder.png" id="8_1k4da"]
 [ext_resource type="Texture2D" uid="uid://cwft2l63bnmjw" path="res://assets/images/icons/placeholders/movement_speed_placeholder.png" id="8_vovv2"]
 [ext_resource type="Script" uid="uid://xwe8l35b4s4i" path="res://scripts/menu/general/ui_gold.gd" id="9_vovv2"]
+[ext_resource type="Texture2D" uid="uid://b54qtyh18kvuu" path="res://assets/images/icons/passive_itens/range.png" id="10_do53f"]
+[ext_resource type="Texture2D" uid="uid://7eiar7gy1eyx" path="res://assets/images/icons/passive_itens/Colete_Armor.png" id="12_1bw8o"]
 [ext_resource type="Texture2D" uid="uid://evbr2fn4a6qj" path="res://assets/images/menus/menu.png" id="12_prbor"]
-[ext_resource type="Texture2D" uid="uid://07qkpo2m2r2l" path="res://assets/images/icons/placeholders/armor_placeholder.png" id="12_uaj4g"]
-[ext_resource type="Texture2D" uid="uid://bf81gry7t3mc2" path="res://assets/images/icons/placeholders/growth_placeholder.png" id="13_si58d"]
-[ext_resource type="Texture2D" uid="uid://b7furmg1tjadb" path="res://assets/images/icons/placeholders/luck_placeholder.png" id="14_anexq"]
+[ext_resource type="Texture2D" uid="uid://dgrqvovy5tq7v" path="res://assets/images/icons/passive_itens/XPbnrigadeiro.png" id="13_q78k2"]
+[ext_resource type="Texture2D" uid="uid://bcky5xtydgtgs" path="res://assets/images/icons/passive_itens/Sorte.png" id="14_neoyv"]
 [ext_resource type="Script" uid="uid://bq4mppbe2oarb" path="res://scripts/menu/general/sair.gd" id="14_prbor"]
-[ext_resource type="Texture2D" uid="uid://b35ku1f23igyw" path="res://assets/images/icons/placeholders/ima_placeholder.png" id="15_qvxhw"]
+[ext_resource type="Texture2D" uid="uid://c66klgwhppp6g" path="res://assets/images/icons/passive_itens/ima.png" id="15_wof4p"]
 [ext_resource type="Script" uid="uid://djuc788mon0nn" path="res://scripts/menu/bestiario/enemy_list.gd" id="16_3h20m"]
-[ext_resource type="Texture2D" uid="uid://qgh4s7mfn7lt" path="res://assets/images/icons/placeholders/coracao_placeholder.png" id="16_do53f"]
+[ext_resource type="Texture2D" uid="uid://b6r15nuqsr212" path="res://assets/images/icons/passive_itens/XP.png" id="16_fgrcj"]
 [ext_resource type="Texture2D" uid="uid://cycb5e8ahwc20" path="res://assets/images/icons/placeholders/bestiario_menu_placeholder.png" id="16_pstia"]
 [ext_resource type="Texture2D" uid="uid://d260b4p1t33d2" path="res://assets/images/icons/passive_itens/recovery_icon.png" id="17_1bw8o"]
 [ext_resource type="Texture2D" uid="uid://88m4416qgwb4" path="res://assets/images/icons/placeholders/slot_tile_placeholder.png" id="17_41tvm"]
@@ -167,7 +167,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_vovv2"]
 script = ExtResource("6_qgo02")
 name = "Range I"
-texture = ExtResource("6_vovv2")
+texture = ExtResource("10_do53f")
 cost = 10
 stats = SubResource("Resource_qgo02")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -181,7 +181,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_pstia"]
 script = ExtResource("6_qgo02")
 name = "Range II"
-texture = ExtResource("6_vovv2")
+texture = ExtResource("10_do53f")
 cost = 20
 stats = SubResource("Resource_1k4da")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -195,7 +195,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_vxdmp"]
 script = ExtResource("6_qgo02")
 name = "Range III"
-texture = ExtResource("6_vovv2")
+texture = ExtResource("10_do53f")
 cost = 50
 stats = SubResource("Resource_41tvm")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -209,7 +209,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_26v5e"]
 script = ExtResource("6_qgo02")
 name = "Range IV"
-texture = ExtResource("6_vovv2")
+texture = ExtResource("10_do53f")
 cost = 100
 stats = SubResource("Resource_12yd3")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -223,7 +223,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_dckix"]
 script = ExtResource("6_qgo02")
 name = "Range V"
-texture = ExtResource("6_vovv2")
+texture = ExtResource("10_do53f")
 cost = 150
 stats = SubResource("Resource_rp6ip")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -237,7 +237,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_d66xx"]
 script = ExtResource("6_qgo02")
 name = "Range VI"
-texture = ExtResource("6_vovv2")
+texture = ExtResource("10_do53f")
 cost = 200
 stats = SubResource("Resource_co4ci")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -251,7 +251,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_7iyuo"]
 script = ExtResource("6_qgo02")
 name = "Range VII"
-texture = ExtResource("6_vovv2")
+texture = ExtResource("10_do53f")
 cost = 250
 stats = SubResource("Resource_cmcyx")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -363,7 +363,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_8gjrb"]
 script = ExtResource("6_qgo02")
 name = "Armor I"
-texture = ExtResource("12_uaj4g")
+texture = ExtResource("12_1bw8o")
 cost = 10
 stats = SubResource("Resource_o4h6x")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -377,7 +377,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_a4ol8"]
 script = ExtResource("6_qgo02")
 name = "Armor II"
-texture = ExtResource("12_uaj4g")
+texture = ExtResource("12_1bw8o")
 cost = 20
 stats = SubResource("Resource_bcrok")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -391,7 +391,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_axxtu"]
 script = ExtResource("6_qgo02")
 name = "Armor III"
-texture = ExtResource("12_uaj4g")
+texture = ExtResource("12_1bw8o")
 cost = 50
 stats = SubResource("Resource_sqyjr")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -405,7 +405,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_hy5ps"]
 script = ExtResource("6_qgo02")
 name = "Armor IV"
-texture = ExtResource("12_uaj4g")
+texture = ExtResource("12_1bw8o")
 cost = 100
 stats = SubResource("Resource_cly0c")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -419,7 +419,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_07lfo"]
 script = ExtResource("6_qgo02")
 name = "Armor V"
-texture = ExtResource("12_uaj4g")
+texture = ExtResource("12_1bw8o")
 cost = 150
 stats = SubResource("Resource_75vpb")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -433,7 +433,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_dt7bw"]
 script = ExtResource("6_qgo02")
 name = "Armor VI"
-texture = ExtResource("12_uaj4g")
+texture = ExtResource("12_1bw8o")
 cost = 200
 stats = SubResource("Resource_cp2yp")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -447,7 +447,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_8t101"]
 script = ExtResource("6_qgo02")
 name = "Armor VII"
-texture = ExtResource("12_uaj4g")
+texture = ExtResource("12_1bw8o")
 cost = 250
 stats = SubResource("Resource_28r7t")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -461,7 +461,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_3tru8"]
 script = ExtResource("6_qgo02")
 name = "Growth I"
-texture = ExtResource("13_si58d")
+texture = ExtResource("13_q78k2")
 cost = 10
 stats = SubResource("Resource_3xr3q")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -475,7 +475,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_cmvqx"]
 script = ExtResource("6_qgo02")
 name = "Growth II"
-texture = ExtResource("13_si58d")
+texture = ExtResource("13_q78k2")
 cost = 20
 stats = SubResource("Resource_6gelu")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -489,7 +489,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_x1vcc"]
 script = ExtResource("6_qgo02")
 name = "Growth III"
-texture = ExtResource("13_si58d")
+texture = ExtResource("13_q78k2")
 cost = 50
 stats = SubResource("Resource_c1txr")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -503,7 +503,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_1bp23"]
 script = ExtResource("6_qgo02")
 name = "Growth IV"
-texture = ExtResource("13_si58d")
+texture = ExtResource("13_q78k2")
 cost = 100
 stats = SubResource("Resource_n1oi0")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -517,7 +517,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_fb41q"]
 script = ExtResource("6_qgo02")
 name = "Growth V"
-texture = ExtResource("13_si58d")
+texture = ExtResource("13_q78k2")
 cost = 150
 stats = SubResource("Resource_tytls")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -531,7 +531,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_jntcd"]
 script = ExtResource("6_qgo02")
 name = "Growth VI"
-texture = ExtResource("13_si58d")
+texture = ExtResource("13_q78k2")
 cost = 200
 stats = SubResource("Resource_lxoi4")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -545,7 +545,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_bp5qg"]
 script = ExtResource("6_qgo02")
 name = "Growth VII"
-texture = ExtResource("13_si58d")
+texture = ExtResource("13_q78k2")
 cost = 250
 stats = SubResource("Resource_n5tms")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -559,7 +559,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_ex4n4"]
 script = ExtResource("6_qgo02")
 name = "Luck I"
-texture = ExtResource("14_anexq")
+texture = ExtResource("14_neoyv")
 cost = 10
 stats = SubResource("Resource_7n0c5")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -573,7 +573,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_crioi"]
 script = ExtResource("6_qgo02")
 name = "Luck II"
-texture = ExtResource("14_anexq")
+texture = ExtResource("14_neoyv")
 cost = 20
 stats = SubResource("Resource_m7h05")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -587,7 +587,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_jvtc3"]
 script = ExtResource("6_qgo02")
 name = "Luck III"
-texture = ExtResource("14_anexq")
+texture = ExtResource("14_neoyv")
 cost = 50
 stats = SubResource("Resource_nyxyi")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -601,7 +601,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_oqgkn"]
 script = ExtResource("6_qgo02")
 name = "Luck IV"
-texture = ExtResource("14_anexq")
+texture = ExtResource("14_neoyv")
 cost = 100
 stats = SubResource("Resource_w20ql")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -615,7 +615,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_k41yb"]
 script = ExtResource("6_qgo02")
 name = "Luck V"
-texture = ExtResource("14_anexq")
+texture = ExtResource("14_neoyv")
 cost = 150
 stats = SubResource("Resource_74bgh")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -629,7 +629,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_31q3o"]
 script = ExtResource("6_qgo02")
 name = "Luck VI"
-texture = ExtResource("14_anexq")
+texture = ExtResource("14_neoyv")
 cost = 200
 stats = SubResource("Resource_hgsem")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -642,7 +642,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_uqfm6"]
 script = ExtResource("6_qgo02")
 name = "Luck VII"
-texture = ExtResource("14_anexq")
+texture = ExtResource("14_neoyv")
 cost = 250
 stats = SubResource("Resource_b41i2")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -656,7 +656,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_g62g7"]
 script = ExtResource("6_qgo02")
 name = "Magnet I"
-texture = ExtResource("15_qvxhw")
+texture = ExtResource("15_wof4p")
 cost = 10
 stats = SubResource("Resource_vn2th")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -670,7 +670,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_d6kg8"]
 script = ExtResource("6_qgo02")
 name = "Magnet II"
-texture = ExtResource("15_qvxhw")
+texture = ExtResource("15_wof4p")
 cost = 20
 stats = SubResource("Resource_wunu1")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -684,7 +684,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_t1ybw"]
 script = ExtResource("6_qgo02")
 name = "Magnet III"
-texture = ExtResource("15_qvxhw")
+texture = ExtResource("15_wof4p")
 cost = 50
 stats = SubResource("Resource_xwkim")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -698,7 +698,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_2v5ht"]
 script = ExtResource("6_qgo02")
 name = "Magnet IV"
-texture = ExtResource("15_qvxhw")
+texture = ExtResource("15_wof4p")
 cost = 100
 stats = SubResource("Resource_vpbw3")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -712,7 +712,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_shgrs"]
 script = ExtResource("6_qgo02")
 name = "Magnet V"
-texture = ExtResource("15_qvxhw")
+texture = ExtResource("15_wof4p")
 cost = 150
 stats = SubResource("Resource_yokc2")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -726,7 +726,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_7lcu8"]
 script = ExtResource("6_qgo02")
 name = "Magnet VI"
-texture = ExtResource("15_qvxhw")
+texture = ExtResource("15_wof4p")
 cost = 200
 stats = SubResource("Resource_t7sby")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -740,7 +740,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_hsiqb"]
 script = ExtResource("6_qgo02")
 name = "Magnet VII"
-texture = ExtResource("15_qvxhw")
+texture = ExtResource("15_wof4p")
 cost = 250
 stats = SubResource("Resource_ilewm")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -754,7 +754,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_uvm6m"]
 script = ExtResource("6_qgo02")
 name = "MaxHealth I"
-texture = ExtResource("16_do53f")
+texture = ExtResource("16_fgrcj")
 cost = 10
 stats = SubResource("Resource_yd06h")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -768,7 +768,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_vn0dr"]
 script = ExtResource("6_qgo02")
 name = "MaxHealth II"
-texture = ExtResource("16_do53f")
+texture = ExtResource("16_fgrcj")
 cost = 20
 stats = SubResource("Resource_8kift")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -782,7 +782,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_x8btl"]
 script = ExtResource("6_qgo02")
 name = "MaxHealth III"
-texture = ExtResource("16_do53f")
+texture = ExtResource("16_fgrcj")
 cost = 50
 stats = SubResource("Resource_7jvre")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -796,7 +796,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_l5vay"]
 script = ExtResource("6_qgo02")
 name = "MaxHealth IV"
-texture = ExtResource("16_do53f")
+texture = ExtResource("16_fgrcj")
 cost = 100
 stats = SubResource("Resource_7jpbk")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -810,7 +810,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_36lnt"]
 script = ExtResource("6_qgo02")
 name = "MaxHealth V"
-texture = ExtResource("16_do53f")
+texture = ExtResource("16_fgrcj")
 cost = 150
 stats = SubResource("Resource_67rqu")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -824,7 +824,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_mqs1s"]
 script = ExtResource("6_qgo02")
 name = "MaxHealth VI"
-texture = ExtResource("16_do53f")
+texture = ExtResource("16_fgrcj")
 cost = 200
 stats = SubResource("Resource_o7quh")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"
@@ -838,7 +838,7 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 [sub_resource type="Resource" id="Resource_5njxd"]
 script = ExtResource("6_qgo02")
 name = "MaxHealth VII"
-texture = ExtResource("16_do53f")
+texture = ExtResource("16_fgrcj")
 cost = 250
 stats = SubResource("Resource_lhf1p")
 metadata/_custom_type_script = "uid://bitgoko3ltilu"

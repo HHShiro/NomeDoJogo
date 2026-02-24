@@ -30,5 +30,8 @@ func follow(_target : CharacterBody2D, gem_flag = false):
 
 
 func _on_body_entered(body):
+	pass
+	
+func _on_area_entered(area: Area2D) -> void:
 	type.activate()
 	queue_free()
