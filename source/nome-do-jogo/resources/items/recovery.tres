@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://4cohxps7dl7l"]
 
 [ext_resource type="Script" uid="uid://ck7hjpa2a3c7" path="res://scripts/player/items/PassiveItem.gd" id="1_548av"]
-[ext_resource type="Texture2D" uid="uid://cyndku38601so" path="res://assets/images/icons/placeholders/recovery_placeholder.png" id="2_ejfr7"]
+[ext_resource type="Texture2D" uid="uid://d260b4p1t33d2" path="res://assets/images/icons/passive_itens/recovery_icon.png" id="1_ejfr7"]
 [ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="3_n25eh"]
 
 [sub_resource type="Resource" id="Resource_3arnc"]
@@ -26,6 +26,6 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 script = ExtResource("1_548av")
 upgrades = Array[ExtResource("3_n25eh")]([SubResource("Resource_3arnc"), SubResource("Resource_phlcr"), SubResource("Resource_cxs55")])
 title = "Recovery"
-icon = ExtResource("2_ejfr7")
-texture = ExtResource("2_ejfr7")
+icon = ExtResource("1_ejfr7")
+texture = ExtResource("1_ejfr7")
 metadata/_custom_type_script = "uid://ck7hjpa2a3c7"

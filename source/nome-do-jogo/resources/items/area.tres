@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://4dgs5fqp1hsb"]
 
+[ext_resource type="Texture2D" uid="uid://b54qtyh18kvuu" path="res://assets/images/icons/passive_itens/range.png" id="1_827be"]
 [ext_resource type="Script" uid="uid://ck7hjpa2a3c7" path="res://scripts/player/items/PassiveItem.gd" id="1_xifuc"]
-[ext_resource type="Texture2D" uid="uid://b0r4ny5xgdffn" path="res://assets/images/icons/placeholders/area_placeholder.png" id="2_827be"]
 [ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="3_1ir1o"]
 
 [sub_resource type="Resource" id="Resource_uvs6b"]
@@ -26,6 +26,6 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 script = ExtResource("1_xifuc")
 upgrades = Array[ExtResource("3_1ir1o")]([SubResource("Resource_uvs6b"), SubResource("Resource_bvijl"), SubResource("Resource_n30xd")])
 title = "Area"
-icon = ExtResource("2_827be")
-texture = ExtResource("2_827be")
+icon = ExtResource("1_827be")
+texture = ExtResource("1_827be")
 metadata/_custom_type_script = "uid://ck7hjpa2a3c7"

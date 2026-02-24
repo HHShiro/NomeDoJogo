@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://4htf3dyd12nb"]
 
 [ext_resource type="Script" uid="uid://ck7hjpa2a3c7" path="res://scripts/player/items/PassiveItem.gd" id="1_efaj4"]
-[ext_resource type="Texture2D" uid="uid://07qkpo2m2r2l" path="res://assets/images/icons/placeholders/armor_placeholder.png" id="2_hb0m7"]
+[ext_resource type="Texture2D" uid="uid://7eiar7gy1eyx" path="res://assets/images/icons/passive_itens/Colete_Armor.png" id="1_hb0m7"]
 [ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="3_u4l1x"]
 
 [sub_resource type="Resource" id="Resource_w0n1v"]
@@ -26,6 +26,6 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 script = ExtResource("1_efaj4")
 upgrades = Array[ExtResource("3_u4l1x")]([SubResource("Resource_w0n1v"), SubResource("Resource_ip80b"), SubResource("Resource_8qowx")])
 title = "Armor"
-icon = ExtResource("2_hb0m7")
-texture = ExtResource("2_hb0m7")
+icon = ExtResource("1_hb0m7")
+texture = ExtResource("1_hb0m7")
 metadata/_custom_type_script = "uid://ck7hjpa2a3c7"
