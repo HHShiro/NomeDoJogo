@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://cp38adb3ons65"]
 
 [ext_resource type="Script" uid="uid://ck7hjpa2a3c7" path="res://scripts/player/items/PassiveItem.gd" id="1_4ml4h"]
-[ext_resource type="Texture2D" uid="uid://bf81gry7t3mc2" path="res://assets/images/icons/placeholders/growth_placeholder.png" id="2_bqjdr"]
+[ext_resource type="Texture2D" uid="uid://dgrqvovy5tq7v" path="res://assets/images/icons/passive_itens/XPbnrigadeiro.png" id="1_bqjdr"]
 [ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="3_ifyj4"]
 
 [sub_resource type="Resource" id="Resource_bln5v"]
@@ -26,6 +26,6 @@ metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 script = ExtResource("1_4ml4h")
 upgrades = Array[ExtResource("3_ifyj4")]([SubResource("Resource_bln5v"), SubResource("Resource_lod7m"), SubResource("Resource_1dtlw")])
 title = "Growth"
-icon = ExtResource("2_bqjdr")
-texture = ExtResource("2_bqjdr")
+icon = ExtResource("1_bqjdr")
+texture = ExtResource("1_bqjdr")
 metadata/_custom_type_script = "uid://ck7hjpa2a3c7"
