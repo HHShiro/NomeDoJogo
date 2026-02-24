@@ -1794,7 +1794,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Health: "
 
 [node name="Options" type="VBoxContainer" parent="." unique_id=467269206]
-visible = false
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -1875,8 +1874,7 @@ theme_override_styles/hover = ExtResource("19_vxdmp")
 text = "Back"
 alignment = 2
 
-[node name="Audio" type="VBoxContainer" parent="." unique_id=1062212600]
-visible = false
+[node name="Audio" type="VBoxContainer" parent="." unique_id=1062212600 node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
 custom_minimum_size = Vector2(195, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -1891,6 +1889,9 @@ offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("27_q78k2")
+master_slider = NodePath("HBoxContainer/HSlider")
+music_slider = NodePath("HBoxContainer3/HSlider")
+sfx_slider = NodePath("HBoxContainer2/HSlider")
 
 [node name="Label" type="Label" parent="Audio" unique_id=1978158223]
 layout_mode = 2
@@ -1902,7 +1903,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 25
 
-[node name="Label" type="Label" parent="Audio/HBoxContainer" unique_id=2037439642]
+[node name="Geral" type="Label" parent="Audio/HBoxContainer" unique_id=2037439642]
 layout_mode = 2
 text = "Geral"
 
@@ -1915,7 +1916,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 25
 
-[node name="Label" type="Label" parent="Audio/HBoxContainer2" unique_id=787777511]
+[node name="SFX" type="Label" parent="Audio/HBoxContainer2" unique_id=787777511]
 layout_mode = 2
 text = "SFX"
 
@@ -1928,7 +1929,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 25
 
-[node name="Label" type="Label" parent="Audio/HBoxContainer3" unique_id=1194028705]
+[node name="Musica" type="Label" parent="Audio/HBoxContainer3" unique_id=1194028705]
 layout_mode = 2
 text = "Musica"
 
@@ -1937,6 +1938,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
 [node name="Controles" type="VBoxContainer" parent="." unique_id=852512987]
+visible = false
 custom_minimum_size = Vector2(280, 150)
 layout_mode = 1
 anchors_preset = 8
