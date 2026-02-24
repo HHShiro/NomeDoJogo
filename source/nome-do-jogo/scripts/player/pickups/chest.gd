@@ -16,14 +16,14 @@ func _ready():
 func open():
 	clear_reward()
 	chest.play("idle_box_animation")
-	ManipuladorPause.pause()
+	ManipuladorPause.pause(self)
 	show()
 	$Open.show()
 	$Close.hide()
 
 
 func  _on_open_pressed() -> void:
-	SoundManager.play_sfx(load("res://assets/sfx/chest_pickup_sound.wav"))
+	SoundManager.play_sfx(load("res://assets/sounds/sfx/chest_pickup_sound.wav"))
 	chest.play("open_box_animation")
 	await chest.animation_finished
 	set_reward()
@@ -31,7 +31,7 @@ func  _on_open_pressed() -> void:
 	$Close.show()
 
 func _on_close_pressed() -> void:
-	ManipuladorPause.pause()
+	ManipuladorPause.pause(self)
 	hide()
 	
 func set_reward():
