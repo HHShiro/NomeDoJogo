@@ -8,7 +8,7 @@ func _process(_delta):
 		visible = true
 
 func _on_pressed() -> void:
-	get_tree().paused = false
+	ManipuladorPause.pause_all()
 	SaveData.gold += owner.gold
 	SaveData.set_and_save()
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")

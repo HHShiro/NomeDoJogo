@@ -18,7 +18,7 @@ func set_skill_tree():
 	SaveData.set_and_save()
 
 func load_skill_tree():
-	if SaveData.skill_tree == []:
+	if SaveData.skill_tree == []: 
 		set_skill_tree()
 	
 	skill_tree = SaveData.skill_tree

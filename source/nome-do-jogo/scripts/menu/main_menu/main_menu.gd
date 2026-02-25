@@ -1,6 +1,10 @@
 extends Control
 
+
+
 func _ready() -> void:
+	if SoundManager.music_player:
+		SoundManager.music_player.queue_free()
 	menu()
 
 func _on_upgrades_pressed() -> void:
@@ -17,6 +21,9 @@ func menu():
 	$Bestiario.hide()
 	$Gold.hide()
 	$Back.hide()
+	$Options.hide()
+	$Audio.hide()
+	$Controles.hide()
 	tween_pop($Menu)
 
 func skill_tree():
@@ -33,6 +40,31 @@ func bestiario():
 	tween_pop($Bestiario)
 	$Gold.show()
 
+func options():
+	$Options.show()
+	$Back.show()
+	$Menu.hide()
+	tween_pop($Options)
+	$Gold.hide()
+
+func controles():
+	$Options.hide()
+	$Back.show()
+	$Menu.hide()
+	$Gold.hide()
+	$Audio.hide()
+	$Controles.show()
+	tween_pop($Controles)
+
+func audio():
+	$Options.hide()
+	$Back.show()
+	$Menu.hide()
+	$Gold.hide()
+	$Audio.show()
+	$Controles.hide()
+	tween_pop($Audio)
+
 func _on_back_pressed() -> void:
 	menu()
 
@@ -41,3 +73,15 @@ func tween_pop(panel):
 	panel.scale = Vector2(0.85,0.85)
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 	await tween.tween_property(panel, "scale", Vector2(1,1), 0.5)
+
+
+func _on_options_pressed() -> void:
+	options()
+
+
+func _on_audio_pressed() -> void:
+	audio()
+
+
+func _on_controles_pressed() -> void:
+	controles()

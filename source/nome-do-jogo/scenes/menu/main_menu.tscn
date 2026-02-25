@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bhlrq10gglc2b" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_p1nwe"]
 [ext_resource type="Script" uid="uid://cgahse8hib6mr" path="res://scripts/menu/upgrade_menu/skill_tree.gd" id="3_247la"]
 [ext_resource type="Texture2D" uid="uid://buocqtpgofywx" path="res://assets/images/menus/universo.png" id="4_vxdmp"]
-[ext_resource type="PackedScene" uid="uid://dp8xany6pk42b" path="res://scenes/menu/upgrade.tscn" id="5_xn6kt"]
+[ext_resource type="PackedScene" path="res://scenes/menu/upgrade.tscn" id="5_xn6kt"]
 [ext_resource type="Script" uid="uid://bitgoko3ltilu" path="res://scripts/menu/upgrade_menu/Skill.gd" id="6_qgo02"]
 [ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="7_vovv2"]
 [ext_resource type="Texture2D" uid="uid://bjfarej0jpfg7" path="res://assets/images/icons/placeholders/might_placeholder.png" id="8_1k4da"]
@@ -25,6 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://88m4416qgwb4" path="res://assets/images/icons/placeholders/slot_tile_placeholder.png" id="17_41tvm"]
 [ext_resource type="Theme" uid="uid://581opi40pux7" path="res://resources/styles/tema_main_menu.tres" id="17_vxdmp"]
 [ext_resource type="StyleBox" uid="uid://uq8ga61sg7tq" path="res://resources/styles/hflip_button_menu_hover_style.tres" id="19_vxdmp"]
+[ext_resource type="Texture2D" uid="uid://b813pu4qvhqpa" path="res://assets/images/menus/opçao_imagem.png" id="20_1bw8o"]
+[ext_resource type="Script" uid="uid://o64xa6aoci2l" path="res://scripts/menu/options/audio.gd" id="27_q78k2"]
+[ext_resource type="Script" uid="uid://wpho7e68ov03" path="res://scripts/menu/options/controles.gd" id="28_neoyv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4hu8"]
 
@@ -990,6 +993,7 @@ theme = SubResource("Theme_kiqgm")
 script = ExtResource("1_nl8w3")
 
 [node name="SkillTree" type="Panel" parent="." unique_id=1313913689]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1692,6 +1696,19 @@ text = "Sair
 alignment = 0
 script = ExtResource("14_prbor")
 
+[node name="Options" type="TextureButton" parent="Menu" unique_id=974287751]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -83.0
+offset_right = 86.0
+offset_bottom = -3.0
+grow_vertical = 0
+texture_normal = ExtResource("20_1bw8o")
+stretch_mode = 5
+
 [node name="Bestiario" type="Panel" parent="." unique_id=151279342]
 visible = false
 layout_mode = 1
@@ -1777,6 +1794,202 @@ theme = ExtResource("17_vxdmp")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Health: "
 
+[node name="Options" type="VBoxContainer" parent="." unique_id=467269206]
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -13.5
+offset_right = 31.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Options" unique_id=799561086]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Options" unique_id=211464979]
+layout_mode = 2
+
+[node name="Audio" type="Button" parent="Options/Control" unique_id=323283586]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 25)
+text = "Audio"
+
+[node name="Control2" type="Control" parent="Options" unique_id=283140723]
+layout_mode = 2
+
+[node name="Controles" type="Button" parent="Options/Control2" unique_id=1312507090]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_right = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Controles"
+
+[node name="Audio" type="VBoxContainer" parent="." unique_id=1062212600 node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
+visible = false
+custom_minimum_size = Vector2(195, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -72.0
+offset_right = 145.5
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("27_q78k2")
+master_slider = NodePath("HBoxContainer/HSlider")
+music_slider = NodePath("HBoxContainer3/HSlider")
+sfx_slider = NodePath("HBoxContainer2/HSlider")
+
+[node name="Label" type="Label" parent="Audio" unique_id=1978158223]
+layout_mode = 2
+text = "Audio"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Audio" unique_id=144512364]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 25
+
+[node name="Geral" type="Label" parent="Audio/HBoxContainer" unique_id=2037439642]
+layout_mode = 2
+text = "Geral"
+
+[node name="HSlider" type="HSlider" parent="Audio/HBoxContainer" unique_id=937867533]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Audio" unique_id=251430326]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 25
+
+[node name="SFX" type="Label" parent="Audio/HBoxContainer2" unique_id=787777511]
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="Audio/HBoxContainer2" unique_id=696747251]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Audio" unique_id=406080602]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 25
+
+[node name="Musica" type="Label" parent="Audio/HBoxContainer3" unique_id=1194028705]
+layout_mode = 2
+text = "Musica"
+
+[node name="HSlider" type="HSlider" parent="Audio/HBoxContainer3" unique_id=2082165678]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Controles" type="VBoxContainer" parent="." unique_id=852512987 node_paths=PackedStringArray("up_button", "down_button", "left_button", "right_button")]
+visible = false
+custom_minimum_size = Vector2(280, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -75.0
+offset_right = 140.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("28_neoyv")
+up_button = NodePath("HBoxContainer/Button")
+down_button = NodePath("HBoxContainer2/Button")
+left_button = NodePath("HBoxContainer3/Button")
+right_button = NodePath("HBoxContainer4/Button")
+
+[node name="Label" type="Label" parent="Controles" unique_id=985480295]
+layout_mode = 2
+text = "Controles"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controles" unique_id=1721650513]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="Cima" type="Label" parent="Controles/HBoxContainer" unique_id=697597864]
+layout_mode = 2
+text = "Cima"
+
+[node name="Button" type="Button" parent="Controles/HBoxContainer" unique_id=1766046990]
+layout_mode = 2
+text = "W"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Controles" unique_id=1948725814]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="Baixo" type="Label" parent="Controles/HBoxContainer2" unique_id=602448058]
+layout_mode = 2
+text = "Baixo"
+
+[node name="Button" type="Button" parent="Controles/HBoxContainer2" unique_id=1712227757]
+layout_mode = 2
+text = "S"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Controles" unique_id=1717173091]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="Esquerda" type="Label" parent="Controles/HBoxContainer3" unique_id=562306697]
+layout_mode = 2
+text = "Esquerda"
+
+[node name="Button" type="Button" parent="Controles/HBoxContainer3" unique_id=1324111626]
+layout_mode = 2
+text = "A"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Controles" unique_id=1990486356]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="Direita" type="Label" parent="Controles/HBoxContainer4" unique_id=1135954563]
+layout_mode = 2
+text = "Direita"
+
+[node name="Button" type="Button" parent="Controles/HBoxContainer4" unique_id=601010651]
+layout_mode = 2
+text = "D"
+
 [node name="Gold" type="Label" parent="." unique_id=872994653]
 layout_mode = 0
 offset_left = 672.0
@@ -1809,4 +2022,7 @@ alignment = 2
 [connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
 [connection signal="pressed" from="Menu/Bestiary" to="." method="_on_bestiary_pressed"]
 [connection signal="pressed" from="Menu/Sair" to="Menu/Sair" method="_on_pressed"]
+[connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Options/Control/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Options/Control2/Controles" to="." method="_on_controles_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

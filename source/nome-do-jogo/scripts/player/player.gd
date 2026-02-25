@@ -10,7 +10,7 @@ var health: float = 100:
 		health = max(value,0)
 		%Health.value = value
 		if health <= 0:
-			get_tree().paused = true
+			ManipuladorPause.pause_all()
 			
 var movement_speed: float = 150.0:
 	set(value):
@@ -57,10 +57,12 @@ var level : int = 1:
 		%Level.text = "Lv" + str(value)
 		%Options.show_option()
 		
-		if level >= 3:
-			%XP.max_value = 20
-		elif level >= 7:
-			%XP.max_value = 40
+		if level < 20:
+			%XP.max_value = (level * 10) - 5
+		elif level >= 20 and level < 40:
+			%XP.max_value = (level * 13) - 6
+		elif level >= 40:
+			%XP.max_value = (level * 16) - 8
 
 func _ready() -> void:
 	Persistence.gain_bonus_stats(self)
