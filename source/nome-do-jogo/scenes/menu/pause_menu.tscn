@@ -1,11 +1,209 @@
 [gd_scene format=3 uid="uid://b762ncs3lnobj"]
 
 [ext_resource type="Script" uid="uid://dhtek0cgax0yr" path="res://scripts/menu/pause/pause_menu.gd" id="1_n54lc"]
+[ext_resource type="Script" uid="uid://o64xa6aoci2l" path="res://scripts/menu/options/audio.gd" id="2_xtxec"]
+[ext_resource type="Script" uid="uid://wpho7e68ov03" path="res://scripts/menu/options/controles.gd" id="3_msl3b"]
+
+[sub_resource type="Theme" id="Theme_msl3b"]
 
 [node name="pause_menu" type="CanvasLayer" unique_id=134273844]
 script = ExtResource("1_n54lc")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1939168147]
+[node name="Options" type="VBoxContainer" parent="." unique_id=1863178090]
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -100.0
+offset_right = 114.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="Options" unique_id=138767019]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Options" unique_id=1755111096]
+layout_mode = 2
+
+[node name="Audio" type="Button" parent="Options/Control" unique_id=1649117023]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 25)
+text = "Audio"
+
+[node name="Control2" type="Control" parent="Options" unique_id=1613182368]
+layout_mode = 2
+
+[node name="Controles" type="Button" parent="Options/Control2" unique_id=2136149421]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Controles"
+
+[node name="Audio" type="VBoxContainer" parent="." unique_id=924748634 node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
+visible = false
+custom_minimum_size = Vector2(195, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -72.0
+offset_right = 145.5
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_xtxec")
+master_slider = NodePath("HBoxContainer/HSlider")
+music_slider = NodePath("HBoxContainer3/HSlider")
+sfx_slider = NodePath("HBoxContainer2/HSlider")
+
+[node name="Label" type="Label" parent="Audio" unique_id=958488639]
+layout_mode = 2
+text = "Audio"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Audio" unique_id=2120453671]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 25
+
+[node name="Geral" type="Label" parent="Audio/HBoxContainer" unique_id=814495201]
+layout_mode = 2
+text = "Geral"
+
+[node name="HSlider" type="HSlider" parent="Audio/HBoxContainer" unique_id=1317410449]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Audio" unique_id=1679174446]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 25
+
+[node name="SFX" type="Label" parent="Audio/HBoxContainer2" unique_id=295818735]
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="Audio/HBoxContainer2" unique_id=1197966042]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Audio" unique_id=2010948864]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 25
+
+[node name="Musica" type="Label" parent="Audio/HBoxContainer3" unique_id=1597301247]
+layout_mode = 2
+text = "Musica"
+
+[node name="HSlider" type="HSlider" parent="Audio/HBoxContainer3" unique_id=325189714]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Controles" type="VBoxContainer" parent="." unique_id=1147207251 node_paths=PackedStringArray("up_button", "down_button", "left_button", "right_button")]
+visible = false
+custom_minimum_size = Vector2(280, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -81.5
+offset_right = 140.0
+offset_bottom = 81.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_msl3b")
+up_button = NodePath("HBoxContainer/Button")
+down_button = NodePath("HBoxContainer2/Button")
+left_button = NodePath("HBoxContainer3/Button")
+right_button = NodePath("HBoxContainer4/Button")
+
+[node name="Label" type="Label" parent="Controles" unique_id=820525339]
+layout_mode = 2
+text = "Controles"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controles" unique_id=1529352895]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="Cima" type="Label" parent="Controles/HBoxContainer" unique_id=1654765961]
+layout_mode = 2
+text = "Cima"
+
+[node name="Button" type="Button" parent="Controles/HBoxContainer" unique_id=1486980866]
+layout_mode = 2
+text = "W"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Controles" unique_id=441064980]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="Baixo" type="Label" parent="Controles/HBoxContainer2" unique_id=488216992]
+layout_mode = 2
+text = "Baixo"
+
+[node name="Button" type="Button" parent="Controles/HBoxContainer2" unique_id=1745982403]
+layout_mode = 2
+text = "S"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Controles" unique_id=1766623048]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="Esquerda" type="Label" parent="Controles/HBoxContainer3" unique_id=700824881]
+layout_mode = 2
+text = "Esquerda"
+
+[node name="Button" type="Button" parent="Controles/HBoxContainer3" unique_id=1846720135]
+layout_mode = 2
+text = "A"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Controles" unique_id=549131173]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="Direita" type="Label" parent="Controles/HBoxContainer4" unique_id=1549017858]
+layout_mode = 2
+text = "Direita"
+
+[node name="Button" type="Button" parent="Controles/HBoxContainer4" unique_id=507367083]
+layout_mode = 2
+text = "D"
+
+[node name="Filtro" type="ColorRect" parent="." unique_id=1939168147]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,7 +211,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.2)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1173996938]
+[node name="Menu" type="VBoxContainer" parent="." unique_id=1173996938]
+visible = false
 custom_minimum_size = Vector2(200, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,17 +228,41 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="resume" type="Button" parent="VBoxContainer" unique_id=1104534373]
+[node name="resume" type="Button" parent="Menu" unique_id=1104534373]
 layout_mode = 2
 size_flags_vertical = 6
 text = "Voltar ao JOGO
 "
 
-[node name="back_main_menu" type="Button" parent="VBoxContainer" unique_id=1633818157]
+[node name="options" type="Button" parent="Menu" unique_id=1878477315]
+layout_mode = 2
+text = "Options
+"
+
+[node name="back_main_menu" type="Button" parent="Menu" unique_id=1633818157]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Voltar ao MENU
 "
 
-[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="VBoxContainer/back_main_menu" to="." method="_on_back_main_menu_pressed"]
+[node name="Back" type="Button" parent="." unique_id=822894466]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = 86.0
+offset_right = 79.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_msl3b")
+text = "Back"
+
+[connection signal="pressed" from="Options/Control/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Options/Control2/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="Menu/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu/back_main_menu" to="." method="_on_back_main_menu_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
