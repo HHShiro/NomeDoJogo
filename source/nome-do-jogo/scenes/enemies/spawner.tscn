@@ -21,15 +21,15 @@ wait_time = 5.0
 autostart = true
 
 [node name="pattern" type="Timer" parent="." unique_id=587495378]
-wait_time = 20.0
+wait_time = 60.0
 autostart = true
 
 [node name="elite" type="Timer" parent="." unique_id=299055601]
-wait_time = 30.0
+wait_time = 60.0
 autostart = true
 
 [node name="Destructible" type="Timer" parent="." unique_id=1602776294]
-wait_time = 9.0
+wait_time = 30.0
 autostart = true
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

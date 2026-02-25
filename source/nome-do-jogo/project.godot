@@ -20,14 +20,14 @@ window/size/mode=2
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://dxp5adn3tredl"
 
 [autoload]
 
 SoundManager="*uid://dl0hlun7ly432"
-SaveData="*uid://sbuyevl75q8y"
-Persistence="*uid://srpatos4ibig"
 ManipuladorPause="*uid://ryr3f8socs8o"
+SaveData="*uid://b276t5yaupvb0"
+Persistence="*uid://b7ag3nfoxd3xx"
 
 [display]
 

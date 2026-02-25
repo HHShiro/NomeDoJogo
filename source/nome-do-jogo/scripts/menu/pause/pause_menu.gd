@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var player = get_tree().get_first_node_in_group("player")
 
 func menu_pause():
 	$Options.hide()
@@ -98,7 +99,9 @@ func _on_resume_pressed() -> void:
 
 
 func _on_back_main_menu_pressed() -> void:
-	get_tree().paused = false
+	ManipuladorPause.pause_all()
+	SaveData.gold += player.gold
+	SaveData.set_and_save()
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
 

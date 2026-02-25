@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 
 func spawn(pos : Vector2, elite : bool = false):
 	var enemy_instance = enemy.instantiate()
-	enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)]
+	enemy_instance.type = enemy_types[min(floori(minute/2), enemy_types.size()-1)]
 	enemy_instance.position = pos
 	enemy_instance.player = player
 	enemy_instance.elite = elite
