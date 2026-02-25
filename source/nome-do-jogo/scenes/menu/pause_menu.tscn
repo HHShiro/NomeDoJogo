@@ -10,6 +10,7 @@
 script = ExtResource("1_n54lc")
 
 [node name="Options" type="VBoxContainer" parent="." unique_id=1863178090]
+visible = false
 custom_minimum_size = Vector2(200, 200)
 anchors_preset = 8
 anchor_left = 0.5
@@ -126,16 +127,15 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
 [node name="Controles" type="VBoxContainer" parent="." unique_id=1147207251 node_paths=PackedStringArray("up_button", "down_button", "left_button", "right_button")]
-visible = false
-custom_minimum_size = Vector2(280, 150)
+custom_minimum_size = Vector2(150, 150)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.0
+offset_left = -75.0
 offset_top = -81.5
-offset_right = 140.0
+offset_right = 75.0
 offset_bottom = 81.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -152,7 +152,6 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Controles" unique_id=1529352895]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
 [node name="Cima" type="Label" parent="Controles/HBoxContainer" unique_id=1654765961]
@@ -160,12 +159,13 @@ layout_mode = 2
 text = "Cima"
 
 [node name="Button" type="Button" parent="Controles/HBoxContainer" unique_id=1486980866]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+size_flags_horizontal = 10
 text = "W"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Controles" unique_id=441064980]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
 [node name="Baixo" type="Label" parent="Controles/HBoxContainer2" unique_id=488216992]
@@ -173,12 +173,13 @@ layout_mode = 2
 text = "Baixo"
 
 [node name="Button" type="Button" parent="Controles/HBoxContainer2" unique_id=1745982403]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+size_flags_horizontal = 10
 text = "S"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Controles" unique_id=1766623048]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
 [node name="Esquerda" type="Label" parent="Controles/HBoxContainer3" unique_id=700824881]
@@ -186,12 +187,13 @@ layout_mode = 2
 text = "Esquerda"
 
 [node name="Button" type="Button" parent="Controles/HBoxContainer3" unique_id=1846720135]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+size_flags_horizontal = 10
 text = "A"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Controles" unique_id=549131173]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
 [node name="Direita" type="Label" parent="Controles/HBoxContainer4" unique_id=1549017858]
@@ -199,7 +201,9 @@ layout_mode = 2
 text = "Direita"
 
 [node name="Button" type="Button" parent="Controles/HBoxContainer4" unique_id=507367083]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+size_flags_horizontal = 10
 text = "D"
 
 [node name="Filtro" type="ColorRect" parent="." unique_id=1939168147]
