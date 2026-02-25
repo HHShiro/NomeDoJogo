@@ -7,13 +7,14 @@
 [ext_resource type="Resource" uid="uid://02fle4oe03g" path="res://resources/pickups/gold.tres" id="4_jgv8r"]
 [ext_resource type="Resource" uid="uid://cb8d36itvjqcp" path="res://resources/pickups/death.tres" id="5_1re5q"]
 [ext_resource type="Resource" uid="uid://cm4ooqbju7s1b" path="res://resources/pickups/vaccum.tres" id="5_lbmpt"]
+[ext_resource type="Resource" uid="uid://b4daa5te4q8o5" path="res://resources/pickups/gold_bag.tres" id="8_rtl11"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nqr4"]
 
 [node name="Destrucible" type="Sprite2D" unique_id=901802857]
 texture = ExtResource("1_mni6e")
 script = ExtResource("2_0ogec")
-drops = Array[ExtResource("3_jgv8r")]([ExtResource("4_jgv8r"), ExtResource("5_lbmpt"), ExtResource("4_1re5q"), ExtResource("5_1re5q")])
+drops = Array[ExtResource("3_jgv8r")]([ExtResource("4_jgv8r"), ExtResource("5_lbmpt"), ExtResource("4_1re5q"), ExtResource("5_1re5q"), ExtResource("8_rtl11")])
 
 [node name="Area2D" type="Area2D" parent="." unique_id=15452346]
 collision_layer = 4
