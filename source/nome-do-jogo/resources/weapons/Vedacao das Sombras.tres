@@ -9,8 +9,8 @@
 [resource]
 script = ExtResource("3_n843o")
 amount = 10
-damage = 5.0
-cooldown = 1.0
+damage = 6.0
+cooldown = 1.2
 sound = ExtResource("4_yc4v7")
 title = "Vedacao das Sombras"
 icon = ExtResource("4_0too3")

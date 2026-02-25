@@ -35,7 +35,8 @@ func _physics_process(delta: float) -> void:
 func spawn(pos : Vector2, elite : bool = false):
 	if can_spawn and !boss_spawned:
 		var enemy_instance = enemy.instantiate()
-		enemy_instance.type = enemy_types[min(floori(minute/2), enemy_types.size()-1)]
+		enemy_instance.type = enemy_types[min(floori(minute/3), enemy_types.size()-1)]
+		print(enemy_instance.type)
 		enemy_instance.position = pos
 		enemy_instance.player = player
 		enemy_instance.elite = elite

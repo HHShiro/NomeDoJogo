@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://diyed4xx0jipp"]
+
+[ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickups/pickup_resource.gd" id="1_une7l"]
+[ext_resource type="Resource" uid="uid://dgqhnqu3trnhu" path="res://resources/Xp/selo_xp.tres" id="2_hcfv5"]
+[ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="3_tlxq5"]
+[ext_resource type="Texture2D" uid="uid://cvs0oh2ygmd8w" path="res://assets/images/icons/placeholders/chihuahua_placeholder.png" id="4_8ummv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_860l5"]
+radius = 8.0
+
+[resource]
+script = ExtResource("3_tlxq5")
+title = "Chihuahua"
+texture = ExtResource("4_8ummv")
+health = 25.0
+damage = 2.0
+drops = Array[ExtResource("1_une7l")]([ExtResource("2_hcfv5")])
+collision_shape = SubResource("CircleShape2D_860l5")

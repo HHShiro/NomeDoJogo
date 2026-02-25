@@ -20,7 +20,7 @@ var max_health: float = 100:
 	set(value):
 		max_health = value
 		%Health.value = value
-var recovery: float = 0
+var recovery: float = 0.2
 var armor: float = 0
 var might: float = 1.0:
 	set(value):

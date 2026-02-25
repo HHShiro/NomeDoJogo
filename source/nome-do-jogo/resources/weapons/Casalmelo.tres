@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("2_2jc6r")
 amount = 10
-damage = 10.0
+damage = 15.0
 cooldown = 2.0
 speed = 200.0
 projectile_node = ExtResource("2_8fqnb")

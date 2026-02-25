@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://2f8i7krgv6lo"]
+
+[ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickups/pickup_resource.gd" id="1_w77tu"]
+[ext_resource type="Resource" uid="uid://4pc4pbgceuiq" path="res://resources/Xp/selo_xp2.tres" id="2_stnp7"]
+[ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="3_f58dv"]
+[ext_resource type="Texture2D" uid="uid://c28k8ejfwucu5" path="res://assets/images/icons/placeholders/karen_placeholder.png" id="4_at6cv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oi448"]
+radius = 6.0
+height = 26.0
+
+[resource]
+script = ExtResource("3_f58dv")
+title = "Karen"
+texture = ExtResource("4_at6cv")
+health = 50.0
+damage = 6.0
+drops = Array[ExtResource("1_w77tu")]([ExtResource("2_stnp7")])
+collision_shape = SubResource("CapsuleShape2D_oi448")

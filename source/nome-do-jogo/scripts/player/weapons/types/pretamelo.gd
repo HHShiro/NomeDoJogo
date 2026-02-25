@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name PretomeloCompanion
+class_name PretameloCompanion
 
 enum State { IDLE, ATACANDO, RETORNANDO, COOLDOWN }
 
