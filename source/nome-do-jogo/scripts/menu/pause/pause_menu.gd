@@ -39,6 +39,44 @@ func tween_pop(panel):
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 	await tween.tween_property(panel, "scale", Vector2(1,1), 0.5)
 
+func menu_pause():
+	$Options.hide()
+	$Back.hide()
+	$Filtro.show()
+	$Menu.show()
+	$Audio.hide()
+	$Controles.hide()
+
+
+func options():
+	$Back.show()
+	$Filtro.hide()
+	$Menu.hide()
+	$Options.show()
+	tween_pop($Options)
+
+func controles():
+	$Filtro.hide()
+	$Menu.hide()
+	$Options.hide()
+	$Audio.hide()
+	$Controles.show()
+	tween_pop($Controles)
+
+func audio():
+	$Filtro.hide()
+	$Menu.hide()
+	$Options.hide()
+	$Audio.show()
+	$Controles.hide()
+	tween_pop($Audio)
+
+func tween_pop(panel):
+	SoundManager.play_sfx(load("res://assets/sounds/sfx/button_menu_sound.wav"))
+	panel.scale = Vector2(0.85,0.85)
+	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+	await tween.tween_property(panel, "scale", Vector2(1,1), 0.5)
+
 func _ready():
 	visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
