@@ -35,9 +35,14 @@ func take_damage(amount = 1):
 func drop_item():
 	var item
 	var weights = []
+	var menor_weight = INF
 	
 	for pickup in drops:
-		if pickup is Gold:
+		if(pickup.weight < menor_weight):
+			menor_weight = pickup.weight
+	
+	for pickup in drops:
+		if pickup.weight == menor_weight:
 			weights.append(pickup.weight)
 		else:
 			weights.append(pickup.weight * player_reference.luck)

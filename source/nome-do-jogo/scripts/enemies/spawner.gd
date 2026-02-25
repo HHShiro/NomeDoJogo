@@ -4,6 +4,9 @@ extends Node2D
 @export var enemy : PackedScene
 @export var destructible : PackedScene
 
+@export var limite_y_min: float = 284
+@export var limite_y_max: float = 860
+
 var distance : float = 400
 
 @export var enemy_types : Array[Enemy]
@@ -29,7 +32,10 @@ func spawn(pos : Vector2, elite : bool = false):
 	get_tree().current_scene.add_child(enemy_instance)
 
 func get_random_position() -> Vector2:
-	return player.position + distance * Vector2.RIGHT.rotated(randf_range(0, 2 * PI))
+	
+	var random_position = player.position + distance * Vector2.RIGHT.rotated(randf_range(0, 2 * PI))
+	random_position.y = clamp(random_position.y,limite_y_min,limite_y_max)
+	return random_position
 
 func amount(number : int = 1):
 	for i in range(number):
