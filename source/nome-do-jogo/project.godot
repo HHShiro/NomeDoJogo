@@ -20,7 +20,7 @@ window/size/mode=2
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="uid://dxp5adn3tredl"
 
 [autoload]
 

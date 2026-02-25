@@ -1,6 +1,10 @@
 extends Control
 
+
+
 func _ready() -> void:
+	if SoundManager.music_player:
+		SoundManager.music_player.queue_free()
 	menu()
 
 func _on_upgrades_pressed() -> void:
@@ -18,6 +22,8 @@ func menu():
 	$Gold.hide()
 	$Back.hide()
 	$Options.hide()
+	$Audio.hide()
+	$Controles.hide()
 	tween_pop($Menu)
 
 func skill_tree():
@@ -41,6 +47,24 @@ func options():
 	tween_pop($Options)
 	$Gold.hide()
 
+func controles():
+	$Options.hide()
+	$Back.show()
+	$Menu.hide()
+	$Gold.hide()
+	$Audio.hide()
+	$Controles.show()
+	tween_pop($Controles)
+
+func audio():
+	$Options.hide()
+	$Back.show()
+	$Menu.hide()
+	$Gold.hide()
+	$Audio.show()
+	$Controles.hide()
+	tween_pop($Audio)
+
 func _on_back_pressed() -> void:
 	menu()
 
@@ -53,3 +77,11 @@ func tween_pop(panel):
 
 func _on_options_pressed() -> void:
 	options()
+
+
+func _on_audio_pressed() -> void:
+	audio()
+
+
+func _on_controles_pressed() -> void:
+	controles()

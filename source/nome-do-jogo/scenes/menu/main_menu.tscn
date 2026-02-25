@@ -27,6 +27,7 @@
 [ext_resource type="StyleBox" uid="uid://uq8ga61sg7tq" path="res://resources/styles/hflip_button_menu_hover_style.tres" id="19_vxdmp"]
 [ext_resource type="Texture2D" uid="uid://b813pu4qvhqpa" path="res://assets/images/menus/opçao_imagem.png" id="20_1bw8o"]
 [ext_resource type="Script" uid="uid://o64xa6aoci2l" path="res://scripts/menu/options/audio.gd" id="27_q78k2"]
+[ext_resource type="Script" uid="uid://wpho7e68ov03" path="res://scripts/menu/options/controles.gd" id="28_neoyv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4hu8"]
 
@@ -1794,6 +1795,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Health: "
 
 [node name="Options" type="VBoxContainer" parent="." unique_id=467269206]
+visible = false
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -1846,35 +1848,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Controles"
 
-[node name="Gold" type="Label" parent="." unique_id=872994653]
-layout_mode = 0
-offset_left = 672.0
-offset_top = 40.0
-offset_right = 978.0
-offset_bottom = 79.0
-theme = ExtResource("17_vxdmp")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-horizontal_alignment = 2
-vertical_alignment = 1
-script = ExtResource("9_vovv2")
-
-[node name="Back" type="Button" parent="." unique_id=1153526559]
-layout_mode = 0
-offset_left = 768.0
-offset_top = 480.0
-offset_right = 980.0
-offset_bottom = 533.0
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 32
-theme_override_styles/pressed = SubResource("StyleBoxFlat_41tvm")
-theme_override_styles/hover = ExtResource("19_vxdmp")
-text = "Back"
-alignment = 2
-
 [node name="Audio" type="VBoxContainer" parent="." unique_id=1062212600 node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
+visible = false
 custom_minimum_size = Vector2(195, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -1882,9 +1857,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -92.0
+offset_left = -134.5
 offset_top = -72.0
-offset_right = 103.0
+offset_right = 145.5
 offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1937,7 +1912,7 @@ text = "Musica"
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Controles" type="VBoxContainer" parent="." unique_id=852512987]
+[node name="Controles" type="VBoxContainer" parent="." unique_id=852512987 node_paths=PackedStringArray("up_button", "down_button", "left_button", "right_button")]
 visible = false
 custom_minimum_size = Vector2(280, 150)
 layout_mode = 1
@@ -1952,6 +1927,11 @@ offset_right = 140.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("28_neoyv")
+up_button = NodePath("HBoxContainer/Button")
+down_button = NodePath("HBoxContainer2/Button")
+left_button = NodePath("HBoxContainer3/Button")
+right_button = NodePath("HBoxContainer4/Button")
 
 [node name="Label" type="Label" parent="Controles" unique_id=985480295]
 layout_mode = 2
@@ -1963,7 +1943,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
-[node name="Label" type="Label" parent="Controles/HBoxContainer" unique_id=697597864]
+[node name="Cima" type="Label" parent="Controles/HBoxContainer" unique_id=697597864]
 layout_mode = 2
 text = "Cima"
 
@@ -1976,7 +1956,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
-[node name="Label" type="Label" parent="Controles/HBoxContainer2" unique_id=602448058]
+[node name="Baixo" type="Label" parent="Controles/HBoxContainer2" unique_id=602448058]
 layout_mode = 2
 text = "Baixo"
 
@@ -1989,7 +1969,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
-[node name="Label" type="Label" parent="Controles/HBoxContainer3" unique_id=562306697]
+[node name="Esquerda" type="Label" parent="Controles/HBoxContainer3" unique_id=562306697]
 layout_mode = 2
 text = "Esquerda"
 
@@ -2002,7 +1982,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 25
 
-[node name="Label" type="Label" parent="Controles/HBoxContainer4" unique_id=1135954563]
+[node name="Direita" type="Label" parent="Controles/HBoxContainer4" unique_id=1135954563]
 layout_mode = 2
 text = "Direita"
 
@@ -2010,9 +1990,39 @@ text = "Direita"
 layout_mode = 2
 text = "D"
 
+[node name="Gold" type="Label" parent="." unique_id=872994653]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 40.0
+offset_right = 978.0
+offset_bottom = 79.0
+theme = ExtResource("17_vxdmp")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("9_vovv2")
+
+[node name="Back" type="Button" parent="." unique_id=1153526559]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 480.0
+offset_right = 980.0
+offset_bottom = 533.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
+theme_override_styles/pressed = SubResource("StyleBoxFlat_41tvm")
+theme_override_styles/hover = ExtResource("19_vxdmp")
+text = "Back"
+alignment = 2
+
 [connection signal="pressed" from="Menu/Start" to="Menu/Start" method="_on_pressed"]
 [connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
 [connection signal="pressed" from="Menu/Bestiary" to="." method="_on_bestiary_pressed"]
 [connection signal="pressed" from="Menu/Sair" to="Menu/Sair" method="_on_pressed"]
 [connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Options/Control/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Options/Control2/Controles" to="." method="_on_controles_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
