@@ -1,7 +1,7 @@
 extends Weapon
 class_name FollowAttack
 
-var active_companion: CarameloCompanion
+var active_companion: CharacterBody2D
 
 @export var amount = 1
 

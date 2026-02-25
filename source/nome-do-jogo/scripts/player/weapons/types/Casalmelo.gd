@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name CarameloCompanion
+class_name CasalmeloCompanion
 
 enum State { IDLE, ATACANDO, RETORNANDO, COOLDOWN }
 
@@ -49,9 +49,12 @@ func handle_idle(delta):
 	
 	if attacks_left > 0:
 		var enemy = find_nearest_enemy()
-		if enemy:
-			current_target = enemy
-			current_state = State.ATACANDO
+		if enemy != null:
+			if enemy.is_in_group("Enemy"):
+				current_target = enemy
+			else:
+				current_target = enemy.get_parent()
+		current_state = State.ATACANDO
 
 func handle_attack(delta):
 	if not is_instance_valid(current_target):
@@ -62,11 +65,11 @@ func handle_attack(delta):
 	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		print("Colidi")
 		var collider = collision.get_collider()
 		if collider.is_in_group("Enemy"):
-			print("É inimigo")
 			bite(collider)
+		if collider.is_in_group("Destructible"):
+			bite(collider.get_parent(),true)
 
 func handle_return(delta):
 	if not is_instance_valid(player_reference): return
@@ -97,22 +100,17 @@ func handle_cooldown(delta):
 		# Incluir som de latido aqui
 
 
-func bite(enemy):
-	print("Mordi carai")
+func bite(enemy,destructible: bool = false):
 	var direction = (enemy.global_position - global_position).normalized()
-	
 	if enemy.has_method("take_damage"):
-		print("Inimigo tem take damage")
 		if "might" in player_reference:
-			print("Player tem Might")
 			enemy.take_damage(damage * player_reference.might)
-			print("Dei dano: ",damage * player_reference.might)
 		else:
-			print("Player não tem Might")
 			enemy.take_damage(damage)
-			print("Dei dano: ",damage)
 		
-		enemy.knockback += direction * 75
+		if(!destructible):	
+			enemy.knockback += direction * 75
+
 	
 	# Tocar som de cachorro bravo aqui!
 	
@@ -132,6 +130,7 @@ func bite(enemy):
 
 func find_nearest_enemy():
 	var enemies = get_tree().get_nodes_in_group("Enemy")
+	enemies.append_array(get_tree().get_nodes_in_group("Destructible"))
 	if enemies.is_empty():
 		return null
 	
@@ -139,7 +138,11 @@ func find_nearest_enemy():
 	var min_dist = INF
 	
 	for enemy in enemies:
-		var dist = global_position.distance_to(enemy.global_position)
+		var dist
+		if enemy.is_in_group("Enemy"):
+			dist = global_position.distance_to(enemy.global_position)
+		else:
+			dist = global_position.distance_to(enemy.get_parent().global_position)
 		if dist < min_dist and dist < 500:
 			min_dist = dist
 			nearest = enemy

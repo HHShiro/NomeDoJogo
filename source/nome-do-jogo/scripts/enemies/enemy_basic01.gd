@@ -54,7 +54,10 @@ func knockback_update(delta):
 	velocity += knockback
 	
 	var collider = move_and_collide(velocity * delta)
+	var collider_node
 	if collider:
+		collider_node = collider.get_collider()
+	if collider and !collider_node.is_in_group("Destructible"):
 		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 50
 
 

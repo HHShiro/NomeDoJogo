@@ -13,9 +13,11 @@ func activate(source, _target, scene_tree):
 
 func shoot(source: CharacterBody2D, scene_tree: SceneTree):
 	var enemies = source.get_tree().get_nodes_in_group("Enemy")
+	enemies.append_array(source.get_tree().get_nodes_in_group("Destructible"))
 	
 	if enemies.size() == 0:
 		return
+	
 	
 	SoundManager.play_sfx(sound)
 	for i in range(amount):
@@ -25,8 +27,10 @@ func shoot(source: CharacterBody2D, scene_tree: SceneTree):
 		projectile.speed = 0
 		projectile.damage = damage
 		projectile.source = source
-		projectile.position = enemy.position
-		
+		if enemy.is_in_group("Enemy"):
+			projectile.position = enemy.position
+		else:
+			projectile.position = enemy.get_parent().position
 		projectile.find_child("Sprite2D").texture = texture
 		projectiles.append(projectile)
 		

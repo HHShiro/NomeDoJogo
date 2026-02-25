@@ -4,7 +4,7 @@ extends Node2D
 @export var enemy : PackedScene
 @export var destructible : PackedScene
 
-@export var limite_y_min: float = 284
+@export var limite_y_min: float = 294
 @export var limite_y_max: float = 860
 
 var distance : float = 400
@@ -15,6 +15,16 @@ var minute : int = 0
 var second : int = 0
 
 var can_spawn : bool = true
+var boss_spawned: bool = false
+
+@export var boss_scene: PackedScene
+@onready var primeira_fase: Node2D = $".."
+
+func _input(event):
+	# Se apertar a tecla "K" (de Kill/Boss), o boss vem na hora
+	if event is InputEventKey and event.pressed and event.keycode == KEY_K:
+		print("DEBUG: Forçando Boss Fight!")
+		iniciar_boss_fight()
 
 func _physics_process(delta: float) -> void:
 	if get_tree().get_node_count_in_group("Enemy") < 500:
@@ -23,13 +33,14 @@ func _physics_process(delta: float) -> void:
 		can_spawn = false
 
 func spawn(pos : Vector2, elite : bool = false):
-	var enemy_instance = enemy.instantiate()
-	enemy_instance.type = enemy_types[min(floori(minute/2), enemy_types.size()-1)]
-	enemy_instance.position = pos
-	enemy_instance.player = player
-	enemy_instance.elite = elite
-	
-	get_tree().current_scene.add_child(enemy_instance)
+	if can_spawn and !boss_spawned:
+		var enemy_instance = enemy.instantiate()
+		enemy_instance.type = enemy_types[min(floori(minute/2), enemy_types.size()-1)]
+		enemy_instance.position = pos
+		enemy_instance.player = player
+		enemy_instance.elite = elite
+		
+		get_tree().current_scene.add_child(enemy_instance)
 
 func get_random_position() -> Vector2:
 	
@@ -47,7 +58,18 @@ func _on_timer_timeout():
 	if second >= 60:
 		second = 0
 		minute += 1
-	amount(int(floor((second / 10) + 1)))
+	
+	#Boss aos 15 min
+	if minute >= 15 and !boss_spawned:
+		iniciar_boss_fight()
+	else:
+		amount(int(floor((second / 10) + 1)))
+
+func iniciar_boss_fight():
+	boss_spawned = true
+	if primeira_fase:
+		primeira_fase.spawn_boss_arena()
+	
 
 
 func _on_pattern_timeout():
