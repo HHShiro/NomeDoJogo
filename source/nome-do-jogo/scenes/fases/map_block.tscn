@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ba3qi244dmu44"]
 
-[ext_resource type="Texture2D" uid="uid://dd7skokkdyrj" path="res://assets/images/icons/placeholders/background_placeholder.png" id="1_aeyxv"]
+[ext_resource type="Texture2D" uid="uid://ccobv43d4o1p8" path="res://assets/images/background/Background_RJ.png" id="1_lra13"]
 [ext_resource type="Texture2D" uid="uid://s0pwsea3jlme" path="res://assets/images/background/predios128.png" id="2_lra13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lra13"]
@@ -11,7 +11,7 @@ y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1985978706]
 z_index = -10
-texture = ExtResource("1_aeyxv")
+texture = ExtResource("1_lra13")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=661567683]
 y_sort_enabled = true
