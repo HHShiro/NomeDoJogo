@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://460vsvdb271u"]
+
+[ext_resource type="Script" uid="uid://w1wko0857x67" path="res://scripts/others/dir_utils.gd" id="1_0osbi"]
+
+[node name="DirUtils" type="Node2D" unique_id=1882171858]
+script = ExtResource("1_0osbi")

@@ -79,16 +79,13 @@ func show_option():
 	ManipuladorPause.open_menu(self)
 
 func dir_contents(path):
-	var dir = DirAccess.open(path)
+	var dir = DirUtils.scan_folder(path)
 	var item_resources = []
 	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
+		for file_name in dir:
 			print("Achei o Arquivo: " + file_name)
 			var item_resource: Item = load(path + file_name)
 			item_resources.append(item_resource)
-			file_name = dir.get_next()
 	else:
 		print("Ocorreu um erro ao tentar acessar o caminho.")
 		return null

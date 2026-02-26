@@ -8,13 +8,10 @@ func _ready():
 	dir_contents()
 
 func dir_contents():
-	var dir = DirAccess.open(path)
+	var dir = DirUtils.scan_folder(path)
 	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
+		for file_name in dir:
 			print("Achei o arquivo: " + file_name)
-			
 			var enemy_resource: Enemy = load(path + file_name)
 			enemies.append(enemy_resource)
 			
@@ -25,8 +22,6 @@ func dir_contents():
 			button.set("theme_override_colors/font_color",black)
 			add_child(button)
 			_on_pressed(button)
-			
-			file_name = dir.get_next()
 	else:
 		print("Ocorreu um erro ao tentar acessar o caminho.")
 	print(enemies)
