@@ -40,6 +40,15 @@ var type : Enemy:
 func _physics_process(delta):
 	check_separation(delta)
 	knockback_update(delta)
+	if velocity.x != 0 or velocity.y != 0:
+		if velocity.x != 0:
+			$Sprite2D.flip_h = velocity.x < 0
+		var velocidade_balanco = 15.0
+		var angulo_maximo = 5.0
+		var tempo = Time.get_ticks_msec() / 1000.0 
+		$Sprite2D.rotation_degrees = sin(tempo * velocidade_balanco) * angulo_maximo
+	else:
+		$Sprite2D.rotation_degrees = 0.0
 	
 func check_separation(_delta):
 	var separation = (player.position - position).length()
