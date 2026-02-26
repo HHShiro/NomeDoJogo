@@ -27,6 +27,7 @@
 [ext_resource type="StyleBox" uid="uid://uq8ga61sg7tq" path="res://resources/styles/hflip_button_menu_hover_style.tres" id="19_vxdmp"]
 [ext_resource type="Texture2D" uid="uid://b813pu4qvhqpa" path="res://assets/images/menus/opçao_imagem.png" id="20_1bw8o"]
 [ext_resource type="Script" uid="uid://o64xa6aoci2l" path="res://scripts/menu/options/audio.gd" id="27_q78k2"]
+[ext_resource type="Theme" uid="uid://c0ti1gsmlye2r" path="res://resources/styles/tema_jogo.tres" id="27_wof4p"]
 [ext_resource type="Script" uid="uid://wpho7e68ov03" path="res://scripts/menu/options/controles.gd" id="28_neoyv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4hu8"]
@@ -1996,7 +1997,7 @@ offset_left = 672.0
 offset_top = 40.0
 offset_right = 978.0
 offset_bottom = 79.0
-theme = ExtResource("17_vxdmp")
+theme = ExtResource("27_wof4p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 horizontal_alignment = 2

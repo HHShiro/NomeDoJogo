@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var boss_scene: PackedScene
-
+@onready var player = get_tree().get_first_node_in_group("player")
 @onready var colisao_barreira = $Sprite2D/Barreira/ColisaoBarreira
 @onready var spawnpoint = $Sprite2D/Spawnpoint
 @onready var indicator_scene = preload("res://scenes/player/boss_indicator.tscn")
@@ -48,4 +48,6 @@ func fechar_arena(player):
 		
 func _on_boss_defeated():
 	print("Boss derrotado!")
+	SaveData.gold += player.gold
+	SaveData.set_and_save()
 	get_tree().change_scene_to_file("res://scenes/fases/end_scene_test.tscn") # <- Adicionar cena de vitoria e fim de jogo!

@@ -13,7 +13,7 @@ var can_follow : bool = false
 
 func _ready():
 	$Sprite2D.texture = type.icon
-
+			
 func _physics_process(delta):
 	if player_reference and can_follow:
 		direction = (player_reference.position - position).normalized()

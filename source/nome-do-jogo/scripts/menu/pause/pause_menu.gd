@@ -3,36 +3,36 @@ extends CanvasLayer
 @onready var player = get_tree().get_first_node_in_group("player")
 
 func menu_pause():
-	$Options.hide()
+	$Panel/Options.hide()
 	$Back.hide()
 	$Filtro.show()
 	$Menu.show()
-	$Audio.hide()
-	$Controles.hide()
+	$Panel/Audio.hide()
+	$Panel/Controles.hide()
 
 
 func options():
 	$Back.show()
 	$Filtro.hide()
 	$Menu.hide()
-	$Options.show()
-	tween_pop($Options)
+	$Panel/Options.show()
+	tween_pop($Panel/Options)
 
 func controles():
 	$Filtro.hide()
 	$Menu.hide()
-	$Options.hide()
-	$Audio.hide()
-	$Controles.show()
-	tween_pop($Controles)
+	$Panel/Options.hide()
+	$Panel/Audio.hide()
+	$Panel/Controles.show()
+	tween_pop($Panel/Controles)
 
 func audio():
 	$Filtro.hide()
 	$Menu.hide()
-	$Options.hide()
-	$Audio.show()
-	$Controles.hide()
-	tween_pop($Audio)
+	$Panel/Options.hide()
+	$Panel/Audio.show()
+	$Panel/Controles.hide()
+	tween_pop($Panel/Audio)
 
 func tween_pop(panel):
 	SoundManager.play_sfx(load("res://assets/sounds/sfx/button_menu_sound.wav"))

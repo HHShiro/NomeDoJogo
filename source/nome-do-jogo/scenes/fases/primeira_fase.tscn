@@ -69,12 +69,18 @@ func spawn_boss_arena():
 	boss_spawned = true
 	var ultimo_block = blocks.back()
 	var spawn_pos_x = ultimo_block.position.x + WIDTH
+	var spawn_pos_x_inverse = ultimo_block.position.x - WIDTH*2
 	var boss_scene = load(\"res://scenes/fases/boss_block.tscn\")
+	var break_scene = load(\"res://scenes/fases/break_block.tscn\")
 	var arena = boss_scene.instantiate()
+	var block = break_scene.instantiate()
 	arena.position.x = spawn_pos_x
 	arena.position.y = 576
+	block.position.x = spawn_pos_x_inverse
+	block.position.y = 576
 	
 	add_child(arena)
+	add_child(block)
 	
 "
 

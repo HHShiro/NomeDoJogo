@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://661fcuerpu7w"]
+
+[ext_resource type="Texture2D" uid="uid://ccobv43d4o1p8" path="res://assets/images/background/Background_RJ.png" id="1_4n1yk"]
+[ext_resource type="Texture2D" uid="uid://s0pwsea3jlme" path="res://assets/images/background/predios128.png" id="2_s67yl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n1yk"]
+size = Vector2(73, 592)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xemef"]
+size = Vector2(1336, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm1mp"]
+size = Vector2(1144, 20)
+
+[node name="break_block" type="Node2D" unique_id=986319403]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1245725254]
+z_index = -10
+texture = ExtResource("1_4n1yk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1489740391]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=24985945]
+position = Vector2(-539.5, 0)
+shape = SubResource("RectangleShape2D_4n1yk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1140486760]
+y_sort_enabled = true
+position = Vector2(-768, -32)
+rotation = 4.712389
+scale = Vector2(8, 8)
+texture = ExtResource("2_s67yl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=1734855092]
+y_sort_enabled = true
+position = Vector2(0, 280)
+rotation = 3.1415927
+scale = Vector2(8, 8)
+texture = ExtResource("2_s67yl")
+offset = Vector2(0, -32)
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D" unique_id=1928378584]
+y_sort_enabled = true
+position = Vector2(0, -800)
+scale = Vector2(8, 8)
+texture = ExtResource("2_s67yl")
+offset = Vector2(0, 32)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1071431810]
+position = Vector2(-24, -312)
+shape = SubResource("RectangleShape2D_xemef")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1630734190]
+position = Vector2(-56, 296)
+shape = SubResource("RectangleShape2D_lm1mp")
