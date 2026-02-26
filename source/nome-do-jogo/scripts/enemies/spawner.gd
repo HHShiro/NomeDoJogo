@@ -39,7 +39,7 @@ func spawn(pos : Vector2, elite : bool = false):
 			enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)]
 		else: 
 			var strong_enemies = [enemy_types[2],enemy_types[5], enemy_types[8]]
-			enemy_instance.type = enemy_types[strong_enemies.pick_random()]
+			enemy_instance.type = strong_enemies.pick_random()
 		enemy_instance.position = pos
 		enemy_instance.player = player
 		enemy_instance.elite = elite
