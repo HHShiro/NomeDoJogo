@@ -15,5 +15,6 @@ title = "Karen"
 texture = ExtResource("4_o7s5y")
 health = 40.0
 damage = 6.0
+speed = 50.0
 drops = Array[ExtResource("1_qx50k")]([ExtResource("2_ul24j")])
 collision_shape = SubResource("CapsuleShape2D_oi448")

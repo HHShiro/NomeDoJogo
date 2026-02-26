@@ -14,5 +14,6 @@ title = "Abelha"
 texture = ExtResource("4_vhb6j")
 health = 15.0
 damage = 1.0
+speed = 50.0
 drops = Array[ExtResource("1_5ngm0")]([ExtResource("2_x5s83")])
 collision_shape = SubResource("CircleShape2D_5xw61")

@@ -35,6 +35,7 @@ var type : Enemy:
 		damage = value.damage
 		health = value.health
 		$CollisionShape2D.shape = value.collision_shape
+		speed = value.speed
 
 func _physics_process(delta):
 	check_separation(delta)

@@ -14,5 +14,6 @@ title = "Chihuahua"
 texture = ExtResource("4_qqlmr")
 health = 20.0
 damage = 2.0
+speed = 50.0
 drops = Array[ExtResource("1_qqlmr")]([ExtResource("2_860l5")])
 collision_shape = SubResource("CircleShape2D_860l5")
