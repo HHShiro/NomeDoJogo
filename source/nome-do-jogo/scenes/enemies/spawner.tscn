@@ -25,7 +25,6 @@ boss_scene = ExtResource("8_rku2i")
 [node name="ui" type="CanvasLayer" parent="." unique_id=625204892]
 
 [node name="timer" type="Timer" parent="." unique_id=530878413]
-wait_time = 2.0
 autostart = true
 
 [node name="pattern" type="Timer" parent="." unique_id=587495378]

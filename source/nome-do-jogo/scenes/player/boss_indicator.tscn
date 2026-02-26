@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dfb54uib1mlnm"]
+
+[ext_resource type="Script" uid="uid://vq2rp82nth53" path="res://scripts/player/UI/boss_indicator.gd" id="1_4n6vq"]
+[ext_resource type="Texture2D" uid="uid://ca0ixnefo6nfm" path="res://assets/images/icons/placeholders/seta.png" id="2_rb5fd"]
+
+[node name="BossIndicator" type="CanvasLayer" unique_id=1223018724]
+visible = false
+script = ExtResource("1_4n6vq")
+
+[node name="ArrowHolder" type="Node2D" parent="." unique_id=1289657808]
+position = Vector2(512, 288)
+
+[node name="Sprite2D" type="Sprite2D" parent="ArrowHolder" unique_id=1088562023]
+texture = ExtResource("2_rb5fd")
+offset = Vector2(100, 0)

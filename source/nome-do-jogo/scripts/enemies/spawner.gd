@@ -7,7 +7,7 @@ extends Node2D
 @export var limite_y_min: float = 294
 @export var limite_y_max: float = 860
 
-var distance : float = 400
+var distance : float = 1100
 
 @export var enemy_types : Array[Enemy]
 
@@ -35,8 +35,11 @@ func _physics_process(_delta: float) -> void:
 func spawn(pos : Vector2, elite : bool = false):
 	if can_spawn and !boss_spawned:
 		var enemy_instance = enemy.instantiate()
-		enemy_instance.type = enemy_types[min(floori(minute/4.0), enemy_types.size()-1)]
-		print(enemy_instance.type)
+		if minute < 9:
+			enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)]
+		else: 
+			var strong_enemies = [enemy_types[2],enemy_types[5], enemy_types[8]]
+			enemy_instance.type = enemy_types[strong_enemies.pick_random()]
 		enemy_instance.position = pos
 		enemy_instance.player = player
 		enemy_instance.elite = elite
@@ -54,7 +57,7 @@ func amount(number : int = 1):
 		spawn(get_random_position())
 
 func _on_timer_timeout():
-	second += 5
+	second += 1
 	
 	if second >= 60:
 		second = 0

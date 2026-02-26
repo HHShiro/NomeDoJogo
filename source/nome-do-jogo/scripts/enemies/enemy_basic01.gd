@@ -25,6 +25,8 @@ var elite : bool = false:
 		if value:
 			$Sprite2D.material = load("res://resources/styles/rainbow_outline.tres")
 			scale = Vector2(2.0,2.0)
+			health * 2
+			damage * 2
 
 var type : Enemy:
 	set(value):

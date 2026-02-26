@@ -9,7 +9,6 @@ func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	print("Entrou no body")
 	if body.is_in_group("Enemy"):
 		if body.has_method("take_damage"):
 			if "might" in source:

@@ -10,9 +10,21 @@ description = "+0.1 Luck"
 luck = 0.1
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
+[sub_resource type="Resource" id="Resource_2w8oo"]
+script = ExtResource("3_4fopm")
+description = "+0.1 Sorte"
+luck = 0.1
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_4fopm"]
+script = ExtResource("3_4fopm")
+description = "+0.1 Sorte"
+luck = 0.1
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
 [resource]
 script = ExtResource("2_2w8oo")
-upgrades = Array[ExtResource("3_4fopm")]([SubResource("Resource_srh1s")])
+upgrades = Array[ExtResource("3_4fopm")]([SubResource("Resource_srh1s"), SubResource("Resource_2w8oo"), SubResource("Resource_4fopm")])
 title = "Leprechaun Hat"
 icon = ExtResource("1_srh1s")
 texture = ExtResource("1_srh1s")

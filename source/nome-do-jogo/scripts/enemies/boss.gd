@@ -21,7 +21,13 @@ var is_resting = false
 var separation: float
 var knockback: Vector2
 
-var health = 5000
+var health: float:
+	set(value):
+		health = value
+		if health <= 0:
+			died.emit()
+			queue_free()
+			
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var sprite = $Sprite2D
@@ -40,6 +46,8 @@ func take_damage(amount):
 	$ProgressBar.value = health
 	
 func _ready():
+	health = max_health
+	$ProgressBar.max_value = max_health
 	$ProgressBar.value = max_health
 	start_attack_pattern()
 func _physics_process(delta):

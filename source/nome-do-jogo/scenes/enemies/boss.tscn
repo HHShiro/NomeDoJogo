@@ -9,7 +9,7 @@ height = 28.0
 [sub_resource type="Theme" id="Theme_3uc6t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ub7yk"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -27,6 +27,7 @@ bg_color = Color(0.99607843, 0.21960784, 0.40392157, 1)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_3uc6t")
+max_health = 100
 damage = 5.0
 dash_speed = 500
 duracao_dash = 1.0
