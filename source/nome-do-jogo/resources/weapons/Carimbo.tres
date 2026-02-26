@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d44p3j2qtqdf" path="res://scenes/player/projectile.tscn" id="1_iu48m"]
 [ext_resource type="Resource" uid="uid://defsd0lecjtqw" path="res://resources/weapons/Carimbo Fantasma 2.tres" id="1_yxnre"]
 [ext_resource type="Script" uid="uid://4r0v0svfrf30" path="res://scripts/player/weapons/types/SingleShot.gd" id="2_6nlp2"]
-[ext_resource type="Resource" uid="uid://cynfkmcxgso7e" path="res://resources/items/magnet.tres" id="2_w8nxg"]
 [ext_resource type="Texture2D" uid="uid://bh27m4um4m8wb" path="res://assets/images/icons/weapons/Carimbo1.png" id="3_iu48m"]
+[ext_resource type="Resource" uid="uid://bwwpewkuw6t5p" path="res://resources/items/might.tres" id="3_w8nxg"]
 [ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/weapons/upgrades/upgrade.gd" id="4_5vj2t"]
 [ext_resource type="Script" uid="uid://b1hbpqd5yfsbs" path="res://scripts/player/weapons/upgrades/projectile_upgrade.gd" id="5_vxl1v"]
 [ext_resource type="AudioStream" uid="uid://dnpkqqvwv6pc5" path="res://assets/sounds/sfx/projetil.wav" id="5_w8nxg"]
@@ -12,32 +12,32 @@
 [sub_resource type="Resource" id="Resource_yxnre"]
 script = ExtResource("5_vxl1v")
 damage = 1.0
-description = "+1 Dmg"
+description = "+1 Dano"
 metadata/_custom_type_script = "uid://b1hbpqd5yfsbs"
 
 [sub_resource type="Resource" id="Resource_w8nxg"]
 script = ExtResource("5_vxl1v")
 cooldown = -0.2
-description = "-0.2s cooldown"
+description = "-0.2s Recarga"
 metadata/_custom_type_script = "uid://b1hbpqd5yfsbs"
 
 [sub_resource type="Resource" id="Resource_34rsg"]
 script = ExtResource("5_vxl1v")
 speed = 200.0
-description = "+200 speed
+description = "+200 Velocidade
 "
 metadata/_custom_type_script = "uid://b1hbpqd5yfsbs"
 
 [sub_resource type="Resource" id="Resource_mkxy6"]
 script = ExtResource("5_vxl1v")
 damage = 2.0
-description = "+2 Dmg"
+description = "+2 Dano"
 metadata/_custom_type_script = "uid://b1hbpqd5yfsbs"
 
 [sub_resource type="Resource" id="Resource_17rxg"]
 script = ExtResource("5_vxl1v")
 cooldown = -0.1
-description = "-0.1s cooldown"
+description = "-0.1s Recarga"
 metadata/_custom_type_script = "uid://b1hbpqd5yfsbs"
 
 [resource]
@@ -46,7 +46,7 @@ damage = 1.5
 cooldown = 1.4
 speed = 200.0
 upgrades = Array[ExtResource("4_5vj2t")]([SubResource("Resource_yxnre"), SubResource("Resource_w8nxg"), SubResource("Resource_34rsg"), SubResource("Resource_mkxy6"), SubResource("Resource_17rxg")])
-item_needed = ExtResource("2_w8nxg")
+item_needed = ExtResource("3_w8nxg")
 evolution = ExtResource("1_yxnre")
 sound = ExtResource("5_w8nxg")
 title = "Carimbo"

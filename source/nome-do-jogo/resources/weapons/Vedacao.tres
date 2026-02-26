@@ -13,31 +13,31 @@
 [sub_resource type="Resource" id="Resource_nh84v"]
 script = ExtResource("9_n518x")
 amount = 1
-description = "+1 Amount"
+description = "+1 Projétil"
 metadata/_custom_type_script = "uid://b4epa8lbiijvg"
 
 [sub_resource type="Resource" id="Resource_880rh"]
 script = ExtResource("9_n518x")
 damage = 1.0
-description = "+1 Damage"
+description = "+1 Dano"
 metadata/_custom_type_script = "uid://b4epa8lbiijvg"
 
 [sub_resource type="Resource" id="Resource_rr0ig"]
 script = ExtResource("9_n518x")
 cooldown = -0.5
-description = "-0.5s Cooldown"
+description = "-0.5s Recarga"
 metadata/_custom_type_script = "uid://b4epa8lbiijvg"
 
 [sub_resource type="Resource" id="Resource_8um83"]
 script = ExtResource("9_n518x")
 amount = 2
-description = "+2 Amount"
+description = "+2 Projétil"
 metadata/_custom_type_script = "uid://b4epa8lbiijvg"
 
 [sub_resource type="Resource" id="Resource_4de4n"]
 script = ExtResource("9_n518x")
 damage = 1.0
-description = "+1 Damage"
+description = "+1 Dano"
 metadata/_custom_type_script = "uid://b4epa8lbiijvg"
 
 [resource]

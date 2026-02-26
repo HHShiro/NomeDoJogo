@@ -20,11 +20,11 @@ var boss_spawned: bool = false
 @export var boss_scene: PackedScene
 @onready var primeira_fase: Node2D = $".."
 
-func _input(event):
+#func _input(event):
 	#Se apertar a tecla "K" (de Kill/Boss), o boss vem na hora
-	if event is InputEventKey and event.pressed and event.keycode == KEY_K:
-		print("DEBUG: Forçando Boss Fight!")
-		iniciar_boss_fight()
+	#if event is InputEventKey and event.pressed and event.keycode == KEY_K:
+		#print("DEBUG: Forçando Boss Fight!")
+		#iniciar_boss_fight()
 
 func _physics_process(_delta: float) -> void:
 	if get_tree().get_node_count_in_group("Enemy") < 500:

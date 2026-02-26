@@ -6,19 +6,19 @@
 
 [sub_resource type="Resource" id="Resource_uvs6b"]
 script = ExtResource("3_1ir1o")
-description = "+25 Attack Range"
+description = "+25 Area de Ataque"
 area = 25.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_bvijl"]
 script = ExtResource("3_1ir1o")
-description = "+35 Attack Range"
+description = "+35 Area de Ataque"
 area = 35.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_n30xd"]
 script = ExtResource("3_1ir1o")
-description = "+45 Attack Range"
+description = "+45 Area de Ataque"
 area = 45.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
