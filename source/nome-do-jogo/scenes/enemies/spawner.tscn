@@ -32,7 +32,7 @@ wait_time = 40.0
 autostart = true
 
 [node name="elite" type="Timer" parent="." unique_id=299055601]
-wait_time = 60.0
+wait_time = 40.0
 autostart = true
 
 [node name="Destructible" type="Timer" parent="." unique_id=1602776294]
