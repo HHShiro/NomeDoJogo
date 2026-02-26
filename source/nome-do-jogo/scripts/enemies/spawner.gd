@@ -26,7 +26,7 @@ func _input(event):
 		print("DEBUG: Forçando Boss Fight!")
 		iniciar_boss_fight()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if get_tree().get_node_count_in_group("Enemy") < 500:
 		can_spawn = true
 	else:
@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 func spawn(pos : Vector2, elite : bool = false):
 	if can_spawn and !boss_spawned:
 		var enemy_instance = enemy.instantiate()
-		enemy_instance.type = enemy_types[min(floori(minute/3), enemy_types.size()-1)]
+		enemy_instance.type = enemy_types[min(floori(minute/4.0), enemy_types.size()-1)]
 		print(enemy_instance.type)
 		enemy_instance.position = pos
 		enemy_instance.player = player

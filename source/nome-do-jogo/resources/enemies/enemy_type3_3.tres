@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://2f8i7krgv6lo"]
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://c0xxbkjvkyaab"]
 
 [ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickups/pickup_resource.gd" id="1_w77tu"]
 [ext_resource type="Resource" uid="uid://4pc4pbgceuiq" path="res://resources/Xp/selo_xp2.tres" id="2_stnp7"]
