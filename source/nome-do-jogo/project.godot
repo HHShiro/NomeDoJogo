@@ -28,7 +28,6 @@ SoundManager="*uid://dl0hlun7ly432"
 ManipuladorPause="*uid://ryr3f8socs8o"
 SaveData="*uid://b276t5yaupvb0"
 Persistence="*uid://b7ag3nfoxd3xx"
-InputManager="*uid://uxdnhx2eldel"
 
 [display]
 
@@ -41,6 +40,7 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://assets/": "purple",
+"res://config/": "pink",
 "res://resources/": "blue",
 "res://scenes/": "green",
 "res://scripts/": "red"
@@ -109,3 +109,5 @@ rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.09239706, 0.09239707, 0.09239703, 1)
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
