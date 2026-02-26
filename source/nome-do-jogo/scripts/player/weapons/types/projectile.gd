@@ -9,14 +9,21 @@ func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		if "might" in source:
-			body.take_damage(damage * source.might)
-		else:
-			body.take_damage(damage)
-		
-		body.knockback += direction * 75
-
+	if body.is_in_group("Enemy"):
+		if body.has_method("take_damage"):
+			if "might" in source:
+				body.take_damage(damage * source.might)
+			else:
+				body.take_damage(damage)
+				
+			body.knockback += direction * 75
+	else:		
+		if body.get_parent().has_method("take_damage"):
+			if "might" in source:
+				body.get_parent().take_damage(damage * source.might)
+			else:
+				body.get_parent().take_damage(damage)
+				
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
 

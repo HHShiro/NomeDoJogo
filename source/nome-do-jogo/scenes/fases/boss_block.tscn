@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://r8awbtup8wt8"]
+
+[ext_resource type="Script" uid="uid://c11cehtfrx8o" path="res://scripts/fases/boss_block.gd" id="1_43vh2"]
+[ext_resource type="Texture2D" uid="uid://ccobv43d4o1p8" path="res://assets/images/background/Background_RJ.png" id="1_n0ntw"]
+[ext_resource type="PackedScene" uid="uid://clprmaai201vo" path="res://scenes/enemies/boss.tscn" id="2_6q8cw"]
+[ext_resource type="Texture2D" uid="uid://diwsadvxs06vr" path="res://assets/images/background/predios_boss128.png" id="2_43vh2"]
+[ext_resource type="Texture2D" uid="uid://s0pwsea3jlme" path="res://assets/images/background/predios128.png" id="5_hyi3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q8cw"]
+size = Vector2(1025, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyi3r"]
+size = Vector2(1025, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kergl"]
+size = Vector2(32, 659)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52ad1"]
+size = Vector2(34, 592)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bf7c"]
+size = Vector2(20, 576)
+
+[node name="BossBlock" type="Node2D" unique_id=740308349]
+y_sort_enabled = true
+script = ExtResource("1_43vh2")
+boss_scene = ExtResource("2_6q8cw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=259563055]
+z_index = -10
+texture = ExtResource("1_n0ntw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1939591006]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=609617783]
+position = Vector2(-0.5, -311)
+shape = SubResource("RectangleShape2D_6q8cw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=566614909]
+position = Vector2(0.5, 304)
+shape = SubResource("RectangleShape2D_hyi3r")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/StaticBody2D" unique_id=836990409]
+y_sort_enabled = true
+position = Vector2(0, -544)
+scale = Vector2(8, 8)
+texture = ExtResource("2_43vh2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D/StaticBody2D" unique_id=573811054]
+y_sort_enabled = true
+position = Vector2(0, 288)
+rotation = 3.1415927
+scale = Vector2(8, 8)
+texture = ExtResource("2_43vh2")
+offset = Vector2(0, -32)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1851668559]
+position = Vector2(520, -9.5)
+shape = SubResource("RectangleShape2D_kergl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D/StaticBody2D" unique_id=1104944881]
+position = Vector2(768, 0)
+rotation = 1.5707964
+scale = Vector2(8, 8)
+texture = ExtResource("5_hyi3r")
+
+[node name="Barreira" type="StaticBody2D" parent="Sprite2D" unique_id=1553995343]
+collision_mask = 2
+
+[node name="ColisaoBarreira" type="CollisionShape2D" parent="Sprite2D/Barreira" unique_id=1402945346]
+position = Vector2(-519, 0)
+shape = SubResource("RectangleShape2D_52ad1")
+
+[node name="Sensor" type="Area2D" parent="Sprite2D" unique_id=1887897871]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Sensor" unique_id=1011004708]
+position = Vector2(-448, 0)
+shape = SubResource("RectangleShape2D_1bf7c")
+
+[node name="Spawnpoint" type="Marker2D" parent="Sprite2D" unique_id=1482421207]
+position = Vector2(264, -264)
+
+[connection signal="body_entered" from="Sprite2D/Sensor" to="." method="_on_sensor_body_entered"]

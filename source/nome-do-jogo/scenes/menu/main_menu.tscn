@@ -2005,7 +2005,7 @@ script = ExtResource("9_vovv2")
 
 [node name="Back" type="Button" parent="." unique_id=1153526559]
 layout_mode = 0
-offset_left = 768.0
+offset_left = 819.0
 offset_top = 480.0
 offset_right = 980.0
 offset_bottom = 533.0

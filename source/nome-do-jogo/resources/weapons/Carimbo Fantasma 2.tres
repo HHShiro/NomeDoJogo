@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("2_lvqq5")
-damage = 20.0
-cooldown = 0.05
+damage = 15.0
+cooldown = 0.1
 speed = 500.0
 sound = ExtResource("3_lvqq5")
 title = "Carimbo Fantasma 2"

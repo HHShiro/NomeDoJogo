@@ -24,7 +24,9 @@ var elite : bool = false:
 		elite = value
 		if value:
 			$Sprite2D.material = load("res://resources/styles/rainbow_outline.tres")
-			scale = Vector2(1.5,1.5)
+			scale = Vector2(2.0,2.0)
+			health * 2
+			damage * 2
 
 var type : Enemy:
 	set(value):
@@ -33,6 +35,7 @@ var type : Enemy:
 		damage = value.damage
 		health = value.health
 		$CollisionShape2D.shape = value.collision_shape
+		speed = value.speed
 
 func _physics_process(delta):
 	check_separation(delta)
@@ -54,7 +57,10 @@ func knockback_update(delta):
 	velocity += knockback
 	
 	var collider = move_and_collide(velocity * delta)
+	var collider_node
 	if collider:
+		collider_node = collider.get_collider()
+	if collider and !collider_node.is_in_group("Destructible"):
 		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 50
 
 

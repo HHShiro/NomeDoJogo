@@ -7,21 +7,28 @@
 [ext_resource type="Resource" uid="uid://cahstmyql10cl" path="res://resources/enemies/enemy_type1.tres" id="4_e5muq"]
 [ext_resource type="Resource" uid="uid://ccpl2yla5gwtf" path="res://resources/enemies/enemy_type2.tres" id="4_rfmb6"]
 [ext_resource type="Resource" uid="uid://c2of7o34dmb5d" path="res://resources/enemies/enemy_type3.tres" id="5_e5muq"]
+[ext_resource type="Resource" uid="uid://riqd41swjevq" path="res://resources/enemies/enemy_type1_2.tres" id="6_5fwjt"]
+[ext_resource type="Resource" uid="uid://prvmi7brh7tt" path="res://resources/enemies/enemy_type1_3.tres" id="7_tk5pk"]
+[ext_resource type="PackedScene" uid="uid://clprmaai201vo" path="res://scenes/enemies/boss.tscn" id="8_rku2i"]
+[ext_resource type="Resource" uid="uid://dd2loecnoi2t4" path="res://resources/enemies/enemy_type2_2.tres" id="9_d3jg5"]
+[ext_resource type="Resource" uid="uid://jum6hgmjk4it" path="res://resources/enemies/enemy_type2_3.tres" id="10_3vxfk"]
+[ext_resource type="Resource" uid="uid://bw362bmgr1wqk" path="res://resources/enemies/enemy_type3_2.tres" id="12_r34aq"]
+[ext_resource type="Resource" uid="uid://c0xxbkjvkyaab" path="res://resources/enemies/enemy_type3_3.tres" id="13_241vw"]
 
 [node name="spawner" type="Node2D" unique_id=852875230]
 script = ExtResource("1_lie5b")
 enemy = ExtResource("2_mv1hi")
 destructible = ExtResource("3_e5muq")
-enemy_types = Array[ExtResource("3_0pfvh")]([ExtResource("4_e5muq"), ExtResource("4_rfmb6"), ExtResource("5_e5muq")])
+enemy_types = Array[ExtResource("3_0pfvh")]([ExtResource("4_e5muq"), ExtResource("6_5fwjt"), ExtResource("7_tk5pk"), ExtResource("4_rfmb6"), ExtResource("9_d3jg5"), ExtResource("10_3vxfk"), ExtResource("5_e5muq"), ExtResource("12_r34aq"), ExtResource("13_241vw")])
+boss_scene = ExtResource("8_rku2i")
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=625204892]
 
 [node name="timer" type="Timer" parent="." unique_id=530878413]
-wait_time = 5.0
 autostart = true
 
 [node name="pattern" type="Timer" parent="." unique_id=587495378]
-wait_time = 60.0
+wait_time = 40.0
 autostart = true
 
 [node name="elite" type="Timer" parent="." unique_id=299055601]

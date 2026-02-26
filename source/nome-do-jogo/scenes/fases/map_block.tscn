@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ba3qi244dmu44"]
 
-[ext_resource type="Texture2D" uid="uid://dd7skokkdyrj" path="res://assets/images/icons/placeholders/background_placeholder.png" id="1_aeyxv"]
-[ext_resource type="Texture2D" uid="uid://mfn58jwhr186" path="res://assets/images/background/Construcao_2.PNG" id="2_lra13"]
+[ext_resource type="Texture2D" uid="uid://ccobv43d4o1p8" path="res://assets/images/background/Background_RJ.png" id="1_lra13"]
+[ext_resource type="Texture2D" uid="uid://s0pwsea3jlme" path="res://assets/images/background/predios128.png" id="2_lra13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lra13"]
 size = Vector2(1023, 142.25)
@@ -11,7 +11,7 @@ y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1985978706]
 z_index = -10
-texture = ExtResource("1_aeyxv")
+texture = ExtResource("1_lra13")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=661567683]
 y_sort_enabled = true
@@ -27,34 +27,18 @@ shape = SubResource("RectangleShape2D_lra13")
 
 [node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=1618158053]
 y_sort_enabled = true
-position = Vector2(250, -923.99994)
+position = Vector2(0, -800)
 rotation = 3.1415927
-scale = Vector2(10, 10)
-texture = ExtResource("2_lra13")
-offset = Vector2(0, -32)
-flip_v = true
-
-[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D" unique_id=248346783]
-y_sort_enabled = true
-position = Vector2(-246, -924)
-rotation = 3.1415927
-scale = Vector2(10, 10)
+scale = Vector2(8, 8)
 texture = ExtResource("2_lra13")
 offset = Vector2(0, -32)
 flip_v = true
 
 [node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D" unique_id=976706828]
 y_sort_enabled = true
-position = Vector2(-256.99994, 285.00003)
+position = Vector2(0, 288)
 rotation = -3.1415925
-scale = Vector2(10, 10)
+scale = Vector2(8, 8)
 texture = ExtResource("2_lra13")
 offset = Vector2(0, -32)
-
-[node name="Sprite2D5" type="Sprite2D" parent="StaticBody2D" unique_id=714648133]
-y_sort_enabled = true
-position = Vector2(262.0001, 285.00003)
-rotation = -3.1415925
-scale = Vector2(10, 10)
-texture = ExtResource("2_lra13")
-offset = Vector2(0, -32)
+flip_h = true

@@ -1,6 +1,6 @@
 extends Node2D
 
-var gold = 1000
+var gold = 0
 var skill_tree = []
 
 

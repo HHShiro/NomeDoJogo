@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://d3pyg4fpy44d8"]
+
+[ext_resource type="Texture2D" uid="uid://ccobv43d4o1p8" path="res://assets/images/background/Background_RJ.png" id="1_0hmln"]
+[ext_resource type="Texture2D" uid="uid://diwsadvxs06vr" path="res://assets/images/background/predios_boss128.png" id="2_5j63e"]
+[ext_resource type="Texture2D" uid="uid://c1nuunqwuhj1g" path="res://assets/images/player/carteiro.png" id="3_tfrxc"]
+[ext_resource type="Texture2D" uid="uid://dwp1e62qa5c6g" path="res://assets/images/icons/placeholders/box_animation_placeholder.png" id="4_6bw87"]
+[ext_resource type="Texture2D" uid="uid://c28k8ejfwucu5" path="res://assets/images/icons/placeholders/karen_placeholder.png" id="5_hflwb"]
+
+[sub_resource type="Animation" id="Animation_y6vkm"]
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-40, 264), Vector2(688, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.74999994, 1.68, 2.06, 2.6299999, 3.21, 3.83, 4.31, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yeweu"]
+resource_name = "end_animation"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-24, 264), Vector2(696, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbf4y"]
+_data = {
+&"RESET": SubResource("Animation_y6vkm"),
+&"end_animation": SubResource("Animation_yeweu")
+}
+
+[node name="Cutscene" type="Node2D" unique_id=2131687720]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=763247125]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=163777565]
+libraries/ = SubResource("AnimationLibrary_tbf4y")
+
+[node name="Road" type="Sprite2D" parent="." unique_id=174933682]
+position = Vector2(512, 288)
+texture = ExtResource("1_0hmln")
+
+[node name="Up_Buildings" type="Sprite2D" parent="." unique_id=1971781555]
+position = Vector2(512, -256)
+scale = Vector2(8, 8)
+texture = ExtResource("2_5j63e")
+
+[node name="Down_Buildings" type="Sprite2D" parent="." unique_id=865591853]
+position = Vector2(512, 832)
+rotation = 3.1415927
+scale = Vector2(8, 8)
+texture = ExtResource("2_5j63e")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1104266168]
+position = Vector2(-40, 264)
+rotation = 0.17453292
+texture = ExtResource("3_tfrxc")
+
+[node name="Caixa" type="Sprite2D" parent="Player" unique_id=957569798]
+position = Vector2(8, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_6bw87")
+
+[node name="Karen" type="Sprite2D" parent="." unique_id=1324879092]
+position = Vector2(712, -32)
+texture = ExtResource("5_hflwb")

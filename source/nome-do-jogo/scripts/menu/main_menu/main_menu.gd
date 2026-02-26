@@ -1,6 +1,14 @@
 extends Control
 
-
+func _input(event):
+	if Input.is_action_just_pressed("toggle_fullscreen"):
+		var current_mode = DisplayServer.window_get_mode()
+		if current_mode == DisplayServer.WINDOW_MODE_WINDOWED or current_mode == DisplayServer.WINDOW_MODE_MAXIMIZED:
+			# troca pra fullscreen exclusivo
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+		elif current_mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+			# volta pra windowed
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _ready() -> void:
 	if SoundManager.music_player:

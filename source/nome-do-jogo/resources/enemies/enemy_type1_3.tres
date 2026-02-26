@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://prvmi7brh7tt"]
+
+[ext_resource type="Script" uid="uid://cqrharhdmyl8b" path="res://scripts/player/pickups/pickup_resource.gd" id="1_5ngm0"]
+[ext_resource type="Resource" uid="uid://dgqhnqu3trnhu" path="res://resources/Xp/selo_xp.tres" id="2_x5s83"]
+[ext_resource type="Script" uid="uid://clmfcio7b7x0i" path="res://scripts/enemies/enemy_type.gd" id="3_5q8qy"]
+[ext_resource type="Texture2D" uid="uid://spdlbwmk6buj" path="res://assets/images/icons/placeholders/abelha_placeholder.png" id="4_vhb6j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xw61"]
+radius = 3.0
+
+[resource]
+script = ExtResource("3_5q8qy")
+title = "Abelha"
+texture = ExtResource("4_vhb6j")
+health = 15.0
+damage = 1.0
+speed = 50.0
+drops = Array[ExtResource("1_5ngm0")]([ExtResource("2_x5s83")])
+collision_shape = SubResource("CircleShape2D_5xw61")

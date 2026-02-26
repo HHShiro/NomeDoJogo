@@ -20,22 +20,36 @@ var max_health: float = 100:
 	set(value):
 		max_health = value
 		%Health.value = value
-var recovery: float = 0
-var armor: float = 0
+		%MaxHealth.text = "Vida Maxima: " + str(value)
+var recovery: float = 0.2:
+	set(value):
+		recovery = value
+		%HealthRegen.text = "Regeneração: " + str(value)
+var armor: float = 0:
+	set(value):
+		armor = value
+		%Armor.text = "Armadura: " + str(value)	
 var might: float = 1.0:
 	set(value):
 		might = value
-		%Might.text = "Might: " + str(value)
+		%Might.text = "Força: " + str(value)
 var area: float = 0:
 	set(value):
 		area = value
-		%Area.text = "Range: " + str(value)
+		%Area.text = "Alcance: " + str(value)
 var magnet: float = 0:
 	set(value):
 		magnet = value
 		%Magnet.shape.radius = 50 + value
-var growth: float = 1
-var luck: float = 1.0
+		%MagnetAmount.text = "Coleta: " + str(%Magnet.shape.radius)
+var growth: float = 1:
+	set(value):
+		growth = value
+		%Growth.text = "Ganho de XP: " + str(value)
+var luck: float = 1.0:
+	set(value):
+		luck = value
+		%Luck.text = "Sorte: " + str(value)
 
 
 var nearest_enemy

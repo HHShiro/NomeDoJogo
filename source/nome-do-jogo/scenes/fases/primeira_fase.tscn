@@ -15,7 +15,18 @@ const WIDTH = 1024
 
 var blocks: Array[Node2D] = []
 var centro = 0
+var boss_spawned = false
 
+func _input(event):
+	if Input.is_action_just_pressed(\"toggle_fullscreen\"):
+		var current_mode = DisplayServer.window_get_mode()
+		if current_mode == DisplayServer.WINDOW_MODE_WINDOWED:
+			# troca pra fullscreen exclusivo
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+		elif current_mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+			# volta pra windowed
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			
 func _ready():
 	for i in range(-1, 2):
 		#Spawna os blocos atras, no meio e na frente.
@@ -29,6 +40,8 @@ func spawn_block(x_pos):
 	blocks.append(block)
 
 func _process(_delta):
+	if boss_spawned:
+		return
 	
 	var player_block_position = int(round(player.position.x / WIDTH))
 	
@@ -51,6 +64,18 @@ func shift_map(novo_centro):
 		blocks.push_front(block_to_move)
 	
 	centro = novo_centro
+
+func spawn_boss_arena():
+	boss_spawned = true
+	var ultimo_block = blocks.back()
+	var spawn_pos_x = ultimo_block.position.x + WIDTH
+	var boss_scene = load(\"res://scenes/fases/boss_block.tscn\")
+	var arena = boss_scene.instantiate()
+	arena.position.x = spawn_pos_x
+	arena.position.y = 576
+	
+	add_child(arena)
+	
 "
 
 [node name="PrimeiraFase" type="Node2D" unique_id=634138565 node_paths=PackedStringArray("player")]

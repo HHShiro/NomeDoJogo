@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FollowAttack" format=3 uid="uid://w346lu6y3wv5"]
+
+[ext_resource type="Texture2D" uid="uid://buiml7p0l4rvj" path="res://assets/images/icons/weapons/caramelo_casal_icon.png" id="1_vxpip"]
+[ext_resource type="Script" uid="uid://cvu0to5br43k7" path="res://scripts/player/weapons/types/FollowAttack.gd" id="2_2jc6r"]
+[ext_resource type="PackedScene" uid="uid://8mf1e7wtoc2a" path="res://scenes/player/pretamelo.tscn" id="2_8fqnb"]
+[ext_resource type="Script" uid="uid://c4wwflv85hh6i" path="res://scripts/player/weapons/upgrades/upgrade.gd" id="3_8fqnb"]
+
+[resource]
+script = ExtResource("2_2jc6r")
+amount = 10
+damage = 15.0
+cooldown = 2.0
+speed = 200.0
+projectile_node = ExtResource("2_8fqnb")
+title = "Casalmelo"
+icon = ExtResource("1_vxpip")
+metadata/_custom_type_script = "uid://cvu0to5br43k7"
