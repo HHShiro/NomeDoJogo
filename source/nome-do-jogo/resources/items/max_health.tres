@@ -6,19 +6,19 @@
 
 [sub_resource type="Resource" id="Resource_ycud8"]
 script = ExtResource("3_1uqt3")
-description = "+20 Max Health"
+description = "+20 Vida Maxima"
 max_health = 20.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_xnc2i"]
 script = ExtResource("3_1uqt3")
-description = "+25 Max Health"
+description = "+25 Vida Maxima"
 max_health = 25.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_p2tth"]
 script = ExtResource("3_1uqt3")
-description = "+35 Max Health"
+description = "+35 Vida Maxima"
 max_health = 35.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 

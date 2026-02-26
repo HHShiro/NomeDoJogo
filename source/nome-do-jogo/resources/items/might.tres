@@ -6,19 +6,19 @@
 
 [sub_resource type="Resource" id="Resource_wi705"]
 script = ExtResource("3_uxvd6")
-description = "+10% Damage"
+description = "+10% Dano"
 might = 0.1
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_50ylr"]
 script = ExtResource("3_uxvd6")
-description = "+20% Damage"
+description = "+20% Dano"
 might = 0.2
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_lracc"]
 script = ExtResource("3_uxvd6")
-description = "+30% Damage"
+description = "+30% Dano"
 might = 0.3
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 

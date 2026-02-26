@@ -6,19 +6,19 @@
 
 [sub_resource type="Resource" id="Resource_jxoiq"]
 script = ExtResource("3_q0umr")
-description = "+15 Movement Speed"
+description = "+15 Velocidade"
 movement_speed = 15.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_xdah2"]
 script = ExtResource("3_q0umr")
-description = "+20 Movement Speed"
+description = "+20 Velocidade"
 movement_speed = 20.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_utohk"]
 script = ExtResource("3_q0umr")
-description = "+25 Movement Speed"
+description = "+25 Velocidade"
 movement_speed = 25.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 

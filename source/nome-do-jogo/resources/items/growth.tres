@@ -6,19 +6,19 @@
 
 [sub_resource type="Resource" id="Resource_bln5v"]
 script = ExtResource("3_ifyj4")
-description = "+10% Growth"
+description = "+10% +Xp"
 growth = 0.1
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_lod7m"]
 script = ExtResource("3_ifyj4")
-description = "+20% Growth"
+description = "+20% +Xp"
 growth = 0.2
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_1dtlw"]
 script = ExtResource("3_ifyj4")
-description = "+30% Growth"
+description = "+30% +Xp"
 growth = 0.3
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 

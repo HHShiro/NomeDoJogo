@@ -6,19 +6,25 @@
 
 [sub_resource type="Resource" id="Resource_3arnc"]
 script = ExtResource("3_n25eh")
-description = "+0.2 Health per second"
+description = "+0.2 Vida por segundo"
 recovery = 0.2
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_phlcr"]
 script = ExtResource("3_n25eh")
-description = "+0.4 Health per second"
+description = "+0.4 Vida por segundo"
 recovery = 0.4
+metadata/_custom_type_script = "uid://dm5gtjixacdfs"
+
+[sub_resource type="Resource" id="Resource_548av"]
+script = ExtResource("3_n25eh")
+description = "+0.1 Vida por segundo"
+recovery = 0.1
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [resource]
 script = ExtResource("1_548av")
-upgrades = Array[ExtResource("3_n25eh")]([SubResource("Resource_3arnc"), SubResource("Resource_phlcr")])
+upgrades = Array[ExtResource("3_n25eh")]([SubResource("Resource_3arnc"), SubResource("Resource_phlcr"), SubResource("Resource_548av")])
 title = "Recovery"
 icon = ExtResource("1_ejfr7")
 texture = ExtResource("1_ejfr7")

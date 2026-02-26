@@ -12,31 +12,31 @@
 [sub_resource type="Resource" id="Resource_nhmnr"]
 script = ExtResource("5_cjeve")
 amount = 1
-description = "+1 Projectile"
+description = "+1 Projétil"
 metadata/_custom_type_script = "uid://ctkejr2elw0m8"
 
 [sub_resource type="Resource" id="Resource_8ocyw"]
 script = ExtResource("5_cjeve")
 angular_speed = 90.0
-description = "+90 Speed"
+description = "+90 Velocidade"
 metadata/_custom_type_script = "uid://ctkejr2elw0m8"
 
 [sub_resource type="Resource" id="Resource_gw70g"]
 script = ExtResource("5_cjeve")
 damage = 2.0
-description = "+2 Damage"
+description = "+2 Dano"
 metadata/_custom_type_script = "uid://ctkejr2elw0m8"
 
 [sub_resource type="Resource" id="Resource_bjbgd"]
 script = ExtResource("5_cjeve")
 amount = 1
-description = "+1 Projectile"
+description = "+1 Projétil"
 metadata/_custom_type_script = "uid://ctkejr2elw0m8"
 
 [sub_resource type="Resource" id="Resource_aqmar"]
 script = ExtResource("5_cjeve")
 angular_speed = 90.0
-description = "+90 Speed"
+description = "+90 Velocidade"
 metadata/_custom_type_script = "uid://ctkejr2elw0m8"
 
 [resource]

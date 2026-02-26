@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://b3ngail1dfw3h"
 [sub_resource type="Resource" id="Resource_k4vvs"]
 script = ExtResource("5_5k888")
 cooldown = -0.5
-description = "-0.5s Cooldown"
+description = "-0.5s Recarga"
 metadata/_custom_type_script = "uid://b3ngail1dfw3h"
 
 [sub_resource type="Resource" id="Resource_deqev"]
@@ -41,7 +41,7 @@ metadata/_custom_type_script = "uid://b3ngail1dfw3h"
 [resource]
 script = ExtResource("2_uf1e4")
 amount = 5
-damage = 50.0
+damage = 4.0
 cooldown = 4.0
 speed = 200.0
 projectile_node = ExtResource("1_6byjc")

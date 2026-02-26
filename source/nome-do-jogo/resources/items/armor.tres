@@ -6,19 +6,19 @@
 
 [sub_resource type="Resource" id="Resource_w0n1v"]
 script = ExtResource("3_u4l1x")
-description = "+1 Armor"
+description = "+1 Armadura"
 armor = 1.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_ip80b"]
 script = ExtResource("3_u4l1x")
-description = "+2 Armor"
+description = "+2 Armadura"
 armor = 2.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
 [sub_resource type="Resource" id="Resource_8qowx"]
 script = ExtResource("3_u4l1x")
-description = "+3 Armor"
+description = "+3 Armadura"
 armor = 3.0
 metadata/_custom_type_script = "uid://dm5gtjixacdfs"
 
