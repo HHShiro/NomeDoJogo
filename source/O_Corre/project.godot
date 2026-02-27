@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="NomeDoJogo"
+config/name="O Corre"
 run/main_scene="uid://6ujmljc1xgmk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/images/others/legacy/icon.svg"
