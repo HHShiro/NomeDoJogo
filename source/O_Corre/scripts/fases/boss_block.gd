@@ -50,4 +50,4 @@ func _on_boss_defeated():
 	print("Boss derrotado!")
 	SaveData.gold += player.gold
 	SaveData.set_and_save()
-	get_tree().change_scene_to_file("res://scenes/fases/end_scene_test.tscn") # <- Adicionar cena de vitoria e fim de jogo!
+	get_tree().change_scene_to_file("res://scenes/fases/cutscene.tscn") # <- Adicionar cena de vitoria e fim de jogo!

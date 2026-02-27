@@ -39,6 +39,10 @@ func play_music(music: AudioStream):
 		music_player.play()
 		music_player.finished.connect(music_player.play)
 		
+func pause_music():
+	if music_player:
+		music_player.stream_paused = true
+		
 func on_node_added(node: Node):
 	if node is Button or node is TextureButton:
 		connect_signals(node)
