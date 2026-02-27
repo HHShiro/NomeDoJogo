@@ -21,10 +21,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 353.0
-offset_top = 199.0
-offset_right = 660.0
-offset_bottom = 348.0
+offset_left = 182.0
+offset_top = 191.0
+offset_right = 489.0
+offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -39,5 +39,53 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Voltar para o Menu"
 script = ExtResource("1_ukob3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1938185954]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 163.0
+offset_right = 765.0
+offset_bottom = 493.0
+pivot_offset = Vector2(300, 0)
+theme_override_constants/line_separation = 3
+text = "Programação:
+
+
+Arte e Visual:
+
+
+
+Efeitos Sonoros:
+
+Trilha Sonora:"
+horizontal_alignment = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel" unique_id=705021345]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 164.0
+offset_right = 1085.0
+offset_bottom = 494.0
+theme_override_constants/line_separation = 3
+text = "RAFAEL LOPES
+LUCIANO C. BARROS
+LUCAS ALEIXO
+ELISA REBELLO
+MIGUEL VIEIRA
+RAFAEL LOPES
+LUCIANO C. BARROS
+MIGUEL VIEIRA
+RAFAEL BARROS
+LUCAS ALEIXO"
+
+[node name="Label" type="Label" parent="Panel" unique_id=1173006133]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 98.0
+offset_right = 870.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 32
+text = "Creditos"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="Panel/VBoxContainer/Button" method="_on_pressed"]

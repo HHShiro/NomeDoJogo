@@ -1,0 +1,1 @@
+Utilizamos Inteligência Artificial para resolver alguns problemas de erros técnicos na programação, como problemas com GitHub ou erros de compilador baseado nos nossos códigos, de forma que fosse mantida como diagnóstico.
