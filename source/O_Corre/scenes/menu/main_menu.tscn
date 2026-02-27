@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://qrp80j7xn5sq" path="res://resources/styles/button_menu_hover_style.tres" id="1_bbqo6"]
 [ext_resource type="Script" uid="uid://b6c3xmn4q8cqg" path="res://scripts/menu/main_menu/main_menu.gd" id="1_nl8w3"]
-[ext_resource type="FontFile" uid="uid://bhlrq10gglc2b" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_p1nwe"]
+[ext_resource type="FontFile" uid="uid://dlntu8nic5erh" path="res://assets/fonts/Tiny5-Regular.ttf" id="1_wof4p"]
 [ext_resource type="Script" uid="uid://cgahse8hib6mr" path="res://scripts/menu/upgrade_menu/skill_tree.gd" id="3_247la"]
 [ext_resource type="Texture2D" uid="uid://buocqtpgofywx" path="res://assets/images/menus/universo.png" id="4_vxdmp"]
 [ext_resource type="PackedScene" uid="uid://dp8xany6pk42b" path="res://scenes/menu/upgrade.tscn" id="5_xn6kt"]
@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://cycb5e8ahwc20" path="res://assets/images/icons/placeholders/bestiario_menu_placeholder.png" id="16_pstia"]
 [ext_resource type="Texture2D" uid="uid://d260b4p1t33d2" path="res://assets/images/icons/passive_itens/recovery_icon.png" id="17_1bw8o"]
 [ext_resource type="Texture2D" uid="uid://88m4416qgwb4" path="res://assets/images/icons/placeholders/slot_tile_placeholder.png" id="17_41tvm"]
-[ext_resource type="Theme" uid="uid://581opi40pux7" path="res://resources/styles/tema_main_menu.tres" id="17_vxdmp"]
 [ext_resource type="StyleBox" uid="uid://uq8ga61sg7tq" path="res://resources/styles/hflip_button_menu_hover_style.tres" id="19_vxdmp"]
 [ext_resource type="Texture2D" uid="uid://b813pu4qvhqpa" path="res://assets/images/menus/opçao_imagem.png" id="20_1bw8o"]
 [ext_resource type="Script" uid="uid://o64xa6aoci2l" path="res://scripts/menu/options/audio.gd" id="27_q78k2"]
@@ -46,7 +45,7 @@ corner_detail = 1
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 16
-Button/fonts/font = ExtResource("1_p1nwe")
+Button/fonts/font = ExtResource("1_wof4p")
 Button/styles/focus = SubResource("StyleBoxEmpty_d4hu8")
 Button/styles/hover = ExtResource("1_bbqo6")
 Button/styles/normal = SubResource("StyleBoxEmpty_prbor")
@@ -1777,21 +1776,21 @@ offset_bottom = 216.0
 [node name="Name" type="Label" parent="Bestiario/Information/VBoxContainer" unique_id=1375152953]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("17_vxdmp")
+theme = ExtResource("27_wof4p")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Name: "
 
 [node name="Damage" type="Label" parent="Bestiario/Information/VBoxContainer" unique_id=716671413]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("17_vxdmp")
+theme = ExtResource("27_wof4p")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Damage: "
 
 [node name="Health" type="Label" parent="Bestiario/Information/VBoxContainer" unique_id=323934013]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("17_vxdmp")
+theme = ExtResource("27_wof4p")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Health: "
 
