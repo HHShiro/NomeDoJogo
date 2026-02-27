@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://d3pyg4fpy44d8"]
 
 [ext_resource type="Texture2D" uid="uid://ccobv43d4o1p8" path="res://assets/images/background/Background_RJ.png" id="1_0hmln"]
+[ext_resource type="Script" uid="uid://c6amwoyypec7g" path="res://scripts/fases/cutscene.gd" id="1_d4sw7"]
+[ext_resource type="Theme" uid="uid://c0ti1gsmlye2r" path="res://resources/styles/tema_jogo.tres" id="1_tbf4y"]
 [ext_resource type="Texture2D" uid="uid://diwsadvxs06vr" path="res://assets/images/background/predios_boss128.png" id="2_5j63e"]
+[ext_resource type="Texture2D" uid="uid://q5gj3aw0hquw" path="res://assets/images/cutscene/carteiro_icon.png" id="2_d4sw7"]
+[ext_resource type="Texture2D" uid="uid://dpev8bvm3t1e4" path="res://assets/images/cutscene/folha (1).png" id="3_d8sxh"]
 [ext_resource type="Texture2D" uid="uid://c1nuunqwuhj1g" path="res://assets/images/player/carteiro.png" id="3_tfrxc"]
 [ext_resource type="Texture2D" uid="uid://dwp1e62qa5c6g" path="res://assets/images/icons/placeholders/box_animation_placeholder.png" id="4_6bw87"]
+[ext_resource type="Texture2D" uid="uid://ey8fd1qeeoej" path="res://assets/images/cutscene/carimbofinaljogo.png" id="4_tuikv"]
 [ext_resource type="Texture2D" uid="uid://c28k8ejfwucu5" path="res://assets/images/icons/placeholders/karen_placeholder.png" id="5_hflwb"]
+[ext_resource type="Texture2D" uid="uid://cxj7oqks57d4b" path="res://assets/images/cutscene/maocarimbo.png" id="5_u7bhx"]
+[ext_resource type="Texture2D" uid="uid://bbvd1rpjpd0oc" path="res://assets/images/cutscene/karen_icon.png" id="6_1p25d"]
+[ext_resource type="AudioStream" uid="uid://d3ejt4501heq" path="res://assets/sounds/sfx/cutscene/campainha.wav" id="6_tfrxc"]
 
 [sub_resource type="Animation" id="Animation_y6vkm"]
 length = 20.0
@@ -15,10 +23,10 @@ tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 16, 18),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-40, 264), Vector2(688, 24)]
+"values": [Vector2(-40, 300), Vector2(688, 170), Vector2(688, 170), Vector2(-63, 285)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -27,10 +35,216 @@ tracks/1/path = NodePath("Player:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.74999994, 1.68, 2.06, 2.6299999, 3.21, 3.83, 4.31, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 16.4, 16.8, 17.2, 17.6, 18),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, 0.0]
+"values": [0.0, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, 0.0, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UI/Panel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7, 10.5, 11, 13, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UI/Panel/VBoxContainer/RichTextLabel:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8, 9, 10, 10.745315, 11, 17.450256, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", ".", "..", "...", "", "Certo, destinatário ausente! Hora da próxima entrega.", "", "Filho da p"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UI/Panel/VBoxContainer/RichTextLabel:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10.877841, 11, 12, 17.360256, 17.6, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UI/Registro:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 13.2, 16),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("UI/Mao:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 13.2, 16),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("UI/Mao:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(13.2, 14, 14.4, 15.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(446, 850), Vector2(480, 350), Vector2(480, 350), Vector2(455, 860)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("UI/Mao:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(14, 14.2, 14.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(9, 9), Vector2(8, 8), Vector2(9, 9)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("UI/Carimbo:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 14.2, 16),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("UI/Carimbo:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(14.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 350)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Karen:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 17.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("UI/Panel/VBoxContainer/Label:text")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 17.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Carteiro", "Karen"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("UI/Panel/Sprite2D:texture")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 17.6),
+"transitions": PackedFloat32Array(27.857576, 1),
+"update": 1,
+"values": [ExtResource("2_d4sw7"), ExtResource("6_1p25d")]
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath(".")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fim"
+}]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Karen:flip_h")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(17.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Player:flip_h")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Player/Caixa:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(230.72049, 1),
+"update": 0,
+"values": [Vector2(8, 0), Vector2(-8, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_yeweu"]
@@ -55,31 +269,101 @@ _data = {
 &"end_animation": SubResource("Animation_yeweu")
 }
 
-[node name="Cutscene" type="Node2D" unique_id=2131687720]
+[node name="Cutscene" type="Node2D" unique_id=2131687720 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_d4sw7")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=763247125]
 
+[node name="Panel" type="Panel" parent="UI" unique_id=313370393]
+visible = false
+offset_left = 8.0
+offset_top = 360.0
+offset_right = 1019.0
+offset_bottom = 571.0
+theme = ExtResource("1_tbf4y")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Panel" unique_id=1435061942]
+position = Vector2(77, 73.99999)
+scale = Vector2(10, 10)
+texture = ExtResource("2_d4sw7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Panel" unique_id=728600494]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -351.5
+offset_top = 11.0
+offset_right = 483.5
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Panel/VBoxContainer" unique_id=2039533598]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Carteiro"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Panel/VBoxContainer" unique_id=610838860]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+scroll_active = false
+
+[node name="Registro" type="Sprite2D" parent="UI" unique_id=1590262601]
+visible = false
+position = Vector2(496, 264)
+scale = Vector2(4, 4)
+texture = ExtResource("3_d8sxh")
+
+[node name="Carimbo" type="Sprite2D" parent="UI" unique_id=885745346]
+visible = false
+position = Vector2(480, 350)
+rotation = 0.33161256
+scale = Vector2(3, 3)
+texture = ExtResource("4_tuikv")
+
+[node name="Label" type="Label" parent="UI/Carimbo" unique_id=1978025217]
+offset_left = -41.8186
+offset_top = 35.19918
+offset_right = 102.1814
+offset_bottom = 58.19918
+rotation = -0.7853982
+theme = ExtResource("1_tbf4y")
+theme_override_colors/font_color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+theme_override_font_sizes/font_size = 12
+text = "Destinatário Ausente"
+
+[node name="Mao" type="Sprite2D" parent="UI" unique_id=127135837]
+visible = false
+position = Vector2(446, 850)
+rotation = -0.5235988
+scale = Vector2(9, 9)
+texture = ExtResource("5_u7bhx")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=163777565]
 libraries/ = SubResource("AnimationLibrary_tbf4y")
+autoplay = &"RESET"
 
 [node name="Road" type="Sprite2D" parent="." unique_id=174933682]
-position = Vector2(512, 288)
+position = Vector2(514, 472)
 texture = ExtResource("1_0hmln")
 
 [node name="Up_Buildings" type="Sprite2D" parent="." unique_id=1971781555]
-position = Vector2(512, -256)
+position = Vector2(514, -72)
 scale = Vector2(8, 8)
 texture = ExtResource("2_5j63e")
 
 [node name="Down_Buildings" type="Sprite2D" parent="." unique_id=865591853]
-position = Vector2(512, 832)
+position = Vector2(514, 1016)
 rotation = 3.1415927
 scale = Vector2(8, 8)
 texture = ExtResource("2_5j63e")
 
 [node name="Player" type="Sprite2D" parent="." unique_id=1104266168]
-position = Vector2(-40, 264)
-rotation = 0.17453292
+position = Vector2(-40, 300)
 texture = ExtResource("3_tfrxc")
 
 [node name="Caixa" type="Sprite2D" parent="Player" unique_id=957569798]
@@ -88,5 +372,10 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_6bw87")
 
 [node name="Karen" type="Sprite2D" parent="." unique_id=1324879092]
-position = Vector2(712, -32)
+visible = false
+position = Vector2(712, 160)
 texture = ExtResource("5_hflwb")
+flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1297558402]
+stream = ExtResource("6_tfrxc")

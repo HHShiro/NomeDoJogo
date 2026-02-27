@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bhlrq10gglc2b" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_p1nwe"]
 [ext_resource type="Script" uid="uid://cgahse8hib6mr" path="res://scripts/menu/upgrade_menu/skill_tree.gd" id="3_247la"]
 [ext_resource type="Texture2D" uid="uid://buocqtpgofywx" path="res://assets/images/menus/universo.png" id="4_vxdmp"]
-[ext_resource type="PackedScene" path="res://scenes/menu/upgrade.tscn" id="5_xn6kt"]
+[ext_resource type="PackedScene" uid="uid://dp8xany6pk42b" path="res://scenes/menu/upgrade.tscn" id="5_xn6kt"]
 [ext_resource type="Script" uid="uid://bitgoko3ltilu" path="res://scripts/menu/upgrade_menu/Skill.gd" id="6_qgo02"]
 [ext_resource type="Script" uid="uid://dm5gtjixacdfs" path="res://scripts/player/Stats.gd" id="7_vovv2"]
 [ext_resource type="Texture2D" uid="uid://bjfarej0jpfg7" path="res://assets/images/icons/placeholders/might_placeholder.png" id="8_1k4da"]

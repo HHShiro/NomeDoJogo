@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Gem" format=3 uid="uid://dgqhnqu3trnhu"]
 
-[ext_resource type="Texture2D" uid="uid://djyfa801ogsno" path="res://assets/images/icons/placeholders/selov2_placeholder.png" id="1_f6m7c"]
+[ext_resource type="Texture2D" uid="uid://w08vwjuvwmc" path="res://assets/images/pickups/xp1 (1).png" id="1_wh4dx"]
 [ext_resource type="Script" uid="uid://hw8q7yb0w5mr" path="res://scripts/player/pickups/gem.gd" id="2_wh4dx"]
 [ext_resource type="AudioStream" uid="uid://ddlss1ubr5s8y" path="res://assets/sounds/sfx/pickup_sound.wav" id="3_wh4dx"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("2_wh4dx")
 XP = 2.0
 title = "selo_xp"
-icon = ExtResource("1_f6m7c")
+icon = ExtResource("1_wh4dx")
 description = "ganhar exp"
 sound = ExtResource("3_wh4dx")
 metadata/_custom_type_script = "uid://hw8q7yb0w5mr"
