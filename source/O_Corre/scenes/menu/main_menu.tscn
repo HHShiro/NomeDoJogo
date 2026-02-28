@@ -1659,7 +1659,7 @@ offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Start"
+text = "Começar"
 alignment = 0
 script = SubResource("GDScript_do53f")
 
@@ -1670,7 +1670,7 @@ offset_top = 176.0
 offset_right = 464.0
 offset_bottom = 241.0
 theme_override_font_sizes/font_size = 32
-text = "Upgrades"
+text = "Habilidades"
 alignment = 0
 
 [node name="Bestiary" type="Button" parent="Menu" unique_id=1013397127]
@@ -1813,7 +1813,7 @@ theme_override_constants/separation = 20
 [node name="Label" type="Label" parent="Options" unique_id=799561086]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Options"
+text = "Opções"
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="Options" unique_id=211464979]
@@ -1905,7 +1905,7 @@ theme_override_constants/separation = 25
 
 [node name="Musica" type="Label" parent="Audio/HBoxContainer3" unique_id=1194028705]
 layout_mode = 2
-text = "Musica"
+text = "Música"
 
 [node name="HSlider" type="HSlider" parent="Audio/HBoxContainer3" unique_id=2082165678]
 custom_minimum_size = Vector2(200, 0)
@@ -2014,7 +2014,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 32
 theme_override_styles/pressed = SubResource("StyleBoxFlat_41tvm")
 theme_override_styles/hover = ExtResource("19_vxdmp")
-text = "Back"
+text = "Voltar"
 alignment = 2
 
 [connection signal="pressed" from="Menu/Start" to="Menu/Start" method="_on_pressed"]

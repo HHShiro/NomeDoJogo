@@ -15,7 +15,7 @@ var health: float = 100:
 var movement_speed: float = 150.0:
 	set(value):
 		movement_speed = value
-		%MovementSpeed.text = "Movement Speed: " + str(value)
+		%MovementSpeed.text = "Velocidade de Movimento: " + str(value)
 var max_health: float = 100:
 	set(value):
 		max_health = value
@@ -101,7 +101,8 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.rotation_degrees = 0.0
 
 	check_XP()
-	health += recovery * delta
+	if health < max_health:
+		health += recovery * delta
 	
 
 
