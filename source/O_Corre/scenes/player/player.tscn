@@ -339,7 +339,7 @@ offset_top = 203.0
 offset_right = 175.0
 offset_bottom = 234.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ioxgp")
-text = "Open"
+text = "Abrir"
 
 [node name="Close" type="Button" parent="UI/Chest" unique_id=1522609497]
 visible = false
@@ -349,7 +349,7 @@ offset_top = 203.0
 offset_right = 175.0
 offset_bottom = 234.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ioxgp")
-text = "Close"
+text = "Fechar"
 
 [node name="Rewards" type="Control" parent="UI/Chest" unique_id=1782803254]
 anchors_preset = 0

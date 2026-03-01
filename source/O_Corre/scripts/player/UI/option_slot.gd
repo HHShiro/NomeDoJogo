@@ -17,7 +17,7 @@ var passive_item_available:= false:
 		else:
 			icon = value.evolution.icon
 			$Label.text = ""
-			$Description.text = "EVOLUTION"
+			$Description.text = "EVOLUÇÃO"
 
 
 func _on_gui_input(event: InputEvent):

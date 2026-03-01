@@ -7,7 +7,7 @@ var damage_popup_node = preload("res://scenes/player/damage.tscn")
 
 @export var max_health = 5000
 @export var speed = 100
-@export var damage: float
+@export var damage = 10.0
 @export var dash_speed = 600
 @export var friccao = 1
 @export var tempo_esperando = 1.0

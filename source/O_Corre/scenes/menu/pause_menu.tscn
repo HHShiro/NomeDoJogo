@@ -53,7 +53,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Options"
+text = "Opções"
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="Panel/Options" unique_id=1755111096]
@@ -263,18 +263,17 @@ alignment = 1
 [node name="resume" type="Button" parent="Menu" unique_id=1104534373]
 layout_mode = 2
 size_flags_vertical = 6
-text = "Voltar ao JOGO
+text = "Voltar ao Jogo
 "
 
 [node name="options" type="Button" parent="Menu" unique_id=1878477315]
 layout_mode = 2
-text = "Options
-"
+text = "Opções"
 
 [node name="back_main_menu" type="Button" parent="Menu" unique_id=1633818157]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Voltar ao MENU
+text = "Voltar ao Menu
 "
 
 [node name="Back" type="Button" parent="." unique_id=822894466]
@@ -290,7 +289,7 @@ offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_msl3b")
-text = "Back"
+text = "Voltar"
 
 [connection signal="pressed" from="Panel/Options/Control/Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="Panel/Options/Control2/Controles" to="." method="_on_controles_pressed"]
