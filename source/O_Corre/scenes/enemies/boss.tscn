@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://8hk2vb0oxukd" path="res://scripts/enemies/boss.gd" id="1_3uc6t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3uc6t"]
-height = 28.0
+radius = 24.0
+height = 64.0
 
 [sub_resource type="Theme" id="Theme_3uc6t"]
 
@@ -27,11 +28,12 @@ bg_color = Color(0.99607843, 0.21960784, 0.40392157, 1)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_3uc6t")
-damage = 10.0
-dash_speed = 500
+speed = 150
 duracao_dash = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=583819588]
+position = Vector2(2.2737368e-13, 9.536743e-07)
+scale = Vector2(2.0555556, 1.8333334)
 texture = ExtResource("1_1ex25")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2036763026]
@@ -39,10 +41,10 @@ position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_3uc6t")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=309282175]
-offset_left = -60.0
-offset_top = -27.0
-offset_right = 60.0
-offset_bottom = -21.0
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 64.0
+offset_bottom = -42.0
 theme = SubResource("Theme_3uc6t")
 theme_override_styles/background = SubResource("StyleBoxFlat_ub7yk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ian0n")
